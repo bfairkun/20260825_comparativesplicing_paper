@@ -4,6 +4,10 @@ Code and data for the comparative-splicing analysis: junction productivity class
 differential splicing across developmental and adult-tissue contrasts, conservation of
 unproductive cassette exons, and NMD-factor expression.
 
+**[▶ Rendered figure notebook](https://bfairkun.github.io/20260825_comparativesplicing_paper/ComparativeSplicingFigures.html)**
+— every panel, with the code that makes it. No setup required; the same file is committed at
+[`docs/ComparativeSplicingFigures.html`](docs/ComparativeSplicingFigures.html).
+
 ## Reproducing the figures
 
 The figure notebook reads only the small plot-ready tables in `output/` and the metadata in
