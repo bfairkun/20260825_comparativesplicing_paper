@@ -35,4 +35,3 @@ dependencies:
     - rich==12.2.0
     - splice-q==1.0.0
     - typing-extensions==4.1.1
-prefix: /project2/gilad/bjf79_project1/envs/spliceq2

@@ -24,7 +24,7 @@ cd code
 # regenerate everything shipped in output/ from pipeline intermediates (cheap)
 snakemake all_plot_data all_supplement_tables
 
-# the whole pipeline, from downloading ~2,030 FASTQs (weeks of compute, TBs of scratch)
+# the whole pipeline, from downloading 1,993 FASTQs (weeks of compute, TBs of scratch)
 snakemake all
 ```
 

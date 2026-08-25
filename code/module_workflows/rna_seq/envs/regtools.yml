@@ -11,4 +11,3 @@ dependencies:
   - libstdcxx-ng=9.3.0=h6de172a_19
   - regtools=0.6.0=h9a82719_1
   - zlib=1.2.11=h7b6447c_3
-prefix: /project2/gilad/bjf79_project1/envs/regtools

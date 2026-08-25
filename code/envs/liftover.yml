@@ -36,4 +36,3 @@ dependencies:
   - samtools=1.22.1=h96c455f_0
   - ucsc-liftover=482=h0b57e2e_0
   - zstd=1.5.7=hb8e6e7a_2
-prefix: /project2/gilad/bjf79_project1/envs/liftover

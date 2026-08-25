@@ -32,4 +32,3 @@ dependencies:
     - certifi==2022.9.24
     - pip==22.2.2
     - setuptools==63.4.1
-prefix: /project2/gilad/bjf79_project1/envs/bedparse

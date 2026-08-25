@@ -36,4 +36,3 @@ dependencies:
     - pip==24.0
     - setuptools==69.5.1
     - wheel==0.43.0
-prefix: /project2/gilad/bjf79_project1/envs/gtftools

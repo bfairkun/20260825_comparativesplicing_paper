@@ -6,7 +6,7 @@
 #       Regenerates everything shipped in output/ from pipeline intermediates. Cheap.
 #
 #   snakemake all
-#       The whole pipeline, from downloading ~2,030 FASTQs through STAR alignment,
+#       The whole pipeline, from downloading 1,993 FASTQs through STAR alignment,
 #       regtools, leafcutter clustering, leafcutter2 junction classification, liftover and
 #       differential splicing. Weeks of compute and several TB of scratch.
 #
@@ -35,8 +35,6 @@ wildcard_constraints:
     GenomeName = "|".join(STAR_genomes.index)
 
 ruleorder: rna_seq_faidxGenome > faidxGenome
-ruleorder: annotate_juncfiles_NoWhitespaceGtf > rna_seq_annotate_juncfiles
-ruleorder: AnnotateConcatedUniqJuncFile_basic_NoWhitespaceGtf > rna_seq_AnnotateConcatedUniqJuncFile_basic
 
 
 module rna_seq:
@@ -54,7 +52,6 @@ use rule DownloadFastaAndGtf, CopyFastq, CopyFastq_SE, STAR_make_index from rna_
 # into this workdir so those shell commands resolve.
 CreateSymlinksOfDir1ContentsIntoDir2("module_workflows/rna_seq/scripts/", "scripts/")
 
-include: "rules/other.smk"
 include: "rules/LiftoverJuncs.smk"
 include: "rules/MazinLeafcutterAnalysis.smk"
 include: "rules/PlotData.smk"

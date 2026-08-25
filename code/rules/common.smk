@@ -15,9 +15,7 @@ STAR_genomes = pd.read_csv(config["STAR_genomes"], sep="\t", index_col=0)
 
 MazinGenomes = [g for g in STAR_genomes.index if g not in ["Lamprey_ensemblv_112"]]
 SampleGenomes = samples["STARGenomeName"].unique()
-CordosMoreiraGenomes = [g for g in SampleGenomes
-                        if g not in ["StarletSeaAnemone_RefSeq_GCF_932526225.1",
-                                     "SalpingoecaRosetta_ensemblv_59"]]
+CordosMoreiraGenomes = list(SampleGenomes)
 CordosMoreiraGenomes_dict = dict(zip([g.split("_")[0] for g in CordosMoreiraGenomes],
                                      CordosMoreiraGenomes))
 

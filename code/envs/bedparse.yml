@@ -227,4 +227,3 @@ dependencies:
     - python-dateutil==2.9.0.post0
     - pytz==2024.1
     - setuptools==63.4.1
-prefix: /project2/gilad/bjf79_project1/envs/bedparse
