@@ -1,0 +1,20 @@
+# Python leafcutter-ds (https://github.com/leafcutter2/leafcutter-ds).
+#
+# Installed from git, NOT PyPI: the published wheel (leafcutter==2.0.2) contains only
+# dist-info and the two console scripts, with no `leafcutter` package, so `leafcutter-ds`
+# fails at import with ModuleNotFoundError.
+#
+# The pyro-ppl dependency pulls in torch and the CUDA runtime, so this env is ~3 GB.
+#
+# The commit is pinned deliberately. This implementation is new, is not the one that produced
+# the distributed results (leafcutter_ds.R was), and is liable to be patched; bdf92d37 is the
+# commit whose agreement with the R tool was actually measured (see ../scripts/leafcutter_ds_py.py
+# and the README). Moving the pin means re-running that comparison.
+name: leafcutter_ds_py
+channels: [conda-forge, bioconda, defaults]
+dependencies:
+  - python=3.11
+  - pandas
+  - pip
+  - pip:
+      - git+https://github.com/leafcutter2/leafcutter-ds.git@bdf92d377f5dfbe5d643b5c217dc7047d70742e8

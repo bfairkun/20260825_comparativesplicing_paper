@@ -1,0 +1,2284 @@
+gene_name	SpeciesShort	ID	NewerGroup
+ARHGAP17	Chicken	Chicken_Brain_10wph_1775	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_10wph_1805	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_10wph_1865	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_10wph_3920	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_Adult_577	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_Adult_653	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_Adult_783	Non testis adult
+ARHGAP17	Chicken	Chicken_Brain_Adult_922	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_10wph_1770	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_10wph_1776	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_10wph_1868	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_10wph_1869	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_Adult_578	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_Adult_654	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_Adult_782	Non testis adult
+ARHGAP17	Chicken	Chicken_Cerebellum_Adult_921	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_10wph_1771	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_10wph_1777	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_10wph_2455	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_10wph_2457	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_Adult_560	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_Adult_650	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_Adult_764	Non testis adult
+ARHGAP17	Chicken	Chicken_Heart_Adult_785	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_10wph_1772	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_10wph_1778	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_10wph_2456	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_10wph_2458	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_Adult_555	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_Adult_559	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_Adult_784	Non testis adult
+ARHGAP17	Chicken	Chicken_Kidney_adult_918	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_10wph_1774	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_10wph_1779	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_10wph_1872	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_10wph_1873	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_Adult_554	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_Adult_558	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_Adult_786	Non testis adult
+ARHGAP17	Chicken	Chicken_Liver_adult_917	Non testis adult
+ARHGAP17	Chicken	Chicken_Ovary_10wph_1780	Non testis adult
+ARHGAP17	Chicken	Chicken_Ovary_10wph_1781	Non testis adult
+ARHGAP17	Chicken	Chicken_Testis_0dph_1544	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_0dph_1662	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_10_1715	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_10_1722	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_10wph_1773	Adult testis
+ARHGAP17	Chicken	Chicken_Testis_12_1354	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_12_1365	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_14_1417	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_14_3917	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_17_1625	EarlyEmbryo testis
+ARHGAP17	Chicken	Chicken_Testis_5wph_1762	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_5wph_1767	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_7dph_1652	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_7dph_1680	Neonate testis
+ARHGAP17	Chicken	Chicken_Testis_Adult_642	Adult testis
+ARHGAP17	Chicken	Chicken_Testis_Adult_920	Adult testis
+ARHGAP17	Human	Human_Brain_13ypb_5570	Non testis adult
+ARHGAP17	Human	Human_Brain_14ypb_5515	Non testis adult
+ARHGAP17	Human	Human_Brain_16ypb_5532	Non testis adult
+ARHGAP17	Human	Human_Brain_28ypb_6048	Non testis adult
+ARHGAP17	Human	Human_Brain_29ypb_5531	Non testis adult
+ARHGAP17	Human	Human_Brain_29ypb_5908	Non testis adult
+ARHGAP17	Human	Human_Brain_39ypb_5533	Non testis adult
+ARHGAP17	Human	Human_Brain_39ypb_5574	Non testis adult
+ARHGAP17	Human	Human_Brain_50ypb_5517	Non testis adult
+ARHGAP17	Human	Human_Brain_53ypb_5557	Non testis adult
+ARHGAP17	Human	Human_Brain_58ypb_5514	Non testis adult
+ARHGAP17	Human	Human_Brain_58ypb_5524	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_13ypb_5511	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_14ypb_5545	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_16ypb_5534	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_17ypb_5565	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_29ypb_5520	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_29ypb_5540	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_32ypb_6047	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_39ypb_5522	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_39ypb_5547	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_50ypb_5549	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_53ypb_5516	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_58ypb_5525	Non testis adult
+ARHGAP17	Human	Human_Cerebellum_58ypb_5573	Non testis adult
+ARHGAP17	Human	Human_Heart_13ypb_5822	Non testis adult
+ARHGAP17	Human	Human_Heart_25ypb_6042	Non testis adult
+ARHGAP17	Human	Human_Heart_54ypb_6043	Non testis adult
+ARHGAP17	Human	Human_Kidney_2ypb_5821	Non testis adult
+ARHGAP17	Human	Human_Kidney_4ypb_6101	Non testis adult
+ARHGAP17	Human	Human_Kidney_8ypb_6099	Non testis adult
+ARHGAP17	Human	Human_Liver_17ypb_5575	Non testis adult
+ARHGAP17	Human	Human_Liver_29ypb_5536	Non testis adult
+ARHGAP17	Human	Human_Liver_39ypb_5551	Non testis adult
+ARHGAP17	Human	Human_Liver_39ypb_5563	Non testis adult
+ARHGAP17	Human	Human_Liver_55ypb_6106	Non testis adult
+ARHGAP17	Human	Human_Liver_58ypb_5512	Non testis adult
+ARHGAP17	Human	Human_Liver_58ypb_5571	Non testis adult
+ARHGAP17	Human	Human_Liver_7ypb_5513	Non testis adult
+ARHGAP17	Human	Human_Testis_14ypb_5561	Neonate testis
+ARHGAP17	Human	Human_Testis_14ypb_5564	Neonate testis
+ARHGAP17	Human	Human_Testis_16ypb_5526	Adult testis
+ARHGAP17	Human	Human_Testis_17ypb_5546	Adult testis
+ARHGAP17	Human	Human_Testis_1ypb_5841	Neonate testis
+ARHGAP17	Human	Human_Testis_221dpb_5560	Neonate testis
+ARHGAP17	Human	Human_Testis_270dpb_5523	Neonate testis
+ARHGAP17	Human	Human_Testis_28ypb_6107	Adult testis
+ARHGAP17	Human	Human_Testis_29ypb_5535	Adult testis
+ARHGAP17	Human	Human_Testis_29ypb_5566	Adult testis
+ARHGAP17	Human	Human_Testis_39ypb_5550	Adult testis
+ARHGAP17	Human	Human_Testis_46ypb_6095	Adult testis
+ARHGAP17	Human	Human_Testis_55ypb_5518	Adult testis
+ARHGAP17	Macaque	Macaque_Brain_14ypb_6110	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_15ypb_6111	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_21ypb_5413	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_22ypb_5461	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_3ypb_6076	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_3ypb_6084	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_9ypb_5501	Non testis adult
+ARHGAP17	Macaque	Macaque_Brain_9ypb_5988	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_15ypb_5491	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_21ypb_5378	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_22ypb_5389	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_3ypb_5428	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_3ypb_5442	Non testis adult
+ARHGAP17	Macaque	Macaque_Cerebellum_9ypb_5457	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_14ypb_5396	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_15ypb_6120	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_20ypb_6121	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_26ypb_6122	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_3ypb_5422	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_3ypb_5436	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_3ypb_6078	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_3ypb_6081	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_8ypb_6085	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_9ypb_5420	Non testis adult
+ARHGAP17	Macaque	Macaque_Heart_9ypb_5450	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_14ypb_5376	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_15ypb_5445	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_20ypb_6126	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_26ypb_6127	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_3ypb_5380	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_3ypb_5507	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_3ypb_6079	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_3ypb_6083	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_8ypb_6087	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_8ypb_6125	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_9ypb_5476	Non testis adult
+ARHGAP17	Macaque	Macaque_Kidney_9ypb_6091	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_14ypb_5482	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_14ypb_6114	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_15ypb_5416	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_21ypb_5404	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_22ypb_5395	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_3ypb_5447	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_3ypb_5454	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_3ypb_6077	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_8ypb_6086	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_9ypb_5425	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_9ypb_5993	Non testis adult
+ARHGAP17	Macaque	Macaque_Liver_9ypb_6089	Non testis adult
+ARHGAP17	Macaque	Macaque_Testis_109_5462	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_109_5464	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_112_6040	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_123_5460	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_123_5475	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_129_5483	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_130_5392	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_14ypb_5435	Adult testis
+ARHGAP17	Macaque	Macaque_Testis_151dpb_5371	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_153dpb_5456	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_15ypb_5410	Adult testis
+ARHGAP17	Macaque	Macaque_Testis_1dpb_5379	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_1dpb_5379	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_1dpb_5508	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_1dpb_5508	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_1ypb_5418	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_1ypb_5451	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_1ypb_6075	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_21ypb_5383	Adult testis
+ARHGAP17	Macaque	Macaque_Testis_22dpb_5372	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_22ypb_5412	Adult testis
+ARHGAP17	Macaque	Macaque_Testis_23dpb_5408	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_3ypb_5443	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_3ypb_6080	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_3ypb_6082	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_6mpb_6062	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_6mpb_6067	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_7dpb_6057	Neonate testis
+ARHGAP17	Macaque	Macaque_Testis_7dpb_6057	EarlyEmbryo testis
+ARHGAP17	Macaque	Macaque_Testis_9ypb_5373	Adult testis
+ARHGAP17	Macaque	Macaque_Testis_9ypb_5414	Adult testis
+ARHGAP17	Mouse	Mouse_Brain_2wpb_1876	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_2wpb_1880	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_2wpb_1884	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_2wpb_1888	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_4wpb_1892	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_4wpb_1896	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_4wpb_1936	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_4wpb_1940	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_9wpb_1944	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_9wpb_1948	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_9wpb_1954	Non testis adult
+ARHGAP17	Mouse	Mouse_Brain_9wpb_1960	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_2wpb_1877	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_2wpb_1881	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_2wpb_1885	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_4wpb_1893	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_4wpb_1897	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_4wpb_1937	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_4wpb_1941	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_9wpb_1945	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_9wpb_1949	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_9wpb_1955	Non testis adult
+ARHGAP17	Mouse	Mouse_Cerebellum_9wpb_1961	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_2wpb_2643	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_2wpb_2645	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_2wpb_2651	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_2wpb_2653	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_4wpb_2655	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_4wpb_2657	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_4wpb_2659	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_4wpb_2661	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_9wpb_1950	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_9wpb_1956	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_9wpb_2663	Non testis adult
+ARHGAP17	Mouse	Mouse_Heart_9wpb_2669	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_2wpb_2644	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_2wpb_2646	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_2wpb_2652	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_2wpb_2654	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_4wpb_2656	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_4wpb_2658	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_4wpb_2660	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_4wpb_2662	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_9wpb_1951	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_9wpb_2664	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_9wpb_2665	Non testis adult
+ARHGAP17	Mouse	Mouse_Kidney_9wpb_5360	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_2wpb_1878	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_2wpb_1882	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_2wpb_1886	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_2wpb_1890	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_4wpb_1894	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_4wpb_1898	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_4wpb_1938	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_4wpb_1942	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_9wpb_1946	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_9wpb_1952	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_9wpb_1958	Non testis adult
+ARHGAP17	Mouse	Mouse_Liver_9wpb_1962	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_2wpb_1887	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_2wpb_1891	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_4wpb_1939	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_4wpb_1943	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_9wpb_1953	Non testis adult
+ARHGAP17	Mouse	Mouse_Ovary_9wpb_1963	Non testis adult
+ARHGAP17	Mouse	Mouse_Testis_0dpb_1911	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_0dpb_1917	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_10.5_3279	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_10.5_3368	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_11.5_3361	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_11.5_3363	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_12.5_3281	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_12.5_3285	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_13.5_2826	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_13.5_2842	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_14.5_2226	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_14.5_2233	EarlyEmbryo testis
+ARHGAP17	Mouse	Mouse_Testis_2wpb_1879	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_2wpb_1883	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_3dpb_1929	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_3dpb_1967	Neonate testis
+ARHGAP17	Mouse	Mouse_Testis_4wpb_1895	Adult testis
+ARHGAP17	Mouse	Mouse_Testis_4wpb_1899	Adult testis
+ARHGAP17	Mouse	Mouse_Testis_9wpb_1947	Adult testis
+ARHGAP17	Mouse	Mouse_Testis_9wpb_1959	Adult testis
+ARHGAP17	Opossum	Opossum_Brain_120dpb_4599	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_120dpb_4624	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_120dpb_5852	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_14mpb_5972	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_14mpb_5974	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_150dpb_4622	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_150dpb_4623	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_150dpb_5858	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_60dpb_4647	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_90dpb_4607	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_90dpb_4620	Non testis adult
+ARHGAP17	Opossum	Opossum_Brain_90dpb_5864	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_120dpb_4626	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_120dpb_4628	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_120dpb_5857	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_150dpb_4682	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_150dpb_5859	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_4mpb_5975	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_4mpb_5977	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_60dpb_4648	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_60dpb_5869	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_60dpb_5874	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_6mpb_5976	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_90dpb_4608	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_90dpb_4621	Non testis adult
+ARHGAP17	Opossum	Opossum_Cerebellum_90dpb_5865	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_120dpb_4468	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_120dpb_4634	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_120dpb_5855	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_150dpb_4209	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_150dpb_4213	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_150dpb_5861	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_180dpb_3953	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_180dpb_3959	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_180dpb_3990	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_180dpb_3996	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_60dpb_4643	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_60dpb_5871	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_60dpb_5873	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_90dpb_4612	Non testis adult
+ARHGAP17	Opossum	Opossum_Heart_90dpb_5866	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_120dpb_4710	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_150dpb_4214	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_150dpb_5862	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_180dpb_3954	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_180dpb_3960	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_180dpb_3998	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_60dpb_4644	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_60dpb_4659	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_90dpb_4609	Non testis adult
+ARHGAP17	Opossum	Opossum_Kidney_90dpb_5867	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_120dpb_4469	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_120dpb_4601	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_120dpb_5856	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_150dpb_4211	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_150dpb_4215	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_150dpb_5863	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_180dpb_3955	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_180dpb_3961	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_180dpb_3991	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_180dpb_3997	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_60dpb_4660	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_60dpb_5851	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_60dpb_5872	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_90dpb_4610	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_90dpb_4637	Non testis adult
+ARHGAP17	Opossum	Opossum_Liver_90dpb_5868	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_120dpb_4471	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_120dpb_5853	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_150dpb_4208	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_150dpb_5860	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_180dpb_3999	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_60dpb_5870	Non testis adult
+ARHGAP17	Opossum	Opossum_Ovary_90dpb_4613	Non testis adult
+ARHGAP17	Opossum	Opossum_Testis_10dpb_5601	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_10dpb_5601	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_120dpb_5854	Adult testis
+ARHGAP17	Opossum	Opossum_Testis_14dpb_4954	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_14dpb_4954	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_14dpb_5877	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_14dpb_5877	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_150dpb_4212	Adult testis
+ARHGAP17	Opossum	Opossum_Testis_180dpb_3956	Adult testis
+ARHGAP17	Opossum	Opossum_Testis_180dpb_3993	Adult testis
+ARHGAP17	Opossum	Opossum_Testis_21dpb_5329	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_21dpb_5329	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_21dpb_5330	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_21dpb_5330	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_28dpb_4677	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_28dpb_4678	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_2dpb_4492	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_2dpb_4492	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_42dpb_4723	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_42dpb_4727	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_4dpb_4542	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_4dpb_4542	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_4dpb_5331	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_4dpb_5331	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_60dpb_4661	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_60dpb_4731	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_6dpb_5327	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_6dpb_5327	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_6dpb_5328	Neonate testis
+ARHGAP17	Opossum	Opossum_Testis_6dpb_5328	EarlyEmbryo testis
+ARHGAP17	Opossum	Opossum_Testis_90dpb_4619	Adult testis
+ARHGAP17	Opossum	Opossum_Testis_90dpb_4638	Adult testis
+ARHGAP17	Rabbit	Rabbit_Brain_12wpb_4830	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_12wpb_4836	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_12wpb_4917	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_12wpb_4928	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_1ypb_3017	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_6mpb_3011	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_6mpb_3021	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Brain_6mpb_3025	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_12wpb_4831	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_12wpb_4837	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_12wpb_4918	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_12wpb_4929	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_1ypb_3018	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_6mpb_3012	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_6mpb_3022	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Cerebellum_6mpb_3026	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_12wpb_4913	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_12wpb_4919	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_1ypb_3019	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_6mpb_3027	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_6mpb_3458	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Heart_9mpb_3085	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_12wpb_4834	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_12wpb_4914	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_12wpb_4920	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_12wpb_4931	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_6mpb_3014	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_6mpb_3023	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_6mpb_3028	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Kidney_6mpb_3047	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_12wpb_4833	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_12wpb_4915	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_12wpb_4921	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_12wpb_4932	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_1ypb_3079	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_6mpb_3015	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_6mpb_3029	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Liver_6mpb_3081	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Ovary_6mpb_3016	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Ovary_6mpb_3024	Non testis adult
+ARHGAP17	Rabbit	Rabbit_Testis_0dpb_3175	Neonate testis
+ARHGAP17	Rabbit	Rabbit_Testis_0dpb_3181	Neonate testis
+ARHGAP17	Rabbit	Rabbit_Testis_12_4747	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_12_4750	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_12wpb_4835	Adult testis
+ARHGAP17	Rabbit	Rabbit_Testis_13_4800	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_13_4927	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_14_4826	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_14_4998	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_15.5_3370	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_15.5_3376	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_16.5_3407	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_16.5_3424	EarlyEmbryo testis
+ARHGAP17	Rabbit	Rabbit_Testis_2wpb_3109	Neonate testis
+ARHGAP17	Rabbit	Rabbit_Testis_2wpb_3125	Neonate testis
+ARHGAP17	Rabbit	Rabbit_Testis_6mpb_3049	Adult testis
+ARHGAP17	Rat	Rat_Brain_16wpb_2348	Non testis adult
+ARHGAP17	Rat	Rat_Brain_16wpb_2352	Non testis adult
+ARHGAP17	Rat	Rat_Brain_16wpb_2356	Non testis adult
+ARHGAP17	Rat	Rat_Brain_16wpb_2367	Non testis adult
+ARHGAP17	Rat	Rat_Brain_2wpb_2336	Non testis adult
+ARHGAP17	Rat	Rat_Brain_2wpb_2339	Non testis adult
+ARHGAP17	Rat	Rat_Brain_2wpb_2342	Non testis adult
+ARHGAP17	Rat	Rat_Brain_2wpb_2345	Non testis adult
+ARHGAP17	Rat	Rat_Brain_6wpb_1875	Non testis adult
+ARHGAP17	Rat	Rat_Brain_6wpb_1971	Non testis adult
+ARHGAP17	Rat	Rat_Brain_6wpb_1975	Non testis adult
+ARHGAP17	Rat	Rat_Brain_6wpb_2363	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_16wpb_2349	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_16wpb_2353	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_16wpb_2357	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_16wpb_2368	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_2wpb_2337	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_2wpb_2340	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_2wpb_2343	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_2wpb_2346	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_6wpb_1968	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_6wpb_1972	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_6wpb_2285	Non testis adult
+ARHGAP17	Rat	Rat_Cerebellum_6wpb_2364	Non testis adult
+ARHGAP17	Rat	Rat_Heart_16wpb_2746	Non testis adult
+ARHGAP17	Rat	Rat_Heart_16wpb_2747	Non testis adult
+ARHGAP17	Rat	Rat_Heart_16wpb_2749	Non testis adult
+ARHGAP17	Rat	Rat_Heart_16wpb_2853	Non testis adult
+ARHGAP17	Rat	Rat_Heart_2wpb_2727	Non testis adult
+ARHGAP17	Rat	Rat_Heart_2wpb_2728	Non testis adult
+ARHGAP17	Rat	Rat_Heart_2wpb_2731	Non testis adult
+ARHGAP17	Rat	Rat_Heart_2wpb_2760	Non testis adult
+ARHGAP17	Rat	Rat_Heart_6wpb_2738	Non testis adult
+ARHGAP17	Rat	Rat_Heart_6wpb_2740	Non testis adult
+ARHGAP17	Rat	Rat_Heart_6wpb_2742	Non testis adult
+ARHGAP17	Rat	Rat_Heart_6wpb_2751	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_16wpb_2748	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_16wpb_2750	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_16wpb_2854	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_16wpb_2870	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_2wpb_2729	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_2wpb_2730	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_2wpb_2756	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_2wpb_2758	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_6wpb_2739	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_6wpb_2741	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_6wpb_2743	Non testis adult
+ARHGAP17	Rat	Rat_Kidney_6wpb_2856	Non testis adult
+ARHGAP17	Rat	Rat_Liver_16wpb_2351	Non testis adult
+ARHGAP17	Rat	Rat_Liver_16wpb_2355	Non testis adult
+ARHGAP17	Rat	Rat_Liver_16wpb_2359	Non testis adult
+ARHGAP17	Rat	Rat_Liver_16wpb_2370	Non testis adult
+ARHGAP17	Rat	Rat_Liver_2wpb_2525	Non testis adult
+ARHGAP17	Rat	Rat_Liver_2wpb_2526	Non testis adult
+ARHGAP17	Rat	Rat_Liver_2wpb_2527	Non testis adult
+ARHGAP17	Rat	Rat_Liver_2wpb_2759	Non testis adult
+ARHGAP17	Rat	Rat_Liver_6wpb_1969	Non testis adult
+ARHGAP17	Rat	Rat_Liver_6wpb_1973	Non testis adult
+ARHGAP17	Rat	Rat_Liver_6wpb_2287	Non testis adult
+ARHGAP17	Rat	Rat_Liver_6wpb_2366	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_16wpb_2350	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_16wpb_2354	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_2wpb_2338	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_2wpb_2341	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_6wpb_2286	Non testis adult
+ARHGAP17	Rat	Rat_Ovary_6wpb_2365	Non testis adult
+ARHGAP17	Rat	Rat_Testis_0dpb_1750	Neonate testis
+ARHGAP17	Rat	Rat_Testis_0dpb_2291	Neonate testis
+ARHGAP17	Rat	Rat_Testis_12_4176	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_12_4180	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_13_3523	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_13_3581	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_14_3554	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_14_3558	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_15_2395	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_15_3566	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_16_1816	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_16_3602	EarlyEmbryo testis
+ARHGAP17	Rat	Rat_Testis_16wpb_2358	Adult testis
+ARHGAP17	Rat	Rat_Testis_16wpb_2369	Adult testis
+ARHGAP17	Rat	Rat_Testis_1wpb_2304	Neonate testis
+ARHGAP17	Rat	Rat_Testis_1wpb_2362	Neonate testis
+ARHGAP17	Rat	Rat_Testis_2wpb_2344	Neonate testis
+ARHGAP17	Rat	Rat_Testis_2wpb_2347	Neonate testis
+ARHGAP17	Rat	Rat_Testis_3dpb_4909	Neonate testis
+ARHGAP17	Rat	Rat_Testis_3dpb_4963	Neonate testis
+ARHGAP17	Rat	Rat_Testis_6wpb_1970	Adult testis
+ARHGAP17	Rat	Rat_Testis_6wpb_1974	Adult testis
+NSD1	Human	Human_Brain_13ypb_5570	Non testis adult
+NSD1	Human	Human_Brain_14ypb_5515	Non testis adult
+NSD1	Human	Human_Brain_16ypb_5532	Non testis adult
+NSD1	Human	Human_Brain_28ypb_6048	Non testis adult
+NSD1	Human	Human_Brain_29ypb_5531	Non testis adult
+NSD1	Human	Human_Brain_29ypb_5908	Non testis adult
+NSD1	Human	Human_Brain_39ypb_5533	Non testis adult
+NSD1	Human	Human_Brain_39ypb_5574	Non testis adult
+NSD1	Human	Human_Brain_50ypb_5517	Non testis adult
+NSD1	Human	Human_Brain_53ypb_5557	Non testis adult
+NSD1	Human	Human_Brain_58ypb_5514	Non testis adult
+NSD1	Human	Human_Brain_58ypb_5524	Non testis adult
+NSD1	Human	Human_Cerebellum_13ypb_5511	Non testis adult
+NSD1	Human	Human_Cerebellum_14ypb_5545	Non testis adult
+NSD1	Human	Human_Cerebellum_16ypb_5534	Non testis adult
+NSD1	Human	Human_Cerebellum_17ypb_5565	Non testis adult
+NSD1	Human	Human_Cerebellum_29ypb_5520	Non testis adult
+NSD1	Human	Human_Cerebellum_29ypb_5540	Non testis adult
+NSD1	Human	Human_Cerebellum_32ypb_6047	Non testis adult
+NSD1	Human	Human_Cerebellum_39ypb_5522	Non testis adult
+NSD1	Human	Human_Cerebellum_39ypb_5547	Non testis adult
+NSD1	Human	Human_Cerebellum_50ypb_5549	Non testis adult
+NSD1	Human	Human_Cerebellum_53ypb_5516	Non testis adult
+NSD1	Human	Human_Cerebellum_58ypb_5525	Non testis adult
+NSD1	Human	Human_Cerebellum_58ypb_5573	Non testis adult
+NSD1	Human	Human_Heart_13ypb_5822	Non testis adult
+NSD1	Human	Human_Heart_25ypb_6042	Non testis adult
+NSD1	Human	Human_Heart_54ypb_6043	Non testis adult
+NSD1	Human	Human_Kidney_2ypb_5821	Non testis adult
+NSD1	Human	Human_Kidney_4ypb_6101	Non testis adult
+NSD1	Human	Human_Kidney_8ypb_6099	Non testis adult
+NSD1	Human	Human_Liver_17ypb_5575	Non testis adult
+NSD1	Human	Human_Liver_29ypb_5536	Non testis adult
+NSD1	Human	Human_Liver_39ypb_5551	Non testis adult
+NSD1	Human	Human_Liver_39ypb_5563	Non testis adult
+NSD1	Human	Human_Liver_55ypb_6106	Non testis adult
+NSD1	Human	Human_Liver_58ypb_5512	Non testis adult
+NSD1	Human	Human_Liver_58ypb_5571	Non testis adult
+NSD1	Human	Human_Liver_7ypb_5513	Non testis adult
+NSD1	Human	Human_Testis_14ypb_5561	Neonate testis
+NSD1	Human	Human_Testis_14ypb_5564	Neonate testis
+NSD1	Human	Human_Testis_16ypb_5526	Adult testis
+NSD1	Human	Human_Testis_17ypb_5546	Adult testis
+NSD1	Human	Human_Testis_1ypb_5841	Neonate testis
+NSD1	Human	Human_Testis_221dpb_5560	Neonate testis
+NSD1	Human	Human_Testis_270dpb_5523	Neonate testis
+NSD1	Human	Human_Testis_28ypb_6107	Adult testis
+NSD1	Human	Human_Testis_29ypb_5535	Adult testis
+NSD1	Human	Human_Testis_29ypb_5566	Adult testis
+NSD1	Human	Human_Testis_39ypb_5550	Adult testis
+NSD1	Human	Human_Testis_46ypb_6095	Adult testis
+NSD1	Human	Human_Testis_55ypb_5518	Adult testis
+NSD1	Macaque	Macaque_Brain_14ypb_6110	Non testis adult
+NSD1	Macaque	Macaque_Brain_15ypb_6111	Non testis adult
+NSD1	Macaque	Macaque_Brain_21ypb_5413	Non testis adult
+NSD1	Macaque	Macaque_Brain_22ypb_5461	Non testis adult
+NSD1	Macaque	Macaque_Brain_3ypb_6076	Non testis adult
+NSD1	Macaque	Macaque_Brain_3ypb_6084	Non testis adult
+NSD1	Macaque	Macaque_Brain_9ypb_5501	Non testis adult
+NSD1	Macaque	Macaque_Brain_9ypb_5988	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_15ypb_5491	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_21ypb_5378	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_22ypb_5389	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_3ypb_5428	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_3ypb_5442	Non testis adult
+NSD1	Macaque	Macaque_Cerebellum_9ypb_5457	Non testis adult
+NSD1	Macaque	Macaque_Heart_14ypb_5396	Non testis adult
+NSD1	Macaque	Macaque_Heart_15ypb_6120	Non testis adult
+NSD1	Macaque	Macaque_Heart_20ypb_6121	Non testis adult
+NSD1	Macaque	Macaque_Heart_26ypb_6122	Non testis adult
+NSD1	Macaque	Macaque_Heart_3ypb_5422	Non testis adult
+NSD1	Macaque	Macaque_Heart_3ypb_5436	Non testis adult
+NSD1	Macaque	Macaque_Heart_3ypb_6078	Non testis adult
+NSD1	Macaque	Macaque_Heart_3ypb_6081	Non testis adult
+NSD1	Macaque	Macaque_Heart_8ypb_6085	Non testis adult
+NSD1	Macaque	Macaque_Heart_9ypb_5420	Non testis adult
+NSD1	Macaque	Macaque_Heart_9ypb_5450	Non testis adult
+NSD1	Macaque	Macaque_Kidney_14ypb_5376	Non testis adult
+NSD1	Macaque	Macaque_Kidney_15ypb_5445	Non testis adult
+NSD1	Macaque	Macaque_Kidney_20ypb_6126	Non testis adult
+NSD1	Macaque	Macaque_Kidney_26ypb_6127	Non testis adult
+NSD1	Macaque	Macaque_Kidney_3ypb_5380	Non testis adult
+NSD1	Macaque	Macaque_Kidney_3ypb_5507	Non testis adult
+NSD1	Macaque	Macaque_Kidney_3ypb_6079	Non testis adult
+NSD1	Macaque	Macaque_Kidney_3ypb_6083	Non testis adult
+NSD1	Macaque	Macaque_Kidney_8ypb_6087	Non testis adult
+NSD1	Macaque	Macaque_Kidney_8ypb_6125	Non testis adult
+NSD1	Macaque	Macaque_Kidney_9ypb_5476	Non testis adult
+NSD1	Macaque	Macaque_Kidney_9ypb_6091	Non testis adult
+NSD1	Macaque	Macaque_Liver_14ypb_5482	Non testis adult
+NSD1	Macaque	Macaque_Liver_14ypb_6114	Non testis adult
+NSD1	Macaque	Macaque_Liver_15ypb_5416	Non testis adult
+NSD1	Macaque	Macaque_Liver_21ypb_5404	Non testis adult
+NSD1	Macaque	Macaque_Liver_22ypb_5395	Non testis adult
+NSD1	Macaque	Macaque_Liver_3ypb_5447	Non testis adult
+NSD1	Macaque	Macaque_Liver_3ypb_5454	Non testis adult
+NSD1	Macaque	Macaque_Liver_3ypb_6077	Non testis adult
+NSD1	Macaque	Macaque_Liver_8ypb_6086	Non testis adult
+NSD1	Macaque	Macaque_Liver_9ypb_5425	Non testis adult
+NSD1	Macaque	Macaque_Liver_9ypb_5993	Non testis adult
+NSD1	Macaque	Macaque_Liver_9ypb_6089	Non testis adult
+NSD1	Macaque	Macaque_Testis_109_5462	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_109_5464	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_112_6040	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_123_5460	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_123_5475	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_129_5483	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_130_5392	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_14ypb_5435	Adult testis
+NSD1	Macaque	Macaque_Testis_151dpb_5371	Neonate testis
+NSD1	Macaque	Macaque_Testis_153dpb_5456	Neonate testis
+NSD1	Macaque	Macaque_Testis_15ypb_5410	Adult testis
+NSD1	Macaque	Macaque_Testis_1dpb_5379	Neonate testis
+NSD1	Macaque	Macaque_Testis_1dpb_5379	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_1dpb_5508	Neonate testis
+NSD1	Macaque	Macaque_Testis_1dpb_5508	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_1ypb_5418	Neonate testis
+NSD1	Macaque	Macaque_Testis_1ypb_5451	Neonate testis
+NSD1	Macaque	Macaque_Testis_1ypb_6075	Neonate testis
+NSD1	Macaque	Macaque_Testis_21ypb_5383	Adult testis
+NSD1	Macaque	Macaque_Testis_22dpb_5372	Neonate testis
+NSD1	Macaque	Macaque_Testis_22ypb_5412	Adult testis
+NSD1	Macaque	Macaque_Testis_23dpb_5408	Neonate testis
+NSD1	Macaque	Macaque_Testis_3ypb_5443	Neonate testis
+NSD1	Macaque	Macaque_Testis_3ypb_6080	Neonate testis
+NSD1	Macaque	Macaque_Testis_3ypb_6082	Neonate testis
+NSD1	Macaque	Macaque_Testis_6mpb_6062	Neonate testis
+NSD1	Macaque	Macaque_Testis_6mpb_6067	Neonate testis
+NSD1	Macaque	Macaque_Testis_7dpb_6057	Neonate testis
+NSD1	Macaque	Macaque_Testis_7dpb_6057	EarlyEmbryo testis
+NSD1	Macaque	Macaque_Testis_9ypb_5373	Adult testis
+NSD1	Macaque	Macaque_Testis_9ypb_5414	Adult testis
+NSD1	Mouse	Mouse_Brain_2wpb_1876	Non testis adult
+NSD1	Mouse	Mouse_Brain_2wpb_1880	Non testis adult
+NSD1	Mouse	Mouse_Brain_2wpb_1884	Non testis adult
+NSD1	Mouse	Mouse_Brain_2wpb_1888	Non testis adult
+NSD1	Mouse	Mouse_Brain_4wpb_1892	Non testis adult
+NSD1	Mouse	Mouse_Brain_4wpb_1896	Non testis adult
+NSD1	Mouse	Mouse_Brain_4wpb_1936	Non testis adult
+NSD1	Mouse	Mouse_Brain_4wpb_1940	Non testis adult
+NSD1	Mouse	Mouse_Brain_9wpb_1944	Non testis adult
+NSD1	Mouse	Mouse_Brain_9wpb_1948	Non testis adult
+NSD1	Mouse	Mouse_Brain_9wpb_1954	Non testis adult
+NSD1	Mouse	Mouse_Brain_9wpb_1960	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_2wpb_1877	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_2wpb_1881	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_2wpb_1885	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_4wpb_1893	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_4wpb_1897	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_4wpb_1937	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_4wpb_1941	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_9wpb_1945	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_9wpb_1949	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_9wpb_1955	Non testis adult
+NSD1	Mouse	Mouse_Cerebellum_9wpb_1961	Non testis adult
+NSD1	Mouse	Mouse_Heart_2wpb_2643	Non testis adult
+NSD1	Mouse	Mouse_Heart_2wpb_2645	Non testis adult
+NSD1	Mouse	Mouse_Heart_2wpb_2651	Non testis adult
+NSD1	Mouse	Mouse_Heart_2wpb_2653	Non testis adult
+NSD1	Mouse	Mouse_Heart_4wpb_2655	Non testis adult
+NSD1	Mouse	Mouse_Heart_4wpb_2657	Non testis adult
+NSD1	Mouse	Mouse_Heart_4wpb_2659	Non testis adult
+NSD1	Mouse	Mouse_Heart_4wpb_2661	Non testis adult
+NSD1	Mouse	Mouse_Heart_9wpb_1950	Non testis adult
+NSD1	Mouse	Mouse_Heart_9wpb_1956	Non testis adult
+NSD1	Mouse	Mouse_Heart_9wpb_2663	Non testis adult
+NSD1	Mouse	Mouse_Heart_9wpb_2669	Non testis adult
+NSD1	Mouse	Mouse_Kidney_2wpb_2644	Non testis adult
+NSD1	Mouse	Mouse_Kidney_2wpb_2646	Non testis adult
+NSD1	Mouse	Mouse_Kidney_2wpb_2652	Non testis adult
+NSD1	Mouse	Mouse_Kidney_2wpb_2654	Non testis adult
+NSD1	Mouse	Mouse_Kidney_4wpb_2656	Non testis adult
+NSD1	Mouse	Mouse_Kidney_4wpb_2658	Non testis adult
+NSD1	Mouse	Mouse_Kidney_4wpb_2660	Non testis adult
+NSD1	Mouse	Mouse_Kidney_4wpb_2662	Non testis adult
+NSD1	Mouse	Mouse_Kidney_9wpb_1951	Non testis adult
+NSD1	Mouse	Mouse_Kidney_9wpb_2664	Non testis adult
+NSD1	Mouse	Mouse_Kidney_9wpb_2665	Non testis adult
+NSD1	Mouse	Mouse_Kidney_9wpb_5360	Non testis adult
+NSD1	Mouse	Mouse_Liver_2wpb_1878	Non testis adult
+NSD1	Mouse	Mouse_Liver_2wpb_1882	Non testis adult
+NSD1	Mouse	Mouse_Liver_2wpb_1886	Non testis adult
+NSD1	Mouse	Mouse_Liver_2wpb_1890	Non testis adult
+NSD1	Mouse	Mouse_Liver_4wpb_1894	Non testis adult
+NSD1	Mouse	Mouse_Liver_4wpb_1898	Non testis adult
+NSD1	Mouse	Mouse_Liver_4wpb_1938	Non testis adult
+NSD1	Mouse	Mouse_Liver_4wpb_1942	Non testis adult
+NSD1	Mouse	Mouse_Liver_9wpb_1946	Non testis adult
+NSD1	Mouse	Mouse_Liver_9wpb_1952	Non testis adult
+NSD1	Mouse	Mouse_Liver_9wpb_1958	Non testis adult
+NSD1	Mouse	Mouse_Liver_9wpb_1962	Non testis adult
+NSD1	Mouse	Mouse_Ovary_2wpb_1887	Non testis adult
+NSD1	Mouse	Mouse_Ovary_2wpb_1891	Non testis adult
+NSD1	Mouse	Mouse_Ovary_4wpb_1939	Non testis adult
+NSD1	Mouse	Mouse_Ovary_4wpb_1943	Non testis adult
+NSD1	Mouse	Mouse_Ovary_9wpb_1953	Non testis adult
+NSD1	Mouse	Mouse_Ovary_9wpb_1963	Non testis adult
+NSD1	Mouse	Mouse_Testis_0dpb_1911	Neonate testis
+NSD1	Mouse	Mouse_Testis_0dpb_1917	Neonate testis
+NSD1	Mouse	Mouse_Testis_10.5_3279	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_10.5_3368	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_11.5_3361	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_11.5_3363	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_12.5_3281	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_12.5_3285	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_13.5_2826	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_13.5_2842	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_14.5_2226	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_14.5_2233	EarlyEmbryo testis
+NSD1	Mouse	Mouse_Testis_2wpb_1879	Neonate testis
+NSD1	Mouse	Mouse_Testis_2wpb_1883	Neonate testis
+NSD1	Mouse	Mouse_Testis_3dpb_1929	Neonate testis
+NSD1	Mouse	Mouse_Testis_3dpb_1967	Neonate testis
+NSD1	Mouse	Mouse_Testis_4wpb_1895	Adult testis
+NSD1	Mouse	Mouse_Testis_4wpb_1899	Adult testis
+NSD1	Mouse	Mouse_Testis_9wpb_1947	Adult testis
+NSD1	Mouse	Mouse_Testis_9wpb_1959	Adult testis
+NSD1	Opossum	Opossum_Brain_120dpb_4599	Non testis adult
+NSD1	Opossum	Opossum_Brain_120dpb_4624	Non testis adult
+NSD1	Opossum	Opossum_Brain_120dpb_5852	Non testis adult
+NSD1	Opossum	Opossum_Brain_14mpb_5972	Non testis adult
+NSD1	Opossum	Opossum_Brain_14mpb_5974	Non testis adult
+NSD1	Opossum	Opossum_Brain_150dpb_4622	Non testis adult
+NSD1	Opossum	Opossum_Brain_150dpb_4623	Non testis adult
+NSD1	Opossum	Opossum_Brain_150dpb_5858	Non testis adult
+NSD1	Opossum	Opossum_Brain_60dpb_4647	Non testis adult
+NSD1	Opossum	Opossum_Brain_90dpb_4607	Non testis adult
+NSD1	Opossum	Opossum_Brain_90dpb_4620	Non testis adult
+NSD1	Opossum	Opossum_Brain_90dpb_5864	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_120dpb_4626	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_120dpb_4628	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_120dpb_5857	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_150dpb_4682	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_150dpb_5859	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_4mpb_5975	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_4mpb_5977	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_60dpb_4648	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_60dpb_5869	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_60dpb_5874	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_6mpb_5976	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_90dpb_4608	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_90dpb_4621	Non testis adult
+NSD1	Opossum	Opossum_Cerebellum_90dpb_5865	Non testis adult
+NSD1	Opossum	Opossum_Heart_120dpb_4468	Non testis adult
+NSD1	Opossum	Opossum_Heart_120dpb_4634	Non testis adult
+NSD1	Opossum	Opossum_Heart_120dpb_5855	Non testis adult
+NSD1	Opossum	Opossum_Heart_150dpb_4209	Non testis adult
+NSD1	Opossum	Opossum_Heart_150dpb_4213	Non testis adult
+NSD1	Opossum	Opossum_Heart_150dpb_5861	Non testis adult
+NSD1	Opossum	Opossum_Heart_180dpb_3953	Non testis adult
+NSD1	Opossum	Opossum_Heart_180dpb_3959	Non testis adult
+NSD1	Opossum	Opossum_Heart_180dpb_3990	Non testis adult
+NSD1	Opossum	Opossum_Heart_180dpb_3996	Non testis adult
+NSD1	Opossum	Opossum_Heart_60dpb_4643	Non testis adult
+NSD1	Opossum	Opossum_Heart_60dpb_5871	Non testis adult
+NSD1	Opossum	Opossum_Heart_60dpb_5873	Non testis adult
+NSD1	Opossum	Opossum_Heart_90dpb_4612	Non testis adult
+NSD1	Opossum	Opossum_Heart_90dpb_5866	Non testis adult
+NSD1	Opossum	Opossum_Kidney_120dpb_4710	Non testis adult
+NSD1	Opossum	Opossum_Kidney_150dpb_4214	Non testis adult
+NSD1	Opossum	Opossum_Kidney_150dpb_5862	Non testis adult
+NSD1	Opossum	Opossum_Kidney_180dpb_3954	Non testis adult
+NSD1	Opossum	Opossum_Kidney_180dpb_3960	Non testis adult
+NSD1	Opossum	Opossum_Kidney_180dpb_3998	Non testis adult
+NSD1	Opossum	Opossum_Kidney_60dpb_4644	Non testis adult
+NSD1	Opossum	Opossum_Kidney_60dpb_4659	Non testis adult
+NSD1	Opossum	Opossum_Kidney_90dpb_4609	Non testis adult
+NSD1	Opossum	Opossum_Kidney_90dpb_5867	Non testis adult
+NSD1	Opossum	Opossum_Liver_120dpb_4469	Non testis adult
+NSD1	Opossum	Opossum_Liver_120dpb_4601	Non testis adult
+NSD1	Opossum	Opossum_Liver_120dpb_5856	Non testis adult
+NSD1	Opossum	Opossum_Liver_150dpb_4211	Non testis adult
+NSD1	Opossum	Opossum_Liver_150dpb_4215	Non testis adult
+NSD1	Opossum	Opossum_Liver_150dpb_5863	Non testis adult
+NSD1	Opossum	Opossum_Liver_180dpb_3955	Non testis adult
+NSD1	Opossum	Opossum_Liver_180dpb_3961	Non testis adult
+NSD1	Opossum	Opossum_Liver_180dpb_3991	Non testis adult
+NSD1	Opossum	Opossum_Liver_180dpb_3997	Non testis adult
+NSD1	Opossum	Opossum_Liver_60dpb_4660	Non testis adult
+NSD1	Opossum	Opossum_Liver_60dpb_5851	Non testis adult
+NSD1	Opossum	Opossum_Liver_60dpb_5872	Non testis adult
+NSD1	Opossum	Opossum_Liver_90dpb_4610	Non testis adult
+NSD1	Opossum	Opossum_Liver_90dpb_4637	Non testis adult
+NSD1	Opossum	Opossum_Liver_90dpb_5868	Non testis adult
+NSD1	Opossum	Opossum_Ovary_120dpb_4471	Non testis adult
+NSD1	Opossum	Opossum_Ovary_120dpb_5853	Non testis adult
+NSD1	Opossum	Opossum_Ovary_150dpb_4208	Non testis adult
+NSD1	Opossum	Opossum_Ovary_150dpb_5860	Non testis adult
+NSD1	Opossum	Opossum_Ovary_180dpb_3999	Non testis adult
+NSD1	Opossum	Opossum_Ovary_60dpb_5870	Non testis adult
+NSD1	Opossum	Opossum_Ovary_90dpb_4613	Non testis adult
+NSD1	Opossum	Opossum_Testis_10dpb_5601	Neonate testis
+NSD1	Opossum	Opossum_Testis_10dpb_5601	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_120dpb_5854	Adult testis
+NSD1	Opossum	Opossum_Testis_14dpb_4954	Neonate testis
+NSD1	Opossum	Opossum_Testis_14dpb_4954	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_14dpb_5877	Neonate testis
+NSD1	Opossum	Opossum_Testis_14dpb_5877	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_150dpb_4212	Adult testis
+NSD1	Opossum	Opossum_Testis_180dpb_3956	Adult testis
+NSD1	Opossum	Opossum_Testis_180dpb_3993	Adult testis
+NSD1	Opossum	Opossum_Testis_21dpb_5329	Neonate testis
+NSD1	Opossum	Opossum_Testis_21dpb_5329	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_21dpb_5330	Neonate testis
+NSD1	Opossum	Opossum_Testis_21dpb_5330	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_28dpb_4677	Neonate testis
+NSD1	Opossum	Opossum_Testis_28dpb_4678	Neonate testis
+NSD1	Opossum	Opossum_Testis_2dpb_4492	Neonate testis
+NSD1	Opossum	Opossum_Testis_2dpb_4492	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_42dpb_4723	Neonate testis
+NSD1	Opossum	Opossum_Testis_42dpb_4727	Neonate testis
+NSD1	Opossum	Opossum_Testis_4dpb_4542	Neonate testis
+NSD1	Opossum	Opossum_Testis_4dpb_4542	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_4dpb_5331	Neonate testis
+NSD1	Opossum	Opossum_Testis_4dpb_5331	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_60dpb_4661	Neonate testis
+NSD1	Opossum	Opossum_Testis_60dpb_4731	Neonate testis
+NSD1	Opossum	Opossum_Testis_6dpb_5327	Neonate testis
+NSD1	Opossum	Opossum_Testis_6dpb_5327	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_6dpb_5328	Neonate testis
+NSD1	Opossum	Opossum_Testis_6dpb_5328	EarlyEmbryo testis
+NSD1	Opossum	Opossum_Testis_90dpb_4619	Adult testis
+NSD1	Opossum	Opossum_Testis_90dpb_4638	Adult testis
+NSD1	Rabbit	Rabbit_Brain_12wpb_4830	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_12wpb_4836	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_12wpb_4917	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_12wpb_4928	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_1ypb_3017	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_6mpb_3011	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_6mpb_3021	Non testis adult
+NSD1	Rabbit	Rabbit_Brain_6mpb_3025	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_12wpb_4831	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_12wpb_4837	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_12wpb_4918	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_12wpb_4929	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_1ypb_3018	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_6mpb_3012	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_6mpb_3022	Non testis adult
+NSD1	Rabbit	Rabbit_Cerebellum_6mpb_3026	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_12wpb_4913	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_12wpb_4919	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_1ypb_3019	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_6mpb_3027	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_6mpb_3458	Non testis adult
+NSD1	Rabbit	Rabbit_Heart_9mpb_3085	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_12wpb_4834	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_12wpb_4914	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_12wpb_4920	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_12wpb_4931	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_6mpb_3014	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_6mpb_3023	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_6mpb_3028	Non testis adult
+NSD1	Rabbit	Rabbit_Kidney_6mpb_3047	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_12wpb_4833	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_12wpb_4915	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_12wpb_4921	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_12wpb_4932	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_1ypb_3079	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_6mpb_3015	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_6mpb_3029	Non testis adult
+NSD1	Rabbit	Rabbit_Liver_6mpb_3081	Non testis adult
+NSD1	Rabbit	Rabbit_Ovary_6mpb_3016	Non testis adult
+NSD1	Rabbit	Rabbit_Ovary_6mpb_3024	Non testis adult
+NSD1	Rabbit	Rabbit_Testis_0dpb_3175	Neonate testis
+NSD1	Rabbit	Rabbit_Testis_0dpb_3181	Neonate testis
+NSD1	Rabbit	Rabbit_Testis_12_4747	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_12_4750	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_12wpb_4835	Adult testis
+NSD1	Rabbit	Rabbit_Testis_13_4800	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_13_4927	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_14_4826	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_14_4998	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_15.5_3370	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_15.5_3376	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_16.5_3407	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_16.5_3424	EarlyEmbryo testis
+NSD1	Rabbit	Rabbit_Testis_2wpb_3109	Neonate testis
+NSD1	Rabbit	Rabbit_Testis_2wpb_3125	Neonate testis
+NSD1	Rabbit	Rabbit_Testis_6mpb_3049	Adult testis
+SCN8A	Chicken	Chicken_Brain_0dph_1429	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_0dph_1539	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_0dph_1638	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_0dph_1806	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10_1349	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10_1361	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10_1717	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10_1720	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10wph_1775	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10wph_1805	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10wph_1865	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_10wph_3920	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_12_1350	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_12_1353	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_12_1364	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_12_1553	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_14_1546	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_14_1612	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_Adult_577	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_Adult_653	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_Adult_783	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Brain_Adult_922	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_0dph_1487	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_0dph_1540	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_0dph_1639	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_0dph_1658	Neonate brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10_1723	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10_1735	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10_1752	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10_1807	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10wph_1770	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10wph_1776	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10wph_1868	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_10wph_1869	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_12_1477	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_12_1533	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_12_1608	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_12_1808	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_14_1547	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_14_1613	EarlyEmbryo brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_Adult_578	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_Adult_654	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_Adult_782	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Cerebellum_Adult_921	Adult brain/cerebellum
+SCN8A	Chicken	Chicken_Heart_10wph_1771	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_10wph_1777	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_10wph_2455	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_10wph_2457	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_Adult_560	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_Adult_650	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_Adult_764	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Heart_Adult_785	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_10wph_1772	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_10wph_1778	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_10wph_2456	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_10wph_2458	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_Adult_555	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_Adult_559	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_Adult_784	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Kidney_adult_918	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_10wph_1774	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_10wph_1779	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_10wph_1872	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_10wph_1873	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_Adult_554	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_Adult_558	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_Adult_786	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Liver_adult_917	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Ovary_10wph_1780	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Ovary_10wph_1781	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Testis_10wph_1773	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Testis_Adult_642	Non brain/cerebellum adult
+SCN8A	Chicken	Chicken_Testis_Adult_920	Non brain/cerebellum adult
+SCN8A	Human	Human_Brain_13ypb_5570	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_14ypb_5515	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_15dpb_5894	Neonate brain/cerebellum
+SCN8A	Human	Human_Brain_16ypb_5532	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_19dpb_5542	Neonate brain/cerebellum
+SCN8A	Human	Human_Brain_28ypb_6048	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_29ypb_5531	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_29ypb_5908	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_39ypb_5533	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_39ypb_5574	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_4dpb_5892	Neonate brain/cerebellum
+SCN8A	Human	Human_Brain_50ypb_5517	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_53ypb_5557	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_58ypb_5514	Adult brain/cerebellum
+SCN8A	Human	Human_Brain_58ypb_5524	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_0dpb_5842	Neonate brain/cerebellum
+SCN8A	Human	Human_Cerebellum_0dpb_5848	Neonate brain/cerebellum
+SCN8A	Human	Human_Cerebellum_13ypb_5511	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_14ypb_5545	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_16ypb_5534	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_17ypb_5565	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_19dpb_5527	Neonate brain/cerebellum
+SCN8A	Human	Human_Cerebellum_29ypb_5520	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_29ypb_5540	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_32ypb_6047	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_39ypb_5522	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_39ypb_5547	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_4dpb_5510	Neonate brain/cerebellum
+SCN8A	Human	Human_Cerebellum_50ypb_5549	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_53ypb_5516	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_58ypb_5525	Adult brain/cerebellum
+SCN8A	Human	Human_Cerebellum_58ypb_5573	Adult brain/cerebellum
+SCN8A	Human	Human_Heart_13ypb_5822	Non brain/cerebellum adult
+SCN8A	Human	Human_Heart_25ypb_6042	Non brain/cerebellum adult
+SCN8A	Human	Human_Heart_54ypb_6043	Non brain/cerebellum adult
+SCN8A	Human	Human_Kidney_2ypb_5821	Non brain/cerebellum adult
+SCN8A	Human	Human_Kidney_4ypb_6101	Non brain/cerebellum adult
+SCN8A	Human	Human_Kidney_8ypb_6099	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_17ypb_5575	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_29ypb_5536	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_39ypb_5551	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_39ypb_5563	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_55ypb_6106	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_58ypb_5512	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_58ypb_5571	Non brain/cerebellum adult
+SCN8A	Human	Human_Liver_7ypb_5513	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_16ypb_5526	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_17ypb_5546	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_28ypb_6107	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_29ypb_5535	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_29ypb_5566	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_39ypb_5550	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_46ypb_6095	Non brain/cerebellum adult
+SCN8A	Human	Human_Testis_55ypb_5518	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Brain_109_5478	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_112_6113	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_123_5417	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_123_5452	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_123_6112	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_129_5455	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_130_5448	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_14ypb_6110	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_15ypb_6111	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_1dpb_5500	Neonate brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_1dpb_5500	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_1dpb_6006	Neonate brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_1dpb_6006	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_21ypb_5413	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_22ypb_5461	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_2dpb_6049	Neonate brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_3ypb_6076	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_3ypb_6084	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_93_6031	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_9ypb_5501	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Brain_9ypb_5988	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_123_5427	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_129_5374	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_130_5364	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_15ypb_5491	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_1dpb_5430	Neonate brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_1dpb_5430	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_1dpb_5477	Neonate brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_1dpb_5477	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_21ypb_5378	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_22ypb_5389	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_23dpb_5499	EarlyEmbryo brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_3ypb_5428	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_3ypb_5442	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Cerebellum_9ypb_5457	Adult brain/cerebellum
+SCN8A	Macaque	Macaque_Heart_14ypb_5396	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_15ypb_6120	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_20ypb_6121	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_26ypb_6122	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_3ypb_5422	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_3ypb_5436	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_3ypb_6078	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_3ypb_6081	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_8ypb_6085	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_9ypb_5420	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Heart_9ypb_5450	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_14ypb_5376	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_15ypb_5445	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_20ypb_6126	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_26ypb_6127	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_3ypb_5380	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_3ypb_5507	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_3ypb_6079	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_3ypb_6083	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_8ypb_6087	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_8ypb_6125	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_9ypb_5476	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Kidney_9ypb_6091	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_14ypb_5482	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_14ypb_6114	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_15ypb_5416	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_21ypb_5404	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_22ypb_5395	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_3ypb_5447	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_3ypb_5454	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_3ypb_6077	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_8ypb_6086	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_9ypb_5425	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_9ypb_5993	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Liver_9ypb_6089	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_14ypb_5435	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_15ypb_5410	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_21ypb_5383	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_22ypb_5412	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_9ypb_5373	Non brain/cerebellum adult
+SCN8A	Macaque	Macaque_Testis_9ypb_5414	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Brain_0dpb_1740	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_0dpb_1900	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_0dpb_1906	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_0dpb_1912	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_10.5_2579	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_10.5_2580	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_10.5_3459	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_11.5_2621	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_11.5_2624	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_11.5_2937	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_11.5_3096	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_12.5_2945	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_12.5_3038	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_12.5_3040	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_2wpb_1876	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_2wpb_1880	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_2wpb_1884	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_2wpb_1888	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_4wpb_1892	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_4wpb_1896	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_4wpb_1936	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_4wpb_1940	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_9wpb_1944	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_9wpb_1948	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_9wpb_1954	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Brain_9wpb_1960	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_0dpb_1741	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_0dpb_1901	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_0dpb_1907	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_0dpb_3919	Neonate brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_13.5_2814	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_13.5_2822	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_13.5_2830	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_13.5_2838	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_14.5_2224	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_14.5_2228	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_14.5_2238	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_14.5_2244	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_15.5_2194	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_15.5_2218	EarlyEmbryo brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_2wpb_1877	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_2wpb_1881	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_2wpb_1885	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_4wpb_1893	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_4wpb_1897	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_4wpb_1937	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_4wpb_1941	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_9wpb_1945	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_9wpb_1949	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_9wpb_1955	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Cerebellum_9wpb_1961	Adult brain/cerebellum
+SCN8A	Mouse	Mouse_Heart_2wpb_2643	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_2wpb_2645	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_2wpb_2651	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_2wpb_2653	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_4wpb_2655	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_4wpb_2657	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_4wpb_2659	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_4wpb_2661	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_9wpb_1950	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_9wpb_1956	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_9wpb_2663	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Heart_9wpb_2669	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_2wpb_2644	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_2wpb_2646	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_2wpb_2652	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_2wpb_2654	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_4wpb_2656	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_4wpb_2658	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_4wpb_2660	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_4wpb_2662	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_9wpb_1951	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_9wpb_2664	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_9wpb_2665	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Kidney_9wpb_5360	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_2wpb_1878	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_2wpb_1882	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_2wpb_1886	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_2wpb_1890	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_4wpb_1894	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_4wpb_1898	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_4wpb_1938	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_4wpb_1942	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_9wpb_1946	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_9wpb_1952	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_9wpb_1958	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Liver_9wpb_1962	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_2wpb_1887	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_2wpb_1891	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_4wpb_1939	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_4wpb_1943	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_9wpb_1953	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Ovary_9wpb_1963	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Testis_4wpb_1895	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Testis_4wpb_1899	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Testis_9wpb_1947	Non brain/cerebellum adult
+SCN8A	Mouse	Mouse_Testis_9wpb_1959	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Brain_0dpb_3143	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_0dpb_3170	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_0dpb_3176	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_0dpb_3386	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_12wpb_4830	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_12wpb_4836	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_12wpb_4917	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_12wpb_4928	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_1ypb_3017	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_6mpb_3011	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_6mpb_3021	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Brain_6mpb_3025	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_0dpb_3144	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_0dpb_3171	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_0dpb_3177	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_0dpb_3387	Neonate brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_12wpb_4831	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_12wpb_4837	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_12wpb_4918	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_12wpb_4929	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_1ypb_3018	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_6mpb_3012	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_6mpb_3022	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Cerebellum_6mpb_3026	Adult brain/cerebellum
+SCN8A	Rabbit	Rabbit_Heart_12wpb_4913	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Heart_12wpb_4919	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Heart_1ypb_3019	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Heart_6mpb_3027	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Heart_6mpb_3458	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Heart_9mpb_3085	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_12wpb_4834	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_12wpb_4914	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_12wpb_4920	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_12wpb_4931	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_6mpb_3014	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_6mpb_3023	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_6mpb_3028	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Kidney_6mpb_3047	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_12wpb_4833	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_12wpb_4915	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_12wpb_4921	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_12wpb_4932	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_1ypb_3079	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_6mpb_3015	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_6mpb_3029	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Liver_6mpb_3081	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Ovary_6mpb_3016	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Ovary_6mpb_3024	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Testis_12wpb_4835	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_Testis_6mpb_3049	Non brain/cerebellum adult
+SCN8A	Rabbit	Rabbit_WholeBrain_12_4745	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_12_4748	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_12_4751	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_12_4753	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_13_4735	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_13_4799	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_13_4803	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_13_4924	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_14_4817	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_14_4937	EarlyEmbryo brain/cerebellum
+SCN8A	Rabbit	Rabbit_WholeBrain_14_4995	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_0dpb_1746	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Brain_0dpb_2181	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Brain_0dpb_2288	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Brain_0dpb_2292	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Brain_11_4322	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_11_4324	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_11_4326	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_11_4328	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_12_4175	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_12_4179	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_12_4199	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_12_4205	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_13_3513	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_13_3520	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Brain_16wpb_2348	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_16wpb_2352	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_16wpb_2356	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_16wpb_2367	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_2wpb_2336	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_2wpb_2339	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_2wpb_2342	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_2wpb_2345	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_6wpb_1875	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_6wpb_1971	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_6wpb_1975	Adult brain/cerebellum
+SCN8A	Rat	Rat_Brain_6wpb_2363	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_0dpb_1747	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_0dpb_2182	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_0dpb_2289	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_0dpb_2293	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_0dpb_5348	Neonate brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_14_4004	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_14_4007	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_14_4093	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_14_4250	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_15_4011	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_15_4033	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_15_4229	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_15_4232	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16_4095	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16_4099	EarlyEmbryo brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16wpb_2349	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16wpb_2353	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16wpb_2357	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_16wpb_2368	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_2wpb_2337	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_2wpb_2340	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_2wpb_2343	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_2wpb_2346	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_6wpb_1968	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_6wpb_1972	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_6wpb_2285	Adult brain/cerebellum
+SCN8A	Rat	Rat_Cerebellum_6wpb_2364	Adult brain/cerebellum
+SCN8A	Rat	Rat_Heart_16wpb_2746	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_16wpb_2747	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_16wpb_2749	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_16wpb_2853	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_2wpb_2727	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_2wpb_2728	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_2wpb_2731	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_2wpb_2760	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_6wpb_2738	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_6wpb_2740	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_6wpb_2742	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Heart_6wpb_2751	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_16wpb_2748	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_16wpb_2750	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_16wpb_2854	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_16wpb_2870	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_2wpb_2729	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_2wpb_2730	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_2wpb_2756	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_2wpb_2758	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_6wpb_2739	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_6wpb_2741	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_6wpb_2743	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Kidney_6wpb_2856	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_16wpb_2351	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_16wpb_2355	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_16wpb_2359	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_16wpb_2370	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_2wpb_2525	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_2wpb_2526	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_2wpb_2527	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_2wpb_2759	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_6wpb_1969	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_6wpb_1973	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_6wpb_2287	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Liver_6wpb_2366	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_16wpb_2350	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_16wpb_2354	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_2wpb_2338	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_2wpb_2341	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_6wpb_2286	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Ovary_6wpb_2365	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Testis_16wpb_2358	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Testis_16wpb_2369	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Testis_6wpb_1970	Non brain/cerebellum adult
+SCN8A	Rat	Rat_Testis_6wpb_1974	Non brain/cerebellum adult
+SRSF2	Human	Human_Brain_13ypb_5570	
+SRSF2	Human	Human_Brain_14ypb_5515	
+SRSF2	Human	Human_Brain_15dpb_5894	
+SRSF2	Human	Human_Brain_16ypb_5532	
+SRSF2	Human	Human_Brain_19dpb_5542	
+SRSF2	Human	Human_Brain_28ypb_6048	
+SRSF2	Human	Human_Brain_29ypb_5531	
+SRSF2	Human	Human_Brain_29ypb_5908	
+SRSF2	Human	Human_Brain_39ypb_5533	
+SRSF2	Human	Human_Brain_39ypb_5574	
+SRSF2	Human	Human_Brain_4dpb_5892	
+SRSF2	Human	Human_Brain_50ypb_5517	
+SRSF2	Human	Human_Brain_53ypb_5557	
+SRSF2	Human	Human_Brain_58ypb_5514	
+SRSF2	Human	Human_Brain_58ypb_5524	
+SRSF2	Human	Human_Cerebellum_0dpb_5842	
+SRSF2	Human	Human_Cerebellum_0dpb_5848	
+SRSF2	Human	Human_Cerebellum_13ypb_5511	
+SRSF2	Human	Human_Cerebellum_14ypb_5545	
+SRSF2	Human	Human_Cerebellum_16ypb_5534	
+SRSF2	Human	Human_Cerebellum_17ypb_5565	
+SRSF2	Human	Human_Cerebellum_19dpb_5527	
+SRSF2	Human	Human_Cerebellum_29ypb_5520	
+SRSF2	Human	Human_Cerebellum_29ypb_5540	
+SRSF2	Human	Human_Cerebellum_32ypb_6047	
+SRSF2	Human	Human_Cerebellum_39ypb_5522	
+SRSF2	Human	Human_Cerebellum_39ypb_5547	
+SRSF2	Human	Human_Cerebellum_4dpb_5510	
+SRSF2	Human	Human_Cerebellum_50ypb_5549	
+SRSF2	Human	Human_Cerebellum_53ypb_5516	
+SRSF2	Human	Human_Cerebellum_58ypb_5525	
+SRSF2	Human	Human_Cerebellum_58ypb_5573	
+SRSF2	Human	Human_Heart_0dpb_5843	
+SRSF2	Human	Human_Heart_13ypb_5822	
+SRSF2	Human	Human_Heart_25ypb_6042	
+SRSF2	Human	Human_Heart_54ypb_6043	
+SRSF2	Human	Human_Heart_94dpb_5905	
+SRSF2	Human	Human_Kidney_0dpb_5844	
+SRSF2	Human	Human_Kidney_18dpb_6098	
+SRSF2	Human	Human_Kidney_2ypb_5821	
+SRSF2	Human	Human_Kidney_34dpb_5834	
+SRSF2	Human	Human_Kidney_4ypb_6101	
+SRSF2	Human	Human_Kidney_8ypb_6099	
+SRSF2	Human	Human_Liver_15dpb_5544	
+SRSF2	Human	Human_Liver_15dpb_5548	
+SRSF2	Human	Human_Liver_17ypb_5575	
+SRSF2	Human	Human_Liver_29ypb_5536	
+SRSF2	Human	Human_Liver_39ypb_5551	
+SRSF2	Human	Human_Liver_39ypb_5563	
+SRSF2	Human	Human_Liver_55ypb_6106	
+SRSF2	Human	Human_Liver_58ypb_5512	
+SRSF2	Human	Human_Liver_58ypb_5571	
+SRSF2	Human	Human_Liver_7ypb_5513	
+SRSF2	Human	Human_Testis_14ypb_5561	
+SRSF2	Human	Human_Testis_14ypb_5564	
+SRSF2	Human	Human_Testis_16ypb_5526	
+SRSF2	Human	Human_Testis_17ypb_5546	
+SRSF2	Human	Human_Testis_1ypb_5841	
+SRSF2	Human	Human_Testis_221dpb_5560	
+SRSF2	Human	Human_Testis_270dpb_5523	
+SRSF2	Human	Human_Testis_28ypb_6107	
+SRSF2	Human	Human_Testis_29ypb_5535	
+SRSF2	Human	Human_Testis_29ypb_5566	
+SRSF2	Human	Human_Testis_39ypb_5550	
+SRSF2	Human	Human_Testis_46ypb_6095	
+SRSF2	Human	Human_Testis_55ypb_5518	
+SRSF2	Macaque	Macaque_Brain_109_5478	
+SRSF2	Macaque	Macaque_Brain_112_6113	
+SRSF2	Macaque	Macaque_Brain_123_5417	
+SRSF2	Macaque	Macaque_Brain_123_5452	
+SRSF2	Macaque	Macaque_Brain_123_6112	
+SRSF2	Macaque	Macaque_Brain_129_5455	
+SRSF2	Macaque	Macaque_Brain_130_5448	
+SRSF2	Macaque	Macaque_Brain_14ypb_6110	
+SRSF2	Macaque	Macaque_Brain_15ypb_6111	
+SRSF2	Macaque	Macaque_Brain_1dpb_5500	
+SRSF2	Macaque	Macaque_Brain_1dpb_6006	
+SRSF2	Macaque	Macaque_Brain_21ypb_5413	
+SRSF2	Macaque	Macaque_Brain_22ypb_5461	
+SRSF2	Macaque	Macaque_Brain_2dpb_6049	
+SRSF2	Macaque	Macaque_Brain_3ypb_6076	
+SRSF2	Macaque	Macaque_Brain_3ypb_6084	
+SRSF2	Macaque	Macaque_Brain_93_6031	
+SRSF2	Macaque	Macaque_Brain_9ypb_5501	
+SRSF2	Macaque	Macaque_Brain_9ypb_5988	
+SRSF2	Macaque	Macaque_Cerebellum_123_5427	
+SRSF2	Macaque	Macaque_Cerebellum_129_5374	
+SRSF2	Macaque	Macaque_Cerebellum_130_5364	
+SRSF2	Macaque	Macaque_Cerebellum_15ypb_5491	
+SRSF2	Macaque	Macaque_Cerebellum_1dpb_5430	
+SRSF2	Macaque	Macaque_Cerebellum_1dpb_5477	
+SRSF2	Macaque	Macaque_Cerebellum_21ypb_5378	
+SRSF2	Macaque	Macaque_Cerebellum_22ypb_5389	
+SRSF2	Macaque	Macaque_Cerebellum_23dpb_5499	
+SRSF2	Macaque	Macaque_Cerebellum_3ypb_5428	
+SRSF2	Macaque	Macaque_Cerebellum_3ypb_5442	
+SRSF2	Macaque	Macaque_Cerebellum_9ypb_5457	
+SRSF2	Macaque	Macaque_Heart_109_5424	
+SRSF2	Macaque	Macaque_Heart_109_5429	
+SRSF2	Macaque	Macaque_Heart_112_6037	
+SRSF2	Macaque	Macaque_Heart_123_5387	
+SRSF2	Macaque	Macaque_Heart_123_5411	
+SRSF2	Macaque	Macaque_Heart_130_6005	
+SRSF2	Macaque	Macaque_Heart_14ypb_5396	
+SRSF2	Macaque	Macaque_Heart_15ypb_6120	
+SRSF2	Macaque	Macaque_Heart_1dpb_5409	
+SRSF2	Macaque	Macaque_Heart_20ypb_6121	
+SRSF2	Macaque	Macaque_Heart_23dpb_5444	
+SRSF2	Macaque	Macaque_Heart_26ypb_6122	
+SRSF2	Macaque	Macaque_Heart_3ypb_5422	
+SRSF2	Macaque	Macaque_Heart_3ypb_5436	
+SRSF2	Macaque	Macaque_Heart_3ypb_6078	
+SRSF2	Macaque	Macaque_Heart_3ypb_6081	
+SRSF2	Macaque	Macaque_Heart_7dpb_6055	
+SRSF2	Macaque	Macaque_Heart_8ypb_6085	
+SRSF2	Macaque	Macaque_Heart_93_6034	
+SRSF2	Macaque	Macaque_Heart_9ypb_5420	
+SRSF2	Macaque	Macaque_Heart_9ypb_5450	
+SRSF2	Macaque	Macaque_Kidney_109_5386	
+SRSF2	Macaque	Macaque_Kidney_109_5439	
+SRSF2	Macaque	Macaque_Kidney_112_6038	
+SRSF2	Macaque	Macaque_Kidney_123_5363	
+SRSF2	Macaque	Macaque_Kidney_123_5365	
+SRSF2	Macaque	Macaque_Kidney_129_5423	
+SRSF2	Macaque	Macaque_Kidney_130_5384	
+SRSF2	Macaque	Macaque_Kidney_14ypb_5376	
+SRSF2	Macaque	Macaque_Kidney_15ypb_5445	
+SRSF2	Macaque	Macaque_Kidney_1dpb_5453	
+SRSF2	Macaque	Macaque_Kidney_1dpb_5486	
+SRSF2	Macaque	Macaque_Kidney_20ypb_6126	
+SRSF2	Macaque	Macaque_Kidney_26ypb_6127	
+SRSF2	Macaque	Macaque_Kidney_2dpb_6051	
+SRSF2	Macaque	Macaque_Kidney_3ypb_5380	
+SRSF2	Macaque	Macaque_Kidney_3ypb_5507	
+SRSF2	Macaque	Macaque_Kidney_3ypb_6079	
+SRSF2	Macaque	Macaque_Kidney_3ypb_6083	
+SRSF2	Macaque	Macaque_Kidney_8ypb_6087	
+SRSF2	Macaque	Macaque_Kidney_8ypb_6125	
+SRSF2	Macaque	Macaque_Kidney_93_6030	
+SRSF2	Macaque	Macaque_Kidney_93_6033	
+SRSF2	Macaque	Macaque_Kidney_9ypb_5476	
+SRSF2	Macaque	Macaque_Kidney_9ypb_6091	
+SRSF2	Macaque	Macaque_Liver_109_5370	
+SRSF2	Macaque	Macaque_Liver_109_5495	
+SRSF2	Macaque	Macaque_Liver_112_6039	
+SRSF2	Macaque	Macaque_Liver_123_5406	
+SRSF2	Macaque	Macaque_Liver_123_5493	
+SRSF2	Macaque	Macaque_Liver_129_5362	
+SRSF2	Macaque	Macaque_Liver_130_5466	
+SRSF2	Macaque	Macaque_Liver_14ypb_5482	
+SRSF2	Macaque	Macaque_Liver_14ypb_6114	
+SRSF2	Macaque	Macaque_Liver_15ypb_5416	
+SRSF2	Macaque	Macaque_Liver_1dpb_5431	
+SRSF2	Macaque	Macaque_Liver_1dpb_5496	
+SRSF2	Macaque	Macaque_Liver_21ypb_5404	
+SRSF2	Macaque	Macaque_Liver_22ypb_5395	
+SRSF2	Macaque	Macaque_Liver_2dpb_6050	
+SRSF2	Macaque	Macaque_Liver_3ypb_5447	
+SRSF2	Macaque	Macaque_Liver_3ypb_5454	
+SRSF2	Macaque	Macaque_Liver_3ypb_6077	
+SRSF2	Macaque	Macaque_Liver_7dpb_6054	
+SRSF2	Macaque	Macaque_Liver_8ypb_6086	
+SRSF2	Macaque	Macaque_Liver_93_6029	
+SRSF2	Macaque	Macaque_Liver_93_6032	
+SRSF2	Macaque	Macaque_Liver_9ypb_5425	
+SRSF2	Macaque	Macaque_Liver_9ypb_5993	
+SRSF2	Macaque	Macaque_Liver_9ypb_6089	
+SRSF2	Macaque	Macaque_Testis_109_5462	
+SRSF2	Macaque	Macaque_Testis_109_5464	
+SRSF2	Macaque	Macaque_Testis_112_6040	
+SRSF2	Macaque	Macaque_Testis_123_5460	
+SRSF2	Macaque	Macaque_Testis_123_5475	
+SRSF2	Macaque	Macaque_Testis_129_5483	
+SRSF2	Macaque	Macaque_Testis_130_5392	
+SRSF2	Macaque	Macaque_Testis_14ypb_5435	
+SRSF2	Macaque	Macaque_Testis_151dpb_5371	
+SRSF2	Macaque	Macaque_Testis_153dpb_5456	
+SRSF2	Macaque	Macaque_Testis_15ypb_5410	
+SRSF2	Macaque	Macaque_Testis_1dpb_5379	
+SRSF2	Macaque	Macaque_Testis_1dpb_5508	
+SRSF2	Macaque	Macaque_Testis_1ypb_5418	
+SRSF2	Macaque	Macaque_Testis_1ypb_5451	
+SRSF2	Macaque	Macaque_Testis_1ypb_6075	
+SRSF2	Macaque	Macaque_Testis_21ypb_5383	
+SRSF2	Macaque	Macaque_Testis_22dpb_5372	
+SRSF2	Macaque	Macaque_Testis_22ypb_5412	
+SRSF2	Macaque	Macaque_Testis_23dpb_5408	
+SRSF2	Macaque	Macaque_Testis_3ypb_5443	
+SRSF2	Macaque	Macaque_Testis_3ypb_6080	
+SRSF2	Macaque	Macaque_Testis_3ypb_6082	
+SRSF2	Macaque	Macaque_Testis_6mpb_6062	
+SRSF2	Macaque	Macaque_Testis_6mpb_6067	
+SRSF2	Macaque	Macaque_Testis_7dpb_6057	
+SRSF2	Macaque	Macaque_Testis_9ypb_5373	
+SRSF2	Macaque	Macaque_Testis_9ypb_5414	
+SRSF2	Mouse	Mouse_Brain_0dpb_1740	
+SRSF2	Mouse	Mouse_Brain_0dpb_1900	
+SRSF2	Mouse	Mouse_Brain_0dpb_1906	
+SRSF2	Mouse	Mouse_Brain_0dpb_1912	
+SRSF2	Mouse	Mouse_Brain_10.5_2579	
+SRSF2	Mouse	Mouse_Brain_10.5_2580	
+SRSF2	Mouse	Mouse_Brain_10.5_3459	
+SRSF2	Mouse	Mouse_Brain_11.5_2621	
+SRSF2	Mouse	Mouse_Brain_11.5_2624	
+SRSF2	Mouse	Mouse_Brain_11.5_2937	
+SRSF2	Mouse	Mouse_Brain_11.5_3096	
+SRSF2	Mouse	Mouse_Brain_12.5_2945	
+SRSF2	Mouse	Mouse_Brain_12.5_3038	
+SRSF2	Mouse	Mouse_Brain_12.5_3040	
+SRSF2	Mouse	Mouse_Brain_2wpb_1876	
+SRSF2	Mouse	Mouse_Brain_2wpb_1880	
+SRSF2	Mouse	Mouse_Brain_2wpb_1884	
+SRSF2	Mouse	Mouse_Brain_2wpb_1888	
+SRSF2	Mouse	Mouse_Brain_4wpb_1892	
+SRSF2	Mouse	Mouse_Brain_4wpb_1896	
+SRSF2	Mouse	Mouse_Brain_4wpb_1936	
+SRSF2	Mouse	Mouse_Brain_4wpb_1940	
+SRSF2	Mouse	Mouse_Brain_9wpb_1944	
+SRSF2	Mouse	Mouse_Brain_9wpb_1948	
+SRSF2	Mouse	Mouse_Brain_9wpb_1954	
+SRSF2	Mouse	Mouse_Brain_9wpb_1960	
+SRSF2	Mouse	Mouse_Cerebellum_0dpb_1741	
+SRSF2	Mouse	Mouse_Cerebellum_0dpb_1901	
+SRSF2	Mouse	Mouse_Cerebellum_0dpb_1907	
+SRSF2	Mouse	Mouse_Cerebellum_0dpb_3919	
+SRSF2	Mouse	Mouse_Cerebellum_13.5_2814	
+SRSF2	Mouse	Mouse_Cerebellum_13.5_2822	
+SRSF2	Mouse	Mouse_Cerebellum_13.5_2830	
+SRSF2	Mouse	Mouse_Cerebellum_13.5_2838	
+SRSF2	Mouse	Mouse_Cerebellum_14.5_2224	
+SRSF2	Mouse	Mouse_Cerebellum_14.5_2228	
+SRSF2	Mouse	Mouse_Cerebellum_14.5_2238	
+SRSF2	Mouse	Mouse_Cerebellum_14.5_2244	
+SRSF2	Mouse	Mouse_Cerebellum_15.5_2194	
+SRSF2	Mouse	Mouse_Cerebellum_15.5_2218	
+SRSF2	Mouse	Mouse_Cerebellum_2wpb_1877	
+SRSF2	Mouse	Mouse_Cerebellum_2wpb_1881	
+SRSF2	Mouse	Mouse_Cerebellum_2wpb_1885	
+SRSF2	Mouse	Mouse_Cerebellum_4wpb_1893	
+SRSF2	Mouse	Mouse_Cerebellum_4wpb_1897	
+SRSF2	Mouse	Mouse_Cerebellum_4wpb_1937	
+SRSF2	Mouse	Mouse_Cerebellum_4wpb_1941	
+SRSF2	Mouse	Mouse_Cerebellum_9wpb_1945	
+SRSF2	Mouse	Mouse_Cerebellum_9wpb_1949	
+SRSF2	Mouse	Mouse_Cerebellum_9wpb_1955	
+SRSF2	Mouse	Mouse_Cerebellum_9wpb_1961	
+SRSF2	Mouse	Mouse_Heart_0dpb_1742	
+SRSF2	Mouse	Mouse_Heart_0dpb_1902	
+SRSF2	Mouse	Mouse_Heart_0dpb_1908	
+SRSF2	Mouse	Mouse_Heart_0dpb_1914	
+SRSF2	Mouse	Mouse_Heart_10.5_2495	
+SRSF2	Mouse	Mouse_Heart_10.5_2581	
+SRSF2	Mouse	Mouse_Heart_10.5_2647	
+SRSF2	Mouse	Mouse_Heart_10.5_3460	
+SRSF2	Mouse	Mouse_Heart_11.5_2622	
+SRSF2	Mouse	Mouse_Heart_11.5_2938	
+SRSF2	Mouse	Mouse_Heart_11.5_2944	
+SRSF2	Mouse	Mouse_Heart_11.5_3031	
+SRSF2	Mouse	Mouse_Heart_12.5_3041	
+SRSF2	Mouse	Mouse_Heart_12.5_5027	
+SRSF2	Mouse	Mouse_Heart_2wpb_2643	
+SRSF2	Mouse	Mouse_Heart_2wpb_2645	
+SRSF2	Mouse	Mouse_Heart_2wpb_2651	
+SRSF2	Mouse	Mouse_Heart_2wpb_2653	
+SRSF2	Mouse	Mouse_Heart_4wpb_2655	
+SRSF2	Mouse	Mouse_Heart_4wpb_2657	
+SRSF2	Mouse	Mouse_Heart_4wpb_2659	
+SRSF2	Mouse	Mouse_Heart_4wpb_2661	
+SRSF2	Mouse	Mouse_Heart_9wpb_1950	
+SRSF2	Mouse	Mouse_Heart_9wpb_1956	
+SRSF2	Mouse	Mouse_Heart_9wpb_2663	
+SRSF2	Mouse	Mouse_Heart_9wpb_2669	
+SRSF2	Mouse	Mouse_Kidney_0dpb_1744	
+SRSF2	Mouse	Mouse_Kidney_0dpb_1903	
+SRSF2	Mouse	Mouse_Kidney_0dpb_1909	
+SRSF2	Mouse	Mouse_Kidney_0dpb_1915	
+SRSF2	Mouse	Mouse_Kidney_11.5_3360	
+SRSF2	Mouse	Mouse_Kidney_11.5_3362	
+SRSF2	Mouse	Mouse_Kidney_11.5_3364	
+SRSF2	Mouse	Mouse_Kidney_11.5_3366	
+SRSF2	Mouse	Mouse_Kidney_12.5_3280	
+SRSF2	Mouse	Mouse_Kidney_12.5_3282	
+SRSF2	Mouse	Mouse_Kidney_12.5_3284	
+SRSF2	Mouse	Mouse_Kidney_12.5_3286	
+SRSF2	Mouse	Mouse_Kidney_13.5_2841	
+SRSF2	Mouse	Mouse_Kidney_13.5_5359	
+SRSF2	Mouse	Mouse_Kidney_2wpb_2644	
+SRSF2	Mouse	Mouse_Kidney_2wpb_2646	
+SRSF2	Mouse	Mouse_Kidney_2wpb_2652	
+SRSF2	Mouse	Mouse_Kidney_2wpb_2654	
+SRSF2	Mouse	Mouse_Kidney_4wpb_2656	
+SRSF2	Mouse	Mouse_Kidney_4wpb_2658	
+SRSF2	Mouse	Mouse_Kidney_4wpb_2660	
+SRSF2	Mouse	Mouse_Kidney_4wpb_2662	
+SRSF2	Mouse	Mouse_Kidney_9wpb_1951	
+SRSF2	Mouse	Mouse_Kidney_9wpb_2664	
+SRSF2	Mouse	Mouse_Kidney_9wpb_2665	
+SRSF2	Mouse	Mouse_Kidney_9wpb_5360	
+SRSF2	Mouse	Mouse_Liver_0dpb_1743	
+SRSF2	Mouse	Mouse_Liver_0dpb_1904	
+SRSF2	Mouse	Mouse_Liver_0dpb_1910	
+SRSF2	Mouse	Mouse_Liver_0dpb_1916	
+SRSF2	Mouse	Mouse_Liver_10.5_2496	
+SRSF2	Mouse	Mouse_Liver_10.5_2583	
+SRSF2	Mouse	Mouse_Liver_10.5_2648	
+SRSF2	Mouse	Mouse_Liver_10.5_3461	
+SRSF2	Mouse	Mouse_Liver_11.5_2623	
+SRSF2	Mouse	Mouse_Liver_11.5_2626	
+SRSF2	Mouse	Mouse_Liver_11.5_2943	
+SRSF2	Mouse	Mouse_Liver_11.5_3034	
+SRSF2	Mouse	Mouse_Liver_12.5_3037	
+SRSF2	Mouse	Mouse_Liver_12.5_3044	
+SRSF2	Mouse	Mouse_Liver_2wpb_1878	
+SRSF2	Mouse	Mouse_Liver_2wpb_1882	
+SRSF2	Mouse	Mouse_Liver_2wpb_1886	
+SRSF2	Mouse	Mouse_Liver_2wpb_1890	
+SRSF2	Mouse	Mouse_Liver_4wpb_1894	
+SRSF2	Mouse	Mouse_Liver_4wpb_1898	
+SRSF2	Mouse	Mouse_Liver_4wpb_1938	
+SRSF2	Mouse	Mouse_Liver_4wpb_1942	
+SRSF2	Mouse	Mouse_Liver_9wpb_1946	
+SRSF2	Mouse	Mouse_Liver_9wpb_1952	
+SRSF2	Mouse	Mouse_Liver_9wpb_1958	
+SRSF2	Mouse	Mouse_Liver_9wpb_1962	
+SRSF2	Mouse	Mouse_Ovary_0dpb_1745	
+SRSF2	Mouse	Mouse_Ovary_0dpb_1905	
+SRSF2	Mouse	Mouse_Ovary_10.5_3248	
+SRSF2	Mouse	Mouse_Ovary_10.5_3251	
+SRSF2	Mouse	Mouse_Ovary_11.5_3365	
+SRSF2	Mouse	Mouse_Ovary_11.5_3367	
+SRSF2	Mouse	Mouse_Ovary_12.5_3283	
+SRSF2	Mouse	Mouse_Ovary_12.5_3287	
+SRSF2	Mouse	Mouse_Ovary_13.5_2818	
+SRSF2	Mouse	Mouse_Ovary_13.5_2834	
+SRSF2	Mouse	Mouse_Ovary_14.5_2230	
+SRSF2	Mouse	Mouse_Ovary_14.5_2246	
+SRSF2	Mouse	Mouse_Ovary_2wpb_1887	
+SRSF2	Mouse	Mouse_Ovary_2wpb_1891	
+SRSF2	Mouse	Mouse_Ovary_4wpb_1939	
+SRSF2	Mouse	Mouse_Ovary_4wpb_1943	
+SRSF2	Mouse	Mouse_Ovary_9wpb_1953	
+SRSF2	Mouse	Mouse_Ovary_9wpb_1963	
+SRSF2	Mouse	Mouse_Testis_0dpb_1911	
+SRSF2	Mouse	Mouse_Testis_0dpb_1917	
+SRSF2	Mouse	Mouse_Testis_10.5_3279	
+SRSF2	Mouse	Mouse_Testis_10.5_3368	
+SRSF2	Mouse	Mouse_Testis_11.5_3361	
+SRSF2	Mouse	Mouse_Testis_11.5_3363	
+SRSF2	Mouse	Mouse_Testis_12.5_3281	
+SRSF2	Mouse	Mouse_Testis_12.5_3285	
+SRSF2	Mouse	Mouse_Testis_13.5_2826	
+SRSF2	Mouse	Mouse_Testis_13.5_2842	
+SRSF2	Mouse	Mouse_Testis_14.5_2226	
+SRSF2	Mouse	Mouse_Testis_14.5_2233	
+SRSF2	Mouse	Mouse_Testis_2wpb_1879	
+SRSF2	Mouse	Mouse_Testis_2wpb_1883	
+SRSF2	Mouse	Mouse_Testis_3dpb_1929	
+SRSF2	Mouse	Mouse_Testis_3dpb_1967	
+SRSF2	Mouse	Mouse_Testis_4wpb_1895	
+SRSF2	Mouse	Mouse_Testis_4wpb_1899	
+SRSF2	Mouse	Mouse_Testis_9wpb_1947	
+SRSF2	Mouse	Mouse_Testis_9wpb_1959	
+SRSF2	Rat	Rat_Brain_0dpb_1746	
+SRSF2	Rat	Rat_Brain_0dpb_2181	
+SRSF2	Rat	Rat_Brain_0dpb_2288	
+SRSF2	Rat	Rat_Brain_0dpb_2292	
+SRSF2	Rat	Rat_Brain_11_4322	
+SRSF2	Rat	Rat_Brain_11_4324	
+SRSF2	Rat	Rat_Brain_11_4326	
+SRSF2	Rat	Rat_Brain_11_4328	
+SRSF2	Rat	Rat_Brain_12_4175	
+SRSF2	Rat	Rat_Brain_12_4179	
+SRSF2	Rat	Rat_Brain_12_4199	
+SRSF2	Rat	Rat_Brain_12_4205	
+SRSF2	Rat	Rat_Brain_13_3513	
+SRSF2	Rat	Rat_Brain_13_3520	
+SRSF2	Rat	Rat_Brain_16wpb_2348	
+SRSF2	Rat	Rat_Brain_16wpb_2352	
+SRSF2	Rat	Rat_Brain_16wpb_2356	
+SRSF2	Rat	Rat_Brain_16wpb_2367	
+SRSF2	Rat	Rat_Brain_2wpb_2336	
+SRSF2	Rat	Rat_Brain_2wpb_2339	
+SRSF2	Rat	Rat_Brain_2wpb_2342	
+SRSF2	Rat	Rat_Brain_2wpb_2345	
+SRSF2	Rat	Rat_Brain_6wpb_1875	
+SRSF2	Rat	Rat_Brain_6wpb_1971	
+SRSF2	Rat	Rat_Brain_6wpb_1975	
+SRSF2	Rat	Rat_Brain_6wpb_2363	
+SRSF2	Rat	Rat_Cerebellum_0dpb_1747	
+SRSF2	Rat	Rat_Cerebellum_0dpb_2182	
+SRSF2	Rat	Rat_Cerebellum_0dpb_2289	
+SRSF2	Rat	Rat_Cerebellum_0dpb_2293	
+SRSF2	Rat	Rat_Cerebellum_0dpb_5348	
+SRSF2	Rat	Rat_Cerebellum_14_4004	
+SRSF2	Rat	Rat_Cerebellum_14_4007	
+SRSF2	Rat	Rat_Cerebellum_14_4093	
+SRSF2	Rat	Rat_Cerebellum_14_4250	
+SRSF2	Rat	Rat_Cerebellum_15_4011	
+SRSF2	Rat	Rat_Cerebellum_15_4033	
+SRSF2	Rat	Rat_Cerebellum_15_4229	
+SRSF2	Rat	Rat_Cerebellum_15_4232	
+SRSF2	Rat	Rat_Cerebellum_16_4095	
+SRSF2	Rat	Rat_Cerebellum_16_4099	
+SRSF2	Rat	Rat_Cerebellum_16wpb_2349	
+SRSF2	Rat	Rat_Cerebellum_16wpb_2353	
+SRSF2	Rat	Rat_Cerebellum_16wpb_2357	
+SRSF2	Rat	Rat_Cerebellum_16wpb_2368	
+SRSF2	Rat	Rat_Cerebellum_2wpb_2337	
+SRSF2	Rat	Rat_Cerebellum_2wpb_2340	
+SRSF2	Rat	Rat_Cerebellum_2wpb_2343	
+SRSF2	Rat	Rat_Cerebellum_2wpb_2346	
+SRSF2	Rat	Rat_Cerebellum_6wpb_1968	
+SRSF2	Rat	Rat_Cerebellum_6wpb_1972	
+SRSF2	Rat	Rat_Cerebellum_6wpb_2285	
+SRSF2	Rat	Rat_Cerebellum_6wpb_2364	
+SRSF2	Rat	Rat_Heart_0dpb_1748	
+SRSF2	Rat	Rat_Heart_0dpb_2706	
+SRSF2	Rat	Rat_Heart_0dpb_2708	
+SRSF2	Rat	Rat_Heart_0dpb_2710	
+SRSF2	Rat	Rat_Heart_11_4323	
+SRSF2	Rat	Rat_Heart_11_4325	
+SRSF2	Rat	Rat_Heart_11_4327	
+SRSF2	Rat	Rat_Heart_11_4329	
+SRSF2	Rat	Rat_Heart_12_4194	
+SRSF2	Rat	Rat_Heart_12_4196	
+SRSF2	Rat	Rat_Heart_12_4201	
+SRSF2	Rat	Rat_Heart_12_4259	
+SRSF2	Rat	Rat_Heart_13_3521	
+SRSF2	Rat	Rat_Heart_13_3650	
+SRSF2	Rat	Rat_Heart_16wpb_2746	
+SRSF2	Rat	Rat_Heart_16wpb_2747	
+SRSF2	Rat	Rat_Heart_16wpb_2749	
+SRSF2	Rat	Rat_Heart_16wpb_2853	
+SRSF2	Rat	Rat_Heart_2wpb_2727	
+SRSF2	Rat	Rat_Heart_2wpb_2728	
+SRSF2	Rat	Rat_Heart_2wpb_2731	
+SRSF2	Rat	Rat_Heart_2wpb_2760	
+SRSF2	Rat	Rat_Heart_6wpb_2738	
+SRSF2	Rat	Rat_Heart_6wpb_2740	
+SRSF2	Rat	Rat_Heart_6wpb_2742	
+SRSF2	Rat	Rat_Heart_6wpb_2751	
+SRSF2	Rat	Rat_Kidney_0dpb_1749	
+SRSF2	Rat	Rat_Kidney_0dpb_2707	
+SRSF2	Rat	Rat_Kidney_0dpb_2709	
+SRSF2	Rat	Rat_Kidney_0dpb_2711	
+SRSF2	Rat	Rat_Kidney_15_4008	
+SRSF2	Rat	Rat_Kidney_15_4009	
+SRSF2	Rat	Rat_Kidney_15_4230	
+SRSF2	Rat	Rat_Kidney_15_4233	
+SRSF2	Rat	Rat_Kidney_16_3601	
+SRSF2	Rat	Rat_Kidney_16_3605	
+SRSF2	Rat	Rat_Kidney_16_3645	
+SRSF2	Rat	Rat_Kidney_16_5349	
+SRSF2	Rat	Rat_Kidney_16wpb_2748	
+SRSF2	Rat	Rat_Kidney_16wpb_2750	
+SRSF2	Rat	Rat_Kidney_16wpb_2854	
+SRSF2	Rat	Rat_Kidney_16wpb_2870	
+SRSF2	Rat	Rat_Kidney_17_2687	
+SRSF2	Rat	Rat_Kidney_17_5350	
+SRSF2	Rat	Rat_Kidney_2wpb_2729	
+SRSF2	Rat	Rat_Kidney_2wpb_2730	
+SRSF2	Rat	Rat_Kidney_2wpb_2756	
+SRSF2	Rat	Rat_Kidney_2wpb_2758	
+SRSF2	Rat	Rat_Kidney_6wpb_2739	
+SRSF2	Rat	Rat_Kidney_6wpb_2741	
+SRSF2	Rat	Rat_Kidney_6wpb_2743	
+SRSF2	Rat	Rat_Kidney_6wpb_2856	
+SRSF2	Rat	Rat_Liver_0dpb_2558	
+SRSF2	Rat	Rat_Liver_0dpb_2559	
+SRSF2	Rat	Rat_Liver_0dpb_2560	
+SRSF2	Rat	Rat_Liver_0dpb_5051	
+SRSF2	Rat	Rat_Liver_12_4193	
+SRSF2	Rat	Rat_Liver_12_4195	
+SRSF2	Rat	Rat_Liver_12_4202	
+SRSF2	Rat	Rat_Liver_12_4260	
+SRSF2	Rat	Rat_Liver_13_3515	
+SRSF2	Rat	Rat_Liver_13_3522	
+SRSF2	Rat	Rat_Liver_13_3546	
+SRSF2	Rat	Rat_Liver_13_3580	
+SRSF2	Rat	Rat_Liver_14_3549	
+SRSF2	Rat	Rat_Liver_14_3553	
+SRSF2	Rat	Rat_Liver_16wpb_2351	
+SRSF2	Rat	Rat_Liver_16wpb_2355	
+SRSF2	Rat	Rat_Liver_16wpb_2359	
+SRSF2	Rat	Rat_Liver_16wpb_2370	
+SRSF2	Rat	Rat_Liver_2wpb_2525	
+SRSF2	Rat	Rat_Liver_2wpb_2526	
+SRSF2	Rat	Rat_Liver_2wpb_2527	
+SRSF2	Rat	Rat_Liver_2wpb_2759	
+SRSF2	Rat	Rat_Liver_6wpb_1969	
+SRSF2	Rat	Rat_Liver_6wpb_1973	
+SRSF2	Rat	Rat_Liver_6wpb_2287	
+SRSF2	Rat	Rat_Liver_6wpb_2366	
+SRSF2	Rat	Rat_Ovary_0dpb_2183	
+SRSF2	Rat	Rat_Ovary_0dpb_2184	
+SRSF2	Rat	Rat_Ovary_12_4200	
+SRSF2	Rat	Rat_Ovary_12_4206	
+SRSF2	Rat	Rat_Ovary_13_3516	
+SRSF2	Rat	Rat_Ovary_13_3529	
+SRSF2	Rat	Rat_Ovary_14_3541	
+SRSF2	Rat	Rat_Ovary_14_3550	
+SRSF2	Rat	Rat_Ovary_15_3591	
+SRSF2	Rat	Rat_Ovary_16_2396	
+SRSF2	Rat	Rat_Ovary_16_3646	
+SRSF2	Rat	Rat_Ovary_16wpb_2350	
+SRSF2	Rat	Rat_Ovary_16wpb_2354	
+SRSF2	Rat	Rat_Ovary_17_2602	
+SRSF2	Rat	Rat_Ovary_2wpb_2338	
+SRSF2	Rat	Rat_Ovary_2wpb_2341	
+SRSF2	Rat	Rat_Ovary_3dpb_4903	
+SRSF2	Rat	Rat_Ovary_3dpb_4969	
+SRSF2	Rat	Rat_Ovary_6wpb_2286	
+SRSF2	Rat	Rat_Ovary_6wpb_2365	
+SRSF2	Rat	Rat_Testis_0dpb_1750	
+SRSF2	Rat	Rat_Testis_0dpb_2291	
+SRSF2	Rat	Rat_Testis_12_4176	
+SRSF2	Rat	Rat_Testis_12_4180	
+SRSF2	Rat	Rat_Testis_13_3523	
+SRSF2	Rat	Rat_Testis_13_3581	
+SRSF2	Rat	Rat_Testis_14_3554	
+SRSF2	Rat	Rat_Testis_14_3558	
+SRSF2	Rat	Rat_Testis_15_2395	
+SRSF2	Rat	Rat_Testis_15_3566	
+SRSF2	Rat	Rat_Testis_16_1816	
+SRSF2	Rat	Rat_Testis_16_3602	
+SRSF2	Rat	Rat_Testis_16wpb_2358	
+SRSF2	Rat	Rat_Testis_16wpb_2369	
+SRSF2	Rat	Rat_Testis_1wpb_2304	
+SRSF2	Rat	Rat_Testis_1wpb_2362	
+SRSF2	Rat	Rat_Testis_2wpb_2344	
+SRSF2	Rat	Rat_Testis_2wpb_2347	
+SRSF2	Rat	Rat_Testis_3dpb_4909	
+SRSF2	Rat	Rat_Testis_3dpb_4963	
+SRSF2	Rat	Rat_Testis_6wpb_1970	
+SRSF2	Rat	Rat_Testis_6wpb_1974	
+SULT4A1	Chicken	Chicken_Brain_0dph_1429	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_0dph_1539	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_0dph_1638	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_0dph_1806	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10_1349	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10_1361	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10_1717	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10_1720	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10wph_1775	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10wph_1805	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10wph_1865	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_10wph_3920	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_12_1350	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_12_1353	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_12_1364	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_12_1553	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_14_1546	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_14_1612	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_Adult_577	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_Adult_653	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_Adult_783	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Brain_Adult_922	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_0dph_1487	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_0dph_1540	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_0dph_1639	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_0dph_1658	Neonate brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10_1723	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10_1735	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10_1752	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10_1807	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10wph_1770	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10wph_1776	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10wph_1868	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_10wph_1869	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_12_1477	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_12_1533	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_12_1608	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_12_1808	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_14_1547	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_14_1613	EarlyEmbryo brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_Adult_578	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_Adult_654	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_Adult_782	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Cerebellum_Adult_921	Adult brain/cerebellum
+SULT4A1	Chicken	Chicken_Heart_10wph_1771	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_10wph_1777	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_10wph_2455	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_10wph_2457	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_Adult_560	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_Adult_650	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_Adult_764	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Heart_Adult_785	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_10wph_1772	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_10wph_1778	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_10wph_2456	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_10wph_2458	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_Adult_555	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_Adult_559	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_Adult_784	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Kidney_adult_918	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_10wph_1774	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_10wph_1779	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_10wph_1872	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_10wph_1873	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_Adult_554	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_Adult_558	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_Adult_786	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Liver_adult_917	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Ovary_10wph_1780	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Ovary_10wph_1781	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Testis_10wph_1773	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Testis_Adult_642	Non brain/cerebellum adult
+SULT4A1	Chicken	Chicken_Testis_Adult_920	Non brain/cerebellum adult
+SULT4A1	Human	Human_Brain_13ypb_5570	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_14ypb_5515	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_15dpb_5894	Neonate brain/cerebellum
+SULT4A1	Human	Human_Brain_16ypb_5532	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_19dpb_5542	Neonate brain/cerebellum
+SULT4A1	Human	Human_Brain_28ypb_6048	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_29ypb_5531	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_29ypb_5908	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_39ypb_5533	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_39ypb_5574	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_4dpb_5892	Neonate brain/cerebellum
+SULT4A1	Human	Human_Brain_50ypb_5517	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_53ypb_5557	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_58ypb_5514	Adult brain/cerebellum
+SULT4A1	Human	Human_Brain_58ypb_5524	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_0dpb_5842	Neonate brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_0dpb_5848	Neonate brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_13ypb_5511	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_14ypb_5545	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_16ypb_5534	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_17ypb_5565	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_19dpb_5527	Neonate brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_29ypb_5520	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_29ypb_5540	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_32ypb_6047	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_39ypb_5522	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_39ypb_5547	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_4dpb_5510	Neonate brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_50ypb_5549	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_53ypb_5516	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_58ypb_5525	Adult brain/cerebellum
+SULT4A1	Human	Human_Cerebellum_58ypb_5573	Adult brain/cerebellum
+SULT4A1	Human	Human_Heart_13ypb_5822	Non brain/cerebellum adult
+SULT4A1	Human	Human_Heart_25ypb_6042	Non brain/cerebellum adult
+SULT4A1	Human	Human_Heart_54ypb_6043	Non brain/cerebellum adult
+SULT4A1	Human	Human_Kidney_2ypb_5821	Non brain/cerebellum adult
+SULT4A1	Human	Human_Kidney_4ypb_6101	Non brain/cerebellum adult
+SULT4A1	Human	Human_Kidney_8ypb_6099	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_17ypb_5575	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_29ypb_5536	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_39ypb_5551	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_39ypb_5563	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_55ypb_6106	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_58ypb_5512	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_58ypb_5571	Non brain/cerebellum adult
+SULT4A1	Human	Human_Liver_7ypb_5513	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_16ypb_5526	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_17ypb_5546	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_28ypb_6107	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_29ypb_5535	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_29ypb_5566	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_39ypb_5550	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_46ypb_6095	Non brain/cerebellum adult
+SULT4A1	Human	Human_Testis_55ypb_5518	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Brain_0dpb_1740	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_0dpb_1900	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_0dpb_1906	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_0dpb_1912	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_10.5_2579	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_10.5_2580	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_10.5_3459	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_11.5_2621	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_11.5_2624	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_11.5_2937	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_11.5_3096	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_12.5_2945	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_12.5_3038	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_12.5_3040	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_2wpb_1876	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_2wpb_1880	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_2wpb_1884	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_2wpb_1888	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_4wpb_1892	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_4wpb_1896	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_4wpb_1936	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_4wpb_1940	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_9wpb_1944	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_9wpb_1948	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_9wpb_1954	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Brain_9wpb_1960	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_0dpb_1741	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_0dpb_1901	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_0dpb_1907	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_0dpb_3919	Neonate brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_13.5_2814	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_13.5_2822	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_13.5_2830	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_13.5_2838	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_14.5_2224	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_14.5_2228	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_14.5_2238	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_14.5_2244	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_15.5_2194	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_15.5_2218	EarlyEmbryo brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_2wpb_1877	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_2wpb_1881	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_2wpb_1885	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_4wpb_1893	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_4wpb_1897	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_4wpb_1937	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_4wpb_1941	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_9wpb_1945	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_9wpb_1949	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_9wpb_1955	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Cerebellum_9wpb_1961	Adult brain/cerebellum
+SULT4A1	Mouse	Mouse_Heart_2wpb_2643	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_2wpb_2645	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_2wpb_2651	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_2wpb_2653	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_4wpb_2655	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_4wpb_2657	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_4wpb_2659	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_4wpb_2661	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_9wpb_1950	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_9wpb_1956	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_9wpb_2663	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Heart_9wpb_2669	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_2wpb_2644	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_2wpb_2646	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_2wpb_2652	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_2wpb_2654	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_4wpb_2656	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_4wpb_2658	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_4wpb_2660	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_4wpb_2662	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_9wpb_1951	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_9wpb_2664	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_9wpb_2665	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Kidney_9wpb_5360	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_2wpb_1878	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_2wpb_1882	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_2wpb_1886	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_2wpb_1890	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_4wpb_1894	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_4wpb_1898	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_4wpb_1938	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_4wpb_1942	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_9wpb_1946	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_9wpb_1952	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_9wpb_1958	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Liver_9wpb_1962	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_2wpb_1887	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_2wpb_1891	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_4wpb_1939	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_4wpb_1943	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_9wpb_1953	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Ovary_9wpb_1963	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Testis_4wpb_1895	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Testis_4wpb_1899	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Testis_9wpb_1947	Non brain/cerebellum adult
+SULT4A1	Mouse	Mouse_Testis_9wpb_1959	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Brain_0dpb_3143	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_0dpb_3170	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_0dpb_3176	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_0dpb_3386	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_12wpb_4830	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_12wpb_4836	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_12wpb_4917	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_12wpb_4928	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_1ypb_3017	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_6mpb_3011	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_6mpb_3021	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Brain_6mpb_3025	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_0dpb_3144	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_0dpb_3171	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_0dpb_3177	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_0dpb_3387	Neonate brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_12wpb_4831	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_12wpb_4837	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_12wpb_4918	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_12wpb_4929	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_1ypb_3018	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_6mpb_3012	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_6mpb_3022	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Cerebellum_6mpb_3026	Adult brain/cerebellum
+SULT4A1	Rabbit	Rabbit_Heart_12wpb_4913	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Heart_12wpb_4919	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Heart_1ypb_3019	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Heart_6mpb_3027	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Heart_6mpb_3458	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Heart_9mpb_3085	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_12wpb_4834	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_12wpb_4914	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_12wpb_4920	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_12wpb_4931	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_6mpb_3014	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_6mpb_3023	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_6mpb_3028	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Kidney_6mpb_3047	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_12wpb_4833	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_12wpb_4915	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_12wpb_4921	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_12wpb_4932	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_1ypb_3079	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_6mpb_3015	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_6mpb_3029	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Liver_6mpb_3081	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Ovary_6mpb_3016	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Ovary_6mpb_3024	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Testis_12wpb_4835	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_Testis_6mpb_3049	Non brain/cerebellum adult
+SULT4A1	Rabbit	Rabbit_WholeBrain_12_4745	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_12_4748	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_12_4751	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_12_4753	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_13_4735	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_13_4799	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_13_4803	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_13_4924	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_14_4817	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_14_4937	EarlyEmbryo brain/cerebellum
+SULT4A1	Rabbit	Rabbit_WholeBrain_14_4995	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_0dpb_1746	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Brain_0dpb_2181	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Brain_0dpb_2288	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Brain_0dpb_2292	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Brain_11_4322	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_11_4324	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_11_4326	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_11_4328	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_12_4175	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_12_4179	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_12_4199	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_12_4205	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_13_3513	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_13_3520	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Brain_16wpb_2348	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_16wpb_2352	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_16wpb_2356	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_16wpb_2367	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_2wpb_2336	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_2wpb_2339	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_2wpb_2342	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_2wpb_2345	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_6wpb_1875	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_6wpb_1971	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_6wpb_1975	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Brain_6wpb_2363	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_0dpb_1747	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_0dpb_2182	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_0dpb_2289	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_0dpb_2293	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_0dpb_5348	Neonate brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_14_4004	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_14_4007	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_14_4093	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_14_4250	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_15_4011	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_15_4033	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_15_4229	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_15_4232	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16_4095	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16_4099	EarlyEmbryo brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16wpb_2349	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16wpb_2353	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16wpb_2357	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_16wpb_2368	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_2wpb_2337	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_2wpb_2340	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_2wpb_2343	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_2wpb_2346	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_6wpb_1968	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_6wpb_1972	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_6wpb_2285	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Cerebellum_6wpb_2364	Adult brain/cerebellum
+SULT4A1	Rat	Rat_Heart_16wpb_2746	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_16wpb_2747	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_16wpb_2749	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_16wpb_2853	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_2wpb_2727	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_2wpb_2728	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_2wpb_2731	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_2wpb_2760	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_6wpb_2738	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_6wpb_2740	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_6wpb_2742	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Heart_6wpb_2751	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_16wpb_2748	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_16wpb_2750	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_16wpb_2854	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_16wpb_2870	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_2wpb_2729	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_2wpb_2730	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_2wpb_2756	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_2wpb_2758	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_6wpb_2739	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_6wpb_2741	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_6wpb_2743	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Kidney_6wpb_2856	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_16wpb_2351	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_16wpb_2355	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_16wpb_2359	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_16wpb_2370	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_2wpb_2525	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_2wpb_2526	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_2wpb_2527	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_2wpb_2759	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_6wpb_1969	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_6wpb_1973	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_6wpb_2287	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Liver_6wpb_2366	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_16wpb_2350	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_16wpb_2354	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_2wpb_2338	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_2wpb_2341	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_6wpb_2286	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Ovary_6wpb_2365	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Testis_16wpb_2358	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Testis_16wpb_2369	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Testis_6wpb_1970	Non brain/cerebellum adult
+SULT4A1	Rat	Rat_Testis_6wpb_1974	Non brain/cerebellum adult

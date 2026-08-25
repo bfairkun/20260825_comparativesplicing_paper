@@ -1,0 +1,1126 @@
+---
+title: "Figures: comparative unproductive splicing across seven vertebrate species"
+author: "Benjamin Fair"
+date: "2026-08-25"
+jupyter: py_general
+format:
+  html:
+    code-fold: true
+    toc: true
+    toc-depth: 3
+    # inline the CSS/JS and base64 the figures so the .html is a single portable file
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+---
+
+## What this notebook does
+
+This rebuilds every data panel of the paper's comparative-splicing figures. It reads **only**
+the plot-ready tables in `output/` and the metadata in `data/`, so it runs in seconds and
+needs none of the pipeline's intermediates.
+
+Those tables are produced by `code/rules/PlotData.smk`, which reduces roughly 9 GB of
+pipeline output to under 4 MB. They are shipped with the project, so the figures reproduce
+without re-running anything; `snakemake all_plot_data all_supplement_tables` regenerates them
+from pipeline intermediates, and `snakemake all` rebuilds those from raw sequencing data.
+
+### What is shipped rather than computed
+
+Three groups of files are shipped as inputs in `data/` rather than being produced by a rule.
+Each is small, and each is here for a reason worth stating:
+
+- **`data/conservation/`** — per-base PhyloP for the *SCN8A* and *ARHGAP17* loci, and the
+  dN/dS + mean-PhyloP tables for cassette-exon trios (about 2 MB total). These are the small
+  end products of the 100-way multiz vertebrate alignment, which needs roughly 1.5 TB of
+  scratch and days of compute to process. Shipping them is what lets panels d, e and f of the
+  conserved-AS figure reproduce in seconds. The rules that regenerate them are available as
+  the non-default target `snakemake all_dnds`; **that chain is the one part of the workflow
+  not exercised by the dry-run check**, so treat it as the least-tested path.
+- **`data/Ensembl.TranscriptInfo.tsv.gz`** and **`data/Ensembl.GeneHumanHomologs.tsv.gz`** —
+  gene/transcript biotypes and human orthologs. biomaRt queries a live service, and the UCSC
+  annotation tracks these have to agree with are frozen snapshots (Ensembl v110 for mm39), so
+  a re-fetch is not guaranteed to reproduce them. `snakemake all_refresh_annotations` fetches
+  a fresh copy into `code/scratch/` for comparison rather than overwriting the shipped one.
+- **The supplementary tables** — including `20260820_SupplementalTable_Contrasts.tsv`, which
+  lists every contrast the paper used along with the libraries in each arm. That file is the
+  authority for the contrast definitions: the leafcutter group files are generated from it by
+  `rule MakeContrastGroupFiles`, and the differential-splicing targets are restricted to the
+  contrasts it names.
+
+Everything under `code/scratch/` is by contrast disposable: parse-time derivatives (an aspera
+manifest, an absolute-path rewrite of `samples.tsv`) and rule intermediates.
+
+The published figures are multi-panel composites assembled by hand. What is rebuilt here are
+the individual data panels. Two panels are graphical assets rather than plots and are not
+rebuilt: the *ARHGAP17* gene track and the *SCN8A* exon schematic.
+
+### Panel index
+
+| Panel | Shows | Reads |
+|---|---|---|
+| Fig 3a | Annotated transcripts per gene, by transcript productivity | `DataToPlot.TranscriptsPerGene*` |
+| Fig 3b | Percent of unique junctions by productivity and annotation status | `DataToPlot.JuncClassTallies` |
+| Fig 3c | Percent unproductive reads, juvenile vs adult testis | `DataToPlot.Testis.Percent.UP` |
+| Fig 3d | ΔPSI vs Δexpression, adult brain vs adult kidney | `DataForReplotting_BetaBeta_AdultBrainKidney` |
+| Fig 3f | *ARHGAP17* unproductive junction across testis development | `DataForReplotting_ConservedAS_Examples` |
+| FigS AlternateGtfs a–c | Fig 3a/3b equivalents across all three annotation sources | as above |
+| FigS SplicExprCorrelation b | Splicing–expression coupling, every contrast and species | `DataToPlot.ContrastSummaries` |
+| FigS ConservedAS a | Conserved-event counts after each successive filter | `DataToPlot.ConservedEventCascade` |
+| FigS ConservedAS c | *SCN8A* exon 18N splicing and host-gene expression | `DataForReplotting_ConservedAS_Examples` |
+| FigS ConservedAS d | *SCN8A* exon conservation by codon position | `DataForReplotting_SCN8A_PhyloP` |
+| FigS ConservedAS e | dN/dS vs PhyloP for cassette-exon trios | `DataToPlot.dNdS_PhyloP_ExonTrios` |
+| FigS ConservedAS f | *ARHGAP17* flanking intronic conservation | `DataForReplotting_ARHGAP17_FlankingPhyloP` |
+| FigS NMD factors | *UPF3A*/*UPF3B* across testis maturation | `DataForReplotting_NMDFactorExpression` |
+
+### Definitions used throughout
+
+**Junction productivity.** leafcutter2 assigns four boolean flags per junction, combined as
+`1*UTR + 2*Coding + 4*Annot + 8*GencodePC`. Codes 1 and 5 are near-UTR ("NE"), codes 0 and 4
+are unproductive ("UP"), everything else is productive ("PR"); unclassified junctions count
+as productive. Near-UTR junctions are excluded from every productive/unproductive split. The
+conserved-event cascade uses a coarser definition — `not (Coding or GencodePC)` — which folds
+near-UTR junctions in with the unproductive ones.
+
+**One event per cluster.** Differential-splicing results are per junction, but the panels
+count events. Within each leafcutter cluster one representative junction is kept: the
+unproductive junction with the largest |ΔPSI| if the cluster has one, otherwise the
+productive junction with the largest |ΔPSI|. Clusters must also pass `p.adjust < 0.05` and
+`|ΔPSI| > 0.05`. This reduction happens in the export rules, upstream of this notebook.
+
+**Juvenile and adult testis.** The two arms of the `Juvenile Testis v Adult Testis` contrast,
+read back out of `data/20260820_SupplementalTable_Contrasts.tsv`, so every plotted point is
+traceable to a row of that supplementary file. This is a stage-based split around the onset of
+meiosis in spermatogenesis.
+
+**R conventions reproduced in Python.** `scipy.stats.mannwhitneyu` defaults to the asymptotic
+approximation while R's `wilcox.test` uses the exact null distribution when there are no ties,
+so `wilcox_p` reproduces R's rule. `bh` reproduces `p.adjust(method="BH")` and `r_format_pval`
+reproduces `format.pval`, which formats p-value labels per facet rather than globally.
+
+## Setup
+
+```{python}
+#| label: setup
+import os
+
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import mannwhitneyu, ttest_ind, norm
+
+OUT = "../output"
+DATA = "../data"
+FIGDIR = "figures"
+os.makedirs(FIGDIR, exist_ok=True)
+
+SPECIES = ["Human", "Macaque", "Mouse", "Rat", "Rabbit", "Opossum", "Chicken"]
+SPIDX = {sp: i for i, sp in enumerate(SPECIES)}
+SRC_ORDER = ["Gencode", "Ensembl", "RefSeq"]
+# the annotation source used for each species in the main figures
+MAIN_GTF = {"Human": "Gencode", "Mouse": "Gencode", "Rat": "RefSeq", "Chicken": "Ensembl",
+            "Opossum": "Ensembl", "Macaque": "Ensembl", "Rabbit": "Ensembl"}
+
+# One size for every annotation, so nothing is much smaller than anything else when the
+# figure is rescaled by hand. Smallest text is 6.5 pt against 9 pt axis text.
+SMALL_TXT, AXIS_TXT, LEG_TXT = 6.5, 9.0, 7.5
+
+GROUP_ORDER = ["Productive, annotated", "Productive, unannotated",
+               "Unproductive, annotated", "Unproductive, unannotated"]
+GROUP_COL = {"Productive, annotated": "#1f78b4", "Productive, unannotated": "#a6cee3",
+             "Unproductive, annotated": "#e31a1c", "Unproductive, unannotated": "#fb9a99"}
+CODE_COL = {"Productive": "#1f78b4", "Unproductive": "#e31a1c"}
+TX_COL = {"Productive": "#377eb8", "Unproductive": "#e41a1c"}
+STAGE_COL = {"Early embryo testis": "#1b9e77", "Juvenile testis": "#d95f02",
+             "Adult testis": "#7570b3", "Juvenile": "#d95f02", "Adult": "#7570b3"}
+DARK2 = ["#1B9E77", "#D95F02", "#7570B3"]        # RColorBrewer Dark2, first three
+XT_LAB = ["1", "", "", "", "5", "", "", "", "", ">10"]
+
+NEW_TESTIS_NAME = "Juvenile Testis v Adult Testis"
+
+
+def savefig(fig, name):
+    p = os.path.join(FIGDIR, name)
+    fig.savefig(p, bbox_inches="tight")
+    return p
+```
+
+## Shared helpers
+
+```{python}
+#| label: helpers
+def wilcox_p(a, b, alternative="two-sided"):
+    """R's wilcox.test rule: exact when small and untied, asymptotic otherwise."""
+    a, b = np.asarray(a, float), np.asarray(b, float)
+    ties = len(np.unique(np.concatenate([a, b]))) < len(a) + len(b)
+    method = "asymptotic" if (ties or len(a) >= 50 or len(b) >= 50) else "exact"
+    return mannwhitneyu(a, b, alternative=alternative, method=method).pvalue
+
+
+def bh(p):
+    """p.adjust(p, method='BH')"""
+    p = np.asarray(p, float); n = len(p); o = np.argsort(p); r = np.empty(n)
+    r[o] = np.minimum.accumulate((p[o] * n / np.arange(1, n + 1))[::-1])[::-1]
+    return np.minimum(r, 1)
+
+
+def pfmt(p):
+    if p >= 1e-3:
+        return f"{p:.3f}"
+    e = int(np.floor(np.log10(p))); m = p / 10 ** e
+    if m >= 9.5:
+        m, e = 1.0, e + 1
+    return f"{m:.0f}e{e:+03d}"
+
+
+def pval_fmt(p, digits=2):
+    if p == 0 or not np.isfinite(p):
+        return "NA"
+    return f"{p:.{digits}g}" if p >= 1e-4 else f"{p:.{digits-1}e}".replace("e-0", "e-")
+
+
+def rfmt(p):
+    return f"{p:.0e}".replace("e-0", "e-") if p < 1e-3 else f"{p:.3f}"
+
+
+def _signif(x, d):
+    x = np.asarray(x, float)
+    e = np.floor(np.log10(np.abs(np.where(x != 0, x, 1))))
+    return np.round(x / 10.0 ** e, d - 1) * 10.0 ** e
+
+
+def r_format_pval(vals, digits=1):
+    """Emulate R's format.pval(x, digits) on a vector.
+
+    R splits at exponent -3, then within each subset uses a COMMON number of decimals -- set
+    so the smallest element still shows `digits` significant figures, using the value AFTER
+    rounding -- and picks fixed or scientific by whichever is not wider.
+    """
+    vals = np.asarray(vals, float)
+    out = np.empty(len(vals), dtype=object)
+    expo = np.floor(np.log10(np.where(vals > 0, vals, 1e-50)))
+    for mask in (expo >= -3, expo < -3):
+        if not mask.any():
+            continue
+        sub = vals[mask]
+        dec = int(max(digits - 1 - np.floor(np.log10(_signif(sub, digits)))))
+        out[mask] = ([f"%.{dec}f" % v for v in sub] if 2 + dec <=
+                     max(len(f"%.{digits-1}e" % v) for v in sub)
+                     else [f"%.{digits-1}e" % v for v in sub])
+    return list(out)
+
+
+def shade(ax, n=7):
+    """Alternating grey species bands."""
+    for i in range(n):
+        if i % 2 == 1:
+            ax.axvspan(i - 0.5, i + 0.5, color="0.90", zorder=0, lw=0)
+```
+
+`seaborn.swarmplot` hardcodes each swarm's width to its dodge slot (`0.8 / n_hue_levels`),
+which makes neighbouring groups touch and has no user-facing knob. These lay the beeswarm out
+directly so the width can be capped. Axis limits must be set *before* calling `draw_swarm`,
+because the layout depends on the data-to-pixel scale.
+
+```{python}
+#| label: beeswarm
+def _beeswarm_px(y_px, d_px, max_half_px):
+    offs = np.zeros(len(y_px)); placed = []
+    for idx in np.argsort(y_px):
+        yi = y_px[idx]
+        forbidden = []
+        for px, py in placed:
+            dy = abs(yi - py)
+            if dy < d_px:
+                dx = np.sqrt(d_px ** 2 - dy ** 2)
+                forbidden.append((px - dx, px + dx))
+        chosen = 0.0
+        for cand in sorted({0.0, *[b for iv in forbidden for b in iv]}, key=abs):
+            if all(not (lo + 1e-9 < cand < hi - 1e-9) for lo, hi in forbidden):
+                chosen = cand; break
+        chosen = float(np.clip(chosen, -max_half_px, max_half_px))
+        placed.append((chosen, yi)); offs[idx] = chosen
+    return offs
+
+
+def draw_swarm(ax, xcenter, yvals, color, size_pt, max_width, zorder=3):
+    """One beeswarm centred at xcenter, never wider than max_width (x data units)."""
+    yvals = np.asarray(yvals, float)
+    if len(yvals) == 0:
+        return
+    fig = ax.figure; fig.canvas.draw()
+    t = ax.transData; o = t.transform((0, 0))
+    ux = t.transform((1, 0))[0] - o[0]
+    uy = t.transform((0, 1))[1] - o[1]
+    offs = _beeswarm_px(yvals * uy, size_pt * fig.dpi / 72.0, max_width / 2 * ux)
+    ax.scatter(xcenter + offs / ux, yvals, s=size_pt ** 2, color=color,
+               linewidths=size_pt / 10, edgecolors="none", zorder=zorder)
+```
+
+Sample groups come out of the supplementary contrast table, so the figures cannot drift from
+the file the paper ships.
+
+```{python}
+#| label: contrast-table
+contrasts = pd.read_csv(f"{DATA}/20260820_SupplementalTable_Contrasts.tsv", sep="\t")
+
+def samples_from_table(contrast_name, groupnum=None):
+    d = contrasts[contrasts.ContrastName == contrast_name]
+    recs = []
+    for _, r in d.iterrows():
+        for gi, col in [(1, "SamplesInGroup1"), (2, "SamplesInGroup2")]:
+            if groupnum is not None and gi != groupnum:
+                continue
+            if isinstance(r[col], str):
+                recs += [{"Species": r.Species, "sample": s, "GroupNum": gi}
+                         for s in r[col].split(", ")]
+    return pd.DataFrame(recs)
+
+contrasts[["ContrastGroup", "ContrastName", "Species"]].head()
+```
+
+# Annotated transcripts per gene
+
+Restricted to protein-coding genes; a transcript counts as unproductive when its own biotype
+is not `protein_coding`.
+
+```{python}
+#| label: load-transcripts
+hist = pd.read_csv(f"{OUT}/DataToPlot.TranscriptsPerGene.tsv.gz", sep="\t")
+tx_totals = pd.read_csv(f"{OUT}/DataToPlot.TranscriptsPerGene.Totals.tsv.gz", sep="\t")
+tx_totals
+```
+
+Annotation sources differ enormously in how many unproductive isoforms they carry: Ensembl
+annotates none at all for macaque, rabbit, opossum or chicken.
+
+## Fig 3a — transcripts per gene, main annotation
+
+```{python}
+#| label: fig-3a
+#| fig-cap: "Unproductive transcript isoforms are not annotated in most species."
+def tx_panel(ax, sub):
+    sub = sub.set_index("Grp").reindex(range(1, 11)).fillna(0.0)
+    x = np.arange(1, 11)
+    ax.bar(x, sub.BarCoding.values, width=0.85, color=TX_COL["Productive"], lw=0)
+    ax.bar(x, sub.BarNoncoding.values, bottom=sub.BarCoding.values, width=0.85,
+           color=TX_COL["Unproductive"], lw=0)
+    ax.set_ylim(0, 20e3); ax.set_yticks([0, 10e3, 20e3])
+    ax.set_yticklabels(["0", "10K", "20K"])
+    ax.set_xticks(x); ax.set_xticklabels(XT_LAB); ax.set_xlim(0.4, 10.6)
+    ax.tick_params(axis="both", labelsize=AXIS_TXT)
+    sns.despine(ax=ax)
+
+
+fig, axes = plt.subplots(1, 7, figsize=(7.6, 2.4), sharey=True,
+                         gridspec_kw={"wspace": 0.15})
+for ax, sp in zip(axes, SPECIES):
+    tx_panel(ax, hist[(hist.Species == sp) & (hist.AnnotationSource == MAIN_GTF[sp])])
+    ax.set_title(sp, fontsize=AXIS_TXT)
+    if ax is not axes[0]:
+        ax.tick_params(labelleft=False)
+axes[0].set_ylabel("# Genes", fontsize=AXIS_TXT)
+fig.supxlabel("# Annotated transcripts per gene", fontsize=AXIS_TXT, y=-0.06)
+fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=TX_COL[k]) for k in TX_COL],
+           labels=list(TX_COL), loc="lower center", bbox_to_anchor=(0.5, -0.30),
+           ncol=2, frameon=False, fontsize=LEG_TXT,
+           title="Annotated transcript type", title_fontsize=LEG_TXT)
+savefig(fig, "Fig3a_TranscriptsPerGene_MainGtfs.pdf")
+```
+
+## FigS Alternate GTFs — panel a
+
+```{python}
+#| label: fig-altgtfs-a
+#| fig-cap: "Transcripts per gene across all three annotation sources."
+fig, axes = plt.subplots(3, 7, figsize=(8.6, 4.6), sharey=True, sharex=True,
+                         gridspec_kw={"wspace": 0.15, "hspace": 0.22})
+for ri, src in enumerate(SRC_ORDER):
+    for ci, sp in enumerate(SPECIES):
+        ax = axes[ri, ci]
+        sub = hist[(hist.Species == sp) & (hist.AnnotationSource == src)]
+        if len(sub) == 0:
+            ax.text(0.5, 0.5, "NA", transform=ax.transAxes, ha="center", va="center",
+                    fontsize=22, color="0.90", zorder=0)
+            ax.set_ylim(0, 20e3); ax.set_yticks([0, 10e3, 20e3])
+            ax.set_yticklabels(["0", "10K", "20K"])
+            ax.set_xticks(np.arange(1, 11)); ax.set_xticklabels(XT_LAB)
+            ax.set_xlim(0.4, 10.6)
+            ax.tick_params(axis="both", labelsize=AXIS_TXT); sns.despine(ax=ax)
+        else:
+            tx_panel(ax, sub)
+            s = tx_totals[(tx_totals.Species == sp)
+                          & (tx_totals.AnnotationSource == src)].iloc[0]
+            ax.text(0.03, 0.97,
+                    f"{s.NumCoding} +\n{s.NumNoncoding} =\n{s.Total} txs\n"
+                    f"among\n{s.nGenes} genes",
+                    transform=ax.transAxes, ha="left", va="top", fontsize=5.2)
+        if ri == 0:
+            ax.set_title(sp, fontsize=AXIS_TXT)
+        if ci == 6:
+            ax2 = ax.twinx(); ax2.set_yticks([])
+            ax2.set_ylabel(src, fontsize=AXIS_TXT, rotation=-90, labelpad=12)
+            for s_ in ax2.spines.values():
+                s_.set_visible(False)
+axes[1, 0].set_ylabel("# Genes", fontsize=AXIS_TXT)
+fig.supxlabel("# Annotated transcripts per gene", fontsize=AXIS_TXT, y=0.0)
+fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=TX_COL[k]) for k in TX_COL],
+           labels=list(TX_COL), loc="lower center", bbox_to_anchor=(0.5, -0.09),
+           ncol=2, frameon=False, fontsize=LEG_TXT,
+           title="Annotated transcript type", title_fontsize=LEG_TXT)
+savefig(fig, "FigS_AltGtfs_a_TranscriptsPerGene.pdf")
+```
+
+# Junction productivity classification
+
+Two views of the same tally: the fraction of *unique junctions* in each class, and the
+fraction of *junction reads*. Reads are overwhelmingly productive-annotated, so that view
+needs a broken axis.
+
+```{python}
+#| label: load-tallies
+tal = pd.read_csv(f"{OUT}/DataToPlot.JuncClassTallies.tsv.gz", sep="\t")
+tal["Group"] = (pd.Series(np.where(tal.IsProd, "Productive, ", "Unproductive, "),
+                          index=tal.index)
+                + np.where(tal.Annot, "annotated", "unannotated"))
+uniq_p = tal[tal.Metric == "UniqueJunctions"]
+reads_p = tal[tal.Metric == "JunctionReads"]
+
+
+def main_gtf_only(d):
+    return d[[MAIN_GTF[s] == a for s, a in zip(d.Species, d.AnnotationSource)]]
+
+
+def facet_piv(d, sp):
+    return (d[d.Species == sp]
+            .pivot_table(index="AnnotationSource", columns="Group", values="Percent")
+            .reindex(SRC_ORDER).reindex(columns=GROUP_ORDER))
+
+
+piv_uniq = (main_gtf_only(uniq_p)
+            .pivot_table(index="Species", columns="Group", values="Percent")
+            .reindex(SPECIES)[GROUP_ORDER])
+piv_uniq.round(2)
+```
+
+Only human, mouse and rat have any *annotated* unproductive junctions — Ensembl carries no
+NMD biotype for the other four species, which is why the dark-red sliver appears in only
+three bars.
+
+## Fig 3b — percent unique junctions, main annotation
+
+```{python}
+#| label: fig-3b
+#| fig-cap: "A similar percent of splice junctions is classified as unproductive in every species."
+def stacked_panel(ax, piv, ylab):
+    piv = piv.fillna(0.0)
+    x = np.arange(len(piv)); bottom = np.zeros(len(piv))
+    for grp in reversed(GROUP_ORDER):          # bottom-up: unproductive-unannotated first
+        ax.bar(x, piv[grp].values, bottom=bottom, width=0.8,
+               color=GROUP_COL[grp], label=grp, lw=0)
+        bottom += piv[grp].values
+    ax.set_xticks(x); ax.set_xticklabels(piv.index)
+    ax.set_ylabel(ylab, fontsize=AXIS_TXT)
+    ax.tick_params(axis="both", labelsize=AXIS_TXT)
+    ax.tick_params(axis="x", labelrotation=45)
+    for lab in ax.get_xticklabels():
+        lab.set_ha("right")
+    sns.despine(ax=ax)
+
+
+fig, ax = plt.subplots(figsize=(2.9, 3.1))
+stacked_panel(ax, piv_uniq, "Percent unique junctions")
+ax.set_ylim(0, 100); ax.set_yticks([0, 25, 50, 75, 100])
+savefig(fig, "Fig3b_PercentUniqueJuncs_MainGtfs.pdf")
+```
+
+## FigS Alternate GTFs — panels b and c
+
+```{python}
+#| label: fig-altgtfs-bc
+#| fig-cap: "The productivity split is robust to the choice of annotation source."
+def faceted_stacked(d, ylab, fname, broken=False, figsize=(7.2, 3.4)):
+    if broken:
+        fig, axrows = plt.subplots(2, len(SPECIES), figsize=figsize, sharex="col",
+                                   gridspec_kw={"height_ratios": [1, 2.2],
+                                                "hspace": 0.10, "wspace": 0.18})
+        rows = [axrows[0], axrows[1]]
+    else:
+        fig, row = plt.subplots(1, len(SPECIES), figsize=figsize, sharey=True,
+                                gridspec_kw={"wspace": 0.18})
+        rows = [np.atleast_1d(row)]
+    for ci, sp in enumerate(SPECIES):
+        t = facet_piv(d, sp)
+        present = [s for s in SRC_ORDER if not t.loc[s].isna().all()]
+        vals = t.reindex(SRC_ORDER).fillna(0.0)
+        for ri, axr in enumerate(rows):
+            ax = axr[ci]
+            x = np.arange(len(SRC_ORDER)); bottom = np.zeros(len(SRC_ORDER))
+            for grp in reversed(GROUP_ORDER):
+                ax.bar(x, vals[grp].values, bottom=bottom, width=0.8,
+                       color=GROUP_COL[grp], lw=0)
+                bottom += vals[grp].values
+            for xi, s in enumerate(SRC_ORDER):
+                if s not in present:
+                    ax.text(xi, 0.5, "NA", rotation=90, ha="center", va="bottom",
+                            fontsize=SMALL_TXT, color="0.55",
+                            transform=ax.get_xaxis_transform())
+            if broken:
+                if ri == 0:
+                    ax.set_ylim(95, 100); ax.set_yticks([95, 100])
+                    ax.spines["bottom"].set_visible(False)
+                    ax.tick_params(bottom=False, labelbottom=False)
+                else:
+                    ax.set_ylim(0, 10); ax.set_yticks([0, 5, 10])
+                    ax.spines["top"].set_visible(False)
+            else:
+                ax.set_ylim(0, 100); ax.set_yticks([0, 25, 50, 75, 100])
+            ax.set_xlim(-0.6, len(SRC_ORDER) - 0.4)
+            ax.spines["right"].set_visible(False)
+            if not broken:
+                ax.spines["top"].set_visible(False)
+            if ci > 0:
+                ax.tick_params(labelleft=False)
+            ax.tick_params(axis="y", labelsize=AXIS_TXT)
+        bottom_ax = rows[-1][ci]
+        bottom_ax.set_xticks(np.arange(len(SRC_ORDER)))
+        bottom_ax.set_xticklabels(SRC_ORDER, rotation=45, ha="right", fontsize=AXIS_TXT)
+        rows[0][ci].set_title(sp, fontsize=AXIS_TXT)
+    rows[-1][0].set_ylabel(ylab, fontsize=AXIS_TXT)
+    if broken:
+        rows[-1][0].yaxis.set_label_coords(-0.62, 0.75)
+    savefig(fig, fname)
+    return fig
+
+
+faceted_stacked(uniq_p, "Percent unique junctions",
+                "FigS_AltGtfs_b_PercentUniqueJuncs.pdf")
+faceted_stacked(reads_p, "Percent junction reads",
+                "FigS_AltGtfs_c_PercentJuncReads.pdf", broken=True)
+```
+
+# Splicing versus expression
+
+## Fig 3d — adult brain vs adult kidney
+
+Each point is one leafcutter cluster; the line is an ordinary least-squares fit and the
+annotation gives the Spearman correlation, with P.adj Benjamini–Hochberg across the four
+groups shown.
+
+```{python}
+#| label: fig-3d
+#| fig-cap: "Differential splicing of unproductive junctions is anticorrelated with host gene expression."
+bk = pd.read_csv(f"{OUT}/DataForReplotting_BetaBeta_AdultBrainKidney.tsv.gz", sep="\t")
+recs = []
+for sp in ["Chicken", "Human"]:
+    for cod in ["Productive", "Unproductive"]:
+        s = bk[(bk.Species == sp) & (bk.Prod == (cod == "Productive"))].dropna(
+            subset=["deltapsi", "logFC"])
+        from scipy.stats import spearmanr
+        rho, p = spearmanr(s.deltapsi, s.logFC)
+        recs.append(dict(Species=sp, Coding=cod, Prod=(cod == "Productive"),
+                         n=len(s), spearman=rho, p=p))
+s_bk = pd.DataFrame(recs)
+s_bk["p_adj"] = bh(s_bk.p.values)
+
+fig, axes = plt.subplots(2, 2, figsize=(4.6, 3.4), sharex=True, sharey=True,
+                         gridspec_kw={"wspace": 0.10, "hspace": 0.12})
+for ri, sp in enumerate(["Chicken", "Human"]):
+    for ci, cod in enumerate(["Productive", "Unproductive"]):
+        ax = axes[ri, ci]
+        sub = bk[(bk.Species == sp) & (bk.Prod == (cod == "Productive"))]
+        ax.axhline(0, ls="--", color="0.5", lw=0.8, zorder=1)
+        ax.scatter(sub.deltapsi, sub.logFC, s=3, alpha=0.05, lw=0,
+                   color=CODE_COL[cod], zorder=2)
+        m = sub.dropna(subset=["deltapsi", "logFC"])
+        slope, intercept = np.polyfit(m.deltapsi, m.logFC, 1)
+        xs = np.array([m.deltapsi.min(), m.deltapsi.max()])
+        ax.plot(xs, intercept + slope * xs, color=CODE_COL[cod], lw=1.6, zorder=4)
+        r = s_bk[(s_bk.Species == sp) & (s_bk.Coding == cod)].iloc[0]
+        ax.text(0.02, 0.97,
+                f"n={r.n}\nspearman rho={r.spearman:.2f}\n"
+                f"P={pval_fmt(r.p)}\nP.adj={pval_fmt(r.p_adj)}",
+                transform=ax.transAxes, ha="left", va="top", fontsize=SMALL_TXT, zorder=6)
+        ax.set_ylim(-5, 5); ax.set_yticks([-4, -2, 0, 2, 4])
+        if ri == 0:
+            ax.set_title(cod, fontsize=AXIS_TXT)
+        if ci == 1:
+            ax2 = ax.twinx(); ax2.set_yticks([])
+            ax2.set_ylabel(sp, fontsize=AXIS_TXT, rotation=-90, labelpad=12)
+            for s_ in ax2.spines.values():
+                s_.set_visible(False)
+        ax.tick_params(axis="both", labelsize=AXIS_TXT)
+        sns.despine(ax=ax)
+for ax in axes[-1]:
+    ax.tick_params(axis="x", labelrotation=45)
+    for lab in ax.get_xticklabels():
+        lab.set_ha("right")
+fig.supylabel("Differential gene\nexpression (log2FC)", fontsize=AXIS_TXT, x=-0.02)
+fig.supxlabel("Differential splicing\n(Delta PSI)", fontsize=AXIS_TXT, y=-0.10)
+fig.suptitle("Adult Brain v Adult Kidney", fontsize=AXIS_TXT, y=1.02)
+savefig(fig, "Fig3d_BetaBeta_AdultBrainKidney.pdf")
+s_bk[["Species", "Coding", "n", "spearman", "p", "p_adj"]]
+```
+
+In both species the unproductive junctions show a negative relationship between ΔPSI and
+Δexpression while the productive ones show essentially none — the signature expected if
+increased inclusion of an unproductive junction lowers host transcript abundance.
+
+## FigS SplicingExpressionCorrelation — panel b
+
+Every contrast in the study at once: each point is one species:tissue contrast, positioned by
+its splicing–expression Spearman ρ and that correlation's significance. The per-species P is a
+one-sided Wilcoxon rank-sum testing whether productive ρ exceeds unproductive ρ, over
+contrasts with at least 100 events.
+
+```{python}
+#| label: fig-splicexpr-b
+#| fig-cap: "Splicing-expression coupling is specific to unproductive junctions in every species."
+summ = pd.read_csv(f"{OUT}/DataToPlot.ContrastSummaries.tsv.gz", sep="\t")
+volc = summ[summ.n >= 100].copy()
+species_p = {}
+for sp, sub in volc.groupby("Species"):
+    species_p[sp] = wilcox_p(sub.loc[sub.Coding == "Productive", "spearman"].dropna(),
+                             sub.loc[sub.Coding == "Unproductive", "spearman"].dropna(),
+                             alternative="greater")
+
+VOLC_COL = {"Unproductive": "red", "Productive": "blue"}
+fig, axes = plt.subplots(2, 7, figsize=(7.4, 3.6), sharex=True, sharey=True,
+                         gridspec_kw={"wspace": 0.12, "hspace": 0.14})
+for ci, sp in enumerate(SPECIES):
+    for ri, cod in enumerate(["Unproductive", "Productive"]):
+        ax = axes[ri, ci]
+        sub = volc[(volc.Species == sp) & (volc.Coding == cod)]
+        ax.axvline(0, ls="--", color="black", lw=0.7)
+        ax.axhline(2, ls="--", color="black", lw=0.7)
+        ax.scatter(sub.spearman, -np.log10(sub.p), s=14, facecolors="none",
+                   edgecolors=VOLC_COL[cod], lw=0.7, zorder=3)
+        hi = sub[sub.Tissue == "Juvenile Testis vs Adult Testis"]
+        ax.scatter(hi.spearman, -np.log10(hi.p), s=44, marker="s", facecolors="none",
+                   edgecolors="black", lw=0.9, zorder=4)
+        ax.set_xlim(-0.5, 0.5); ax.set_xticks([-0.5, 0, 0.5])
+        ax.set_ylim(-1, 22); ax.set_yticks([0, 5, 10, 15, 20])
+        ax.tick_params(axis="both", labelsize=AXIS_TXT)
+        sns.despine(ax=ax)
+        if ri == 0:
+            ax.set_title(f"{sp}\nP={rfmt(species_p[sp])}", fontsize=AXIS_TXT)
+        if ci == 6:
+            ax2 = ax.twinx(); ax2.set_yticks([])
+            ax2.set_ylabel(cod, fontsize=AXIS_TXT, rotation=-90, labelpad=12)
+            for s_ in ax2.spines.values():
+                s_.set_visible(False)
+for ax in axes[1]:
+    ax.tick_params(axis="x", labelrotation=45)
+    for lab in ax.get_xticklabels():
+        lab.set_ha("right")
+fig.supylabel(r"$-\log_{10}(P)$", fontsize=AXIS_TXT, x=0.02)
+fig.supxlabel(r"Splicing vs expression Spearman $\rho$", fontsize=AXIS_TXT, y=-0.06)
+savefig(fig, "FigS_SplicExpr_b_Volcano_AllSpecies.pdf")
+print({sp: rfmt(species_p[sp]) for sp in SPECIES})
+```
+
+In every species the unproductive contrasts sit left of zero and reach far higher significance
+than the productive ones. The highlighted squares mark the juvenile-vs-adult testis contrast.
+
+# Testis development
+
+Both panels take their juvenile and adult groups from the supplementary contrast table, so the
+sample composition of every point is traceable to a row of that file.
+
+## Fig 3c — percent unproductive reads
+
+Percent = unproductive reads / (unproductive + productive reads) per library. Each point is
+one RNA-seq library; bars are group medians and P is a two-sided Wilcoxon rank-sum.
+
+```{python}
+#| label: fig-3c
+#| fig-cap: "Unproductive splicing increases in adult testis."
+pct = pd.read_csv(f"{OUT}/DataToPlot.Testis.Percent.UP.tsv.gz", sep="\t").set_index("ID")
+
+STAGES_C = ["Juvenile testis", "Adult testis"]
+OFF_C = {"Juvenile testis": -0.20, "Adult testis": 0.20}
+pc = samples_from_table(NEW_TESTIS_NAME)
+pc["Stage"] = np.where(pc.GroupNum == 1, STAGES_C[0], STAGES_C[1])
+pc = pc.merge(pct[["Percent"]], left_on="sample", right_index=True, how="left")
+assert pc.Percent.notna().all(), "a contrast-table library is missing from the metric table"
+pv_c = {sp: wilcox_p(pc.query("Species==@sp and Stage==@STAGES_C[0]").Percent,
+                     pc.query("Species==@sp and Stage==@STAGES_C[1]").Percent)
+        for sp in SPECIES}
+
+ymax = pc.Percent.max()
+fig, ax = plt.subplots(figsize=(4.2, 3.4))
+shade(ax)
+ax.set_xlim(-0.5, len(SPECIES) - 0.5)
+ax.set_ylim(-0.75, ymax * 1.32)     # limits before layout: swarm geometry depends on them
+for sp in SPECIES:
+    for st in STAGES_C:
+        v = pc.query("Species==@sp and Stage==@st").Percent.values
+        xc = SPIDX[sp] + OFF_C[st]
+        draw_swarm(ax, xc, v, STAGE_COL[st], size_pt=3.0, max_width=0.26)
+        ax.plot([xc - 0.14, xc + 0.14], [np.median(v)] * 2, color="black", lw=1.6,
+                zorder=4, solid_capstyle="butt")
+        ax.text(xc, -0.20, str(len(v)), ha="center", va="top",
+                fontsize=SMALL_TXT, color=STAGE_COL[st])
+    ax.text(SPIDX[sp], ymax * 1.06, f"P=\n{pfmt(pv_c[sp])}", ha="center", va="bottom",
+            fontsize=SMALL_TXT)
+ax.set_xticks(range(len(SPECIES))); ax.set_xticklabels(SPECIES)
+ax.set_ylabel("Percent unproductive reads", fontsize=AXIS_TXT)
+ax.tick_params(axis="x", labelrotation=45, labelsize=AXIS_TXT)
+ax.tick_params(axis="y", labelsize=AXIS_TXT)
+for lab in ax.get_xticklabels():
+    lab.set_ha("right")
+ax.legend(handles=[plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s], markersize=4,
+                              label=s) for s in STAGES_C],
+          loc="upper center", bbox_to_anchor=(0.5, -0.32), ncol=2, frameon=False,
+          fontsize=LEG_TXT, handletextpad=0.1)
+sns.despine(ax=ax)
+savefig(fig, "Fig3c_PercentUnproductive_Testis.pdf")
+print({sp: pfmt(p) for sp, p in pv_c.items()})
+```
+
+## Fig 3f — *ARHGAP17* unproductive junction
+
+*ARHGAP17* carries an exon-skipping junction classified as unproductive in all seven species.
+PSI is shown only for libraries with at least 10 reads in the cluster.
+
+The early-embryo group is arm 1 of the `Early embryo Testis v Adult Testis` contrast, which
+has no human row — hence "(non-human)" in the legend. That contrast and the juvenile/adult one
+are defined independently and are **not disjoint**: a few macaque and opossum libraries belong
+to both and are drawn twice under two colours, which is why the green and orange opossum
+clouds coincide. They are left duplicated rather than silently de-duplicated so each group
+matches its contrast definition exactly.
+
+```{python}
+#| label: fig-3f
+#| fig-cap: "ARHGAP17 unproductive junction PSI and host gene expression across testis development."
+examples = pd.read_csv(f"{OUT}/DataForReplotting_ConservedAS_Examples.tsv.gz", sep="\t")
+arh = examples[examples.gene_name == "ARHGAP17"].copy()
+arh["PSI_shown"] = np.where(arh.ReadsInClusterGroup, arh.PSI, np.nan)
+
+STAGES_F = ["Early embryo testis", "Juvenile testis", "Adult testis"]
+ee = samples_from_table("Early embryo Testis v Adult Testis", 1).assign(
+    Stage="Early embryo testis")
+ja = samples_from_table(NEW_TESTIS_NAME)
+ja["Stage"] = np.where(ja.GroupNum == 1, "Juvenile testis", "Adult testis")
+pf = pd.concat([ee, ja], ignore_index=True)[["Species", "sample", "Stage"]]
+_ov = pf.groupby(["Species", "sample"]).size().rename("n").reset_index().query("n > 1")
+print("libraries listed under two stage groups:", _ov.groupby("Species").size().to_dict())
+
+pf = pf.merge(arh[["ID", "Species.short", "PSI_shown", "log2RPKM"]],
+              left_on=["sample", "Species"], right_on=["ID", "Species.short"], how="inner")
+
+
+def group_vals(sp, stage, col):
+    return pf.query("Species==@sp and Stage==@stage")[col].dropna().values
+
+
+pf_p = {}
+for sp in SPECIES:
+    for col in ["PSI_shown", "log2RPKM"]:
+        for lab, (g1, g2) in {"Juv_v_Ad": ("Juvenile testis", "Adult testis"),
+                              "EE_v_Ad": ("Early embryo testis", "Adult testis")}.items():
+            a_, b_ = group_vals(sp, g1, col), group_vals(sp, g2, col)
+            pf_p[(sp, col, lab)] = wilcox_p(a_, b_) if len(a_) and len(b_) else np.nan
+
+OFF_F = {"Early embryo testis": -0.27, "Juvenile testis": 0.0, "Adult testis": 0.27}
+fig, axes = plt.subplots(2, 1, figsize=(4.2, 4.8), sharex=True,
+                         gridspec_kw={"hspace": 0.16})
+for ax, (col, ylab) in zip(axes, [("PSI_shown", "Splicing,\nPSI"),
+                                  ("log2RPKM", "Expression,\nlog2RPKM")]):
+    sub = pf.dropna(subset=[col])
+    lo, hi = sub[col].min(), sub[col].max(); span = hi - lo
+    shade(ax)
+    ax.set_xlim(-0.5, len(SPECIES) - 0.5)
+    ax.set_ylim(lo - span * 0.22, hi + span * 0.46)
+    for sp in SPECIES:
+        for st in STAGES_F:
+            v = group_vals(sp, st, col)
+            if not len(v):
+                continue
+            xc = SPIDX[sp] + OFF_F[st]
+            draw_swarm(ax, xc, v, STAGE_COL[st], size_pt=2.8, max_width=0.19)
+            ax.plot([xc - 0.10, xc + 0.10], [np.median(v)] * 2, color="black", lw=1.5,
+                    zorder=4, solid_capstyle="butt")
+            ax.text(xc, lo - span * 0.12, str(len(v)), ha="center", va="top",
+                    fontsize=SMALL_TXT, color=STAGE_COL[st])
+        for k, (lab, x1, x2) in enumerate(
+                [("Juv_v_Ad", SPIDX[sp] + OFF_F["Juvenile testis"],
+                  SPIDX[sp] + OFF_F["Adult testis"]),
+                 ("EE_v_Ad", SPIDX[sp] + OFF_F["Early embryo testis"],
+                  SPIDX[sp] + OFF_F["Adult testis"])]):
+            p = pf_p[(sp, col, lab)]
+            if np.isnan(p):
+                continue
+            y = hi + span * (0.09 + 0.18 * k)
+            ax.plot([x1, x1, x2, x2], [y, y + span * 0.03, y + span * 0.03, y],
+                    color="black", lw=0.6, zorder=5)
+            ax.text((x1 + x2) / 2, y + span * 0.045, pfmt(p), ha="center", va="bottom",
+                    fontsize=SMALL_TXT, zorder=5)
+    ax.set_ylabel(ylab, fontsize=AXIS_TXT)
+    ax.tick_params(axis="y", labelsize=AXIS_TXT)
+    sns.despine(ax=ax)
+axes[1].set_xticks(range(len(SPECIES))); axes[1].set_xticklabels(SPECIES)
+axes[1].tick_params(axis="x", labelrotation=45, labelsize=AXIS_TXT)
+for lab in axes[1].get_xticklabels():
+    lab.set_ha("right")
+axes[1].legend(handles=[plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s],
+                                   markersize=4,
+                                   label="Early embryo testis\n(non-human)"
+                                         if s == STAGES_F[0] else s)
+                        for s in STAGES_F],
+               loc="upper center", bbox_to_anchor=(0.5, -0.32), ncol=3, frameon=False,
+               fontsize=LEG_TXT, handletextpad=0.1)
+savefig(fig, "Fig3f_ARHGAP17_Testis.pdf")
+```
+
+Inclusion of the unproductive junction rises and host-gene expression falls between juvenile
+and adult testis in most species, in the direction expected if the junction destabilises the
+transcript.
+
+# Conserved AS events
+
+## Panel a — conserved-event filter cascade
+
+Five successive filters, once down an unproductive path and once down a productive path, both
+starting from the junctions that lift over to a human junction. `*Any` counts distinct *human*
+features across all non-macaque species, so it is not the sum of the per-species bars.
+
+```{python}
+#| label: fig-conservedas-a
+#| fig-cap: "Conserved-event counts after each successive filter."
+casc = pd.read_csv(f"{OUT}/DataToPlot.ConservedEventCascade.tsv.gz", sep="\t")
+CASC_LAB = {"Macaque": "Mac", "*Any": "*Any", "Mouse": "*Mou", "Rat": "*Rat",
+            "Rabbit": "*Rab", "Opossum": "*Opo", "Chicken": "*Chi"}
+CASC_ORDER = ["Macaque", "*Any", "Mouse", "Rat", "Rabbit", "Opossum", "Chicken"]
+STEP_TITLES = lambda w: ["Matches a human\njunction (liftOver)", f"& is {w}",
+                         f"& matching human\njunction is {w}",
+                         "& is appreciably\nalternatively spliced",
+                         "& is tissue or developmentally\nregulated in both"]
+
+
+def cascade_row(path, titles, fname, figsize=(11.5, 1.9)):
+    d = casc[casc.Path == path]
+    fig, axes = plt.subplots(1, 5, figsize=figsize, gridspec_kw={"wspace": 0.42})
+    for ax, step, ttl in zip(axes, sorted(d.FilterStep.unique()), titles):
+        st = d[d.FilterStep == step].set_index("Species")["n"]
+        vals = [int(st.get(k, 0)) for k in CASC_ORDER]
+        x = np.arange(len(CASC_ORDER))
+        ax.bar(x, vals, width=0.8, color="#d9d9d9", edgecolor="none")
+        for xi, v in zip(x, vals):
+            ax.text(xi, 0, f" {v}", rotation=90, ha="center", va="bottom", fontsize=5.0)
+        ax.set_xticks(x)
+        ax.set_xticklabels([CASC_LAB[k] for k in CASC_ORDER], rotation=45, ha="right",
+                           fontsize=SMALL_TXT)
+        ax.set_ylim(0, max(vals) * 1.02)
+        ax.tick_params(axis="y", labelsize=SMALL_TXT)
+        ax.set_title(ttl, fontsize=4.6, pad=3)
+        sns.despine(ax=ax)
+    savefig(fig, fname)
+    return fig
+
+
+cascade_row("Unproductive", STEP_TITLES("unproductive"),
+            "FigS_ConservedAS_a_UnproductiveCascade.pdf")
+cascade_row("Productive", STEP_TITLES("productive"),
+            "FigS_ConservedAS_a_ProductiveCascade.pdf")
+```
+
+## Panel c — *SCN8A* exon 18N
+
+*SCN8A* exon 18N is a poison exon whose inclusion falls through brain development while
+*SCN8A* expression rises. Rows are coarse developmental stages, columns are species, colour is
+the group mean.
+
+```{python}
+#| label: fig-conservedas-c
+#| fig-cap: "SCN8A exon 18N inclusion falls, and SCN8A expression rises, through brain development."
+GRP_MAP = {"Non brain/cerebellum adult": "Adult non-brain tissue",
+           "EarlyEmbryo brain/cerebellum": "Early embryo brain",
+           "Neonate brain/cerebellum": "Neonate brain",
+           "Adult brain/cerebellum": "Adult brain"}
+GRP_ORDER = ["Adult non-brain tissue", "Adult brain", "Neonate brain", "Early embryo brain"]
+SP_C = ["Human", "Macaque", "Mouse", "Rat", "Rabbit", "Chicken"]
+
+scn = examples[examples.gene_name == "SCN8A"].copy()
+scn["PSI_shown"] = np.where(scn.ReadsInClusterGroup, scn.PSI, np.nan)
+scn["Group"] = scn.NewerGroup.map(GRP_MAP)
+
+fig, axes = plt.subplots(2, 1, figsize=(2.5, 2.3), sharex=True,
+                         gridspec_kw={"hspace": 0.55})
+for ax, (col, ttl, cmap) in zip(
+        axes, [("PSI_shown", "SCN8A exon 18N splicing (PSI)", "magma"),
+               ("log2RPKM", "SCN8A expression (log$_2$RPKM)", "viridis")]):
+    m = (scn.pivot_table(index="Group", columns="Species.short", values=col,
+                         aggfunc="mean")
+         .reindex(GRP_ORDER).reindex(columns=SP_C))
+    im = ax.imshow(m.values, aspect="auto", cmap=cmap)
+    ax.set_yticks(range(len(GRP_ORDER))); ax.set_yticklabels(GRP_ORDER, fontsize=5)
+    ax.set_xticks(range(len(SP_C)))
+    ax.set_xticklabels(["Hum", "Mac", "Mou", "Rat", "Rabbit", "Chi"], fontsize=5)
+    ax.set_title(ttl, fontsize=5.5, pad=3)
+    for sp_ in ax.spines.values():
+        sp_.set_visible(False)
+    ax.tick_params(length=0)
+    cb = fig.colorbar(im, ax=ax, fraction=0.055, pad=0.02)
+    cb.ax.tick_params(labelsize=4.5)
+axes[0].tick_params(labelbottom=False)
+savefig(fig, "FigS_ConservedAS_c_SCN8A_Heatmaps.pdf")
+```
+
+## Panel d — *SCN8A* exon conservation
+
+Per-base PhyloP across the two constitutive flanking exons and the poison exon, coloured by
+codon position, with the mean over the plotted window as a dashed line. The `Mean PhyloP`
+annotation is the bigWig average over the whole exon and `dN/dS` comes from the exon-trio
+table, so both are computed over the full exon rather than the plotted window.
+
+```{python}
+#| label: fig-conservedas-d
+#| fig-cap: "The SCN8A poison exon is nucleotide-conserved but not amino-acid constrained."
+scn_phy = pd.read_csv(f"{OUT}/DataForReplotting_SCN8A_PhyloP.tsv.gz", sep="\t")
+EXON_ORDER = ["exon17", "exon18n", "exon19"]
+
+fig, axes = plt.subplots(3, 2, figsize=(4.4, 3.0),
+                         gridspec_kw={"width_ratios": [2.2, 1],
+                                      "wspace": 0.35, "hspace": 0.45})
+for ri, lab in enumerate(EXON_ORDER):
+    w = scn_phy[scn_phy.Exon == lab]
+    ax = axes[ri, 0]
+    ax.bar(w.stop, w.PhyloP, width=1.0, color=[DARK2[c] for c in w.CodonPos], lw=0)
+    ax.axhline(w.PhyloP.mean(), ls="--", color="black", lw=0.8)
+    ax.set_ylim(0, 10); ax.set_yticks([0, 5, 10])
+    ax.set_xlim(w.stop.min(), w.stop.max())
+    ax.set_xticks([]); ax.set_ylabel(lab, fontsize=SMALL_TXT)
+    ax.tick_params(axis="y", labelsize=SMALL_TXT); sns.despine(ax=ax)
+    ax = axes[ri, 1]
+    cm = w.groupby("CodonPos").PhyloP.mean()
+    ax.bar(cm.index, cm.values, width=0.9, color=[DARK2[c] for c in cm.index], lw=0)
+    ax.axhline(cm.mean(), ls="--", color="black", lw=0.8)
+    ax.set_ylim(0, 10); ax.set_yticks([0, 5, 10])
+    ax.set_xticks([0, 1, 2]); ax.set_xticklabels([1, 2, 3])
+    ax.tick_params(axis="both", labelsize=SMALL_TXT); sns.despine(ax=ax)
+    ax.set_title(f"Mean PhyloP = {w.MeanPhyloP_bigwig.iloc[0]:.1f}\n"
+                 f"dN/dS = {w.dNdS.iloc[0]:.2f}", fontsize=SMALL_TXT, pad=2)
+axes[2, 0].set_xlabel("Nucleotide position", fontsize=SMALL_TXT)
+axes[2, 1].set_xlabel("Codon position", fontsize=SMALL_TXT)
+fig.supylabel("Nucleotide conservation, 100 vertebrate PhyloP", fontsize=SMALL_TXT, x=-0.02)
+savefig(fig, "FigS_ConservedAS_d_SCN8A_PhyloP.pdf")
+```
+
+The poison exon (exon 18n) has mean PhyloP comparable to its constitutive neighbours but
+dN/dS above 1, and its conservation is flat across codon positions rather than depressed at
+position 3 — conserved DNA without amino-acid-level constraint.
+
+## Panel e — dN/dS versus PhyloP
+
+```{python}
+#| label: fig-conservedas-e
+#| fig-cap: "Unproductive cassette exons are nucleotide-conserved without amino-acid constraint."
+trios = pd.read_csv(f"{OUT}/DataToPlot.dNdS_PhyloP_ExonTrios.tsv.gz", sep="\t")
+
+HL_GENES = {"SMNDC1", "SF3B1", "SCN8A", "SCN1A", "SULT4A1", "TIAL1", "TRA2B", "SRRM4",
+            "PRPF39", "RBFOX2", "SRRM2", "SRRM1", "SNRPB", "ACTB", "RBM25", "U2AF2",
+            "HNRNPL", "SMG7", "MYO1D"}
+cand = trios[trios.external_gene_name.isin(HL_GENES)
+             | trios.external_gene_name.str.contains("SRSF", na=False)]
+keep_rn = cand[(cand.Productivity == "Unproductive")
+               & (cand.BroadType == "Cassette exon")
+               & (cand.PhyloP > 3) & (cand.dnds > 1)].rn.unique()
+highlight = cand[cand.rn.isin(keep_rn)]
+
+BT = ["Cassette exon", "Flanking exons"]; PR = ["Productive", "Unproductive"]
+palette = dict(zip(sorted(highlight.external_gene_name.unique()),
+                   sns.color_palette("tab20", highlight.external_gene_name.nunique())))
+fig, axes = plt.subplots(2, 2, figsize=(5.0, 3.4), sharex=True, sharey=True,
+                         gridspec_kw={"wspace": 0.10, "hspace": 0.14})
+with np.errstate(divide="ignore"):
+    for ri, bt in enumerate(BT):
+        for ci, pr in enumerate(PR):
+            ax = axes[ri, ci]
+            s = trios[(trios.BroadType == bt) & (trios.Productivity == pr)]
+            ax.scatter(s.PhyloP, -np.log10(s.dnds), s=1.5, alpha=0.05, lw=0, color="black")
+            hs = highlight[(highlight.BroadType == bt) & (highlight.Productivity == pr)]
+            for gname, sub in hs.groupby("external_gene_name"):
+                ax.scatter(sub.PhyloP, -np.log10(sub.dnds), s=16, color=palette[gname],
+                           lw=0, zorder=4, label=gname)
+            if bt == "Cassette exon" and pr == "Unproductive":
+                ax.add_patch(plt.Rectangle((4, -np.log10(50)), 4.5,
+                                           -np.log10(0.5) + np.log10(50),
+                                           fill=False, ec="black", lw=0.8, zorder=5))
+            ax.set_xlim(-1, 8); ax.set_ylim(-2, 3)
+            ax.set_yticks([-2, -1, 0, 1, 2, 3])
+            ax.set_yticklabels(["100", "10", "1", ".1", ".01", ".001"])
+            ax.tick_params(axis="both", labelsize=SMALL_TXT); sns.despine(ax=ax)
+            if ri == 0:
+                ax.set_title(pr, fontsize=AXIS_TXT)
+            if ci == 1:
+                ax2 = ax.twinx(); ax2.set_yticks([])
+                ax2.set_ylabel(bt, fontsize=SMALL_TXT, rotation=-90, labelpad=12)
+                for s_ in ax2.spines.values():
+                    s_.set_visible(False)
+fig.supxlabel("Nucleotide conservation,\n100 vertebrate PhyloP", fontsize=AXIS_TXT, y=-0.10)
+fig.supylabel("Amino acid constraint,\n100 vertebrate dN/dS", fontsize=AXIS_TXT, x=-0.01)
+h0, l0 = axes[0, 0].get_legend_handles_labels()
+h1, l1 = axes[0, 1].get_legend_handles_labels()
+seen = dict(zip(l0 + l1, h0 + h1))
+fig.legend(seen.values(), seen.keys(), loc="center left", bbox_to_anchor=(1.02, 0.5),
+           ncol=2, frameon=False, fontsize=SMALL_TXT, title="host gene",
+           title_fontsize=SMALL_TXT, handletextpad=0.1, columnspacing=0.6)
+fig.suptitle("cassette exons in human and *any", fontsize=AXIS_TXT, y=1.02)
+savefig(fig, "FigS_ConservedAS_e_dNdS_v_PhyloP.pdf")
+print("highlighted:", sorted(highlight.external_gene_name.unique()))
+```
+
+Unproductive cassette exons occupy a region of the plot that productive exons do not: high
+nucleotide conservation together with dN/dS above 1. The boxed region marks that quadrant, and
+the coloured points are splicing-factor and neuronal genes whose poison exons fall in it.
+
+## Panel f — *ARHGAP17* flanking intronic conservation
+
+The cassette exon's flanking intronic 50-mers are compared against the same regions of the
+gene's constitutive exons, as a z-score against that null.
+
+```{python}
+#| label: fig-conservedas-f
+#| fig-cap: "The ARHGAP17 cassette exon has unusually conserved flanking intronic sequence."
+arh_phy = pd.read_csv(f"{OUT}/DataForReplotting_ARHGAP17_FlankingPhyloP.tsv.gz", sep="\t")
+arh_phy["ExNumber"] = np.ceil((np.arange(len(arh_phy)) + 1) / 2).astype(int)
+arh_phy["Is_SD"] = arh_phy.groupby("ExNumber")["start"].transform("max") == arh_phy.start
+arh_phy["SS_Type"] = np.where(arh_phy.Is_SD, "SD", "SA")
+arh_phy = arh_phy[~((arh_phy.ExNumber == 1) & (arh_phy.SS_Type == "SA"))]
+arh_phy = arh_phy[~((arh_phy.ExNumber == 17) & (arh_phy.SS_Type == "SD"))]
+arh_phy["isCE"] = arh_phy.start.isin([24959620, 24959752])
+
+null_stats = (arh_phy[~arh_phy.isCE].groupby("SS_Type").meanPhyloP
+              .agg(["mean", "std"]).reset_index())
+arh_phy = arh_phy.merge(null_stats, on="SS_Type")
+arh_phy["z"] = (arh_phy.meanPhyloP - arh_phy["mean"]) / arh_phy["std"]
+arh_phy["p"] = norm.sf(arh_phy.z)
+LBL = {"SA": "Upstream flanking\nintronic regions",
+       "SD": "Downstream flanking\nintronic regions"}
+print(arh_phy[arh_phy.isCE][["SS_Type", "meanPhyloP", "z", "p"]].to_string(index=False))
+
+rng = np.random.default_rng(0)
+fig, ax = plt.subplots(figsize=(2.2, 1.1))
+for yi, ss in enumerate(["SA", "SD"]):
+    s = arh_phy[arh_phy.SS_Type == ss]
+    for isce, colr, sz in [(False, "black", 6), (True, "red", 10)]:
+        t = s[s.isCE == isce]
+        ax.scatter(t.meanPhyloP, yi + rng.uniform(-0.15, 0.15, len(t)),
+                   s=sz, color=colr, lw=0, zorder=3 if isce else 2)
+        if isce and len(t):
+            r = t.iloc[0]
+            plab = "<2e-16" if r.p < 2e-16 else f"{r.p:.2g}"
+            ax.annotate(f"z={r.z:.2f}\nP={plab}", (r.meanPhyloP, yi),
+                        textcoords="offset points", xytext=(-4, 4), ha="right",
+                        fontsize=4.6, color="red")
+ax.set_yticks(range(2)); ax.set_yticklabels([LBL[s] for s in ["SA", "SD"]], fontsize=4.8)
+ax.set_xlabel("Nucleotide conservation,\nMean PhyloP", fontsize=SMALL_TXT)
+ax.tick_params(axis="x", labelsize=SMALL_TXT)
+ax.set_ylim(-0.6, 1.6)
+sns.despine(ax=ax)
+savefig(fig, "FigS_ConservedAS_f_ARHGAP17_FlankingConservation.pdf")
+```
+
+The cassette exon's flanking intronic sequence is far more conserved than that of the gene's
+constitutive exons.
+
+# NMD factor expression
+
+*UPF3A*, *UPF3B* and their ratio through testis development, expressed relative to the mean
+juvenile level. Juvenile and adult are defined by the developmental landmarks (birth, onset of
+meiosis in spermatogenesis) on the within-species percent-rank stage axis.
+
+```{python}
+#| label: fig-nmd
+#| fig-cap: "UPF3A rises and UPF3B falls through testis maturation in most species, shifting their ratio."
+nmd = pd.read_csv(f"{OUT}/DataForReplotting_NMDFactorExpression.tsv.gz", sep="\t")
+markers = pd.read_csv(f"{OUT}/DataToPlot.DevelopmentalMarkers.tsv.gz", sep="\t")
+
+GENE_ORDER = ["UPF3A", "UPF3B", "UPF3A/UPF3B"]
+tst = nmd[(nmd.Tissue == "Testis") & nmd["human.name"].isin(["UPF3A", "UPF3B"])]
+w = (tst.pivot_table(index=["ID", "Species", "PercentRank_OrdinalStage"],
+                     columns="human.name", values="Delta").reset_index()
+        .dropna(subset=["UPF3A", "UPF3B"]))
+w["UPF3A/UPF3B"] = w.UPF3A - w.UPF3B
+lg = w.melt(id_vars=["ID", "Species", "PercentRank_OrdinalStage"], value_vars=GENE_ORDER,
+            var_name="Gene", value_name="log2FC")
+lg = lg.merge(markers[["Species", "Birth", "OnsetMeiosis"]], on="Species", how="left")
+lg["Juvenile"] = np.select(
+    [(lg.PercentRank_OrdinalStage >= lg.Birth)
+     & (lg.PercentRank_OrdinalStage < lg.OnsetMeiosis),
+     lg.PercentRank_OrdinalStage >= lg.OnsetMeiosis], ["Juvenile", "Adult"], default=None)
+lg = lg[lg.Juvenile.notna()]
+jm = (lg[lg.Juvenile == "Juvenile"].groupby(["Gene", "Species"])["log2FC"]
+      .mean().rename("mean_juv").reset_index())
+lg = lg.merge(jm, on=["Gene", "Species"])
+lg["rel"] = lg.log2FC - lg.mean_juv
+
+tt_res = {}
+for (sp, gene), sub in lg.groupby(["Species", "Gene"]):
+    tt_res[(sp, gene)] = ttest_ind(sub.loc[sub.Juvenile == "Juvenile", "log2FC"],
+                                   sub.loc[sub.Juvenile == "Adult", "log2FC"],
+                                   equal_var=True).pvalue
+
+rng = np.random.default_rng(1)
+fig, axes = plt.subplots(2, 4, figsize=(7.6, 4.4),
+                         gridspec_kw={"wspace": 0.38, "hspace": 0.62})
+flat = axes.ravel()
+for ai, sp in enumerate(SPECIES):
+    ax = flat[ai]
+    sub = lg[lg.Species == sp]
+    labs = dict(zip(GENE_ORDER, r_format_pval([tt_res[(sp, g)] for g in GENE_ORDER])))
+    ax.axhline(0, color="black", lw=1.0, zorder=1)
+    for gi, gene in enumerate(GENE_ORDER):
+        for st in ["Juvenile", "Adult"]:
+            v = sub[(sub.Gene == gene) & (sub.Juvenile == st)].rel.values
+            if not len(v):
+                continue
+            xc = gi + (-0.19 if st == "Juvenile" else 0.19)
+            bp = ax.boxplot([v], positions=[xc], widths=0.30, showfliers=False,
+                            patch_artist=True, zorder=2)
+            for el in ("boxes", "whiskers", "caps", "medians"):
+                for a in bp[el]:
+                    a.set_color(STAGE_COL[st]); a.set_linewidth(0.9)
+            bp["boxes"][0].set_facecolor("none")
+            ax.scatter(xc + rng.uniform(-0.10, 0.10, len(v)), v, s=7,
+                       color=STAGE_COL[st], lw=0, alpha=0.85, zorder=3)
+    lo, hi = sub.rel.min(), sub.rel.max(); span = hi - lo
+    ax.set_ylim(lo - span * 0.10, hi + span * 0.34)
+    for gi, gene in enumerate(GENE_ORDER):
+        ax.text(gi, hi + span * 0.12, f"P=\n{labs[gene]}", ha="center", va="bottom",
+                fontsize=SMALL_TXT)
+    ax.set_xticks(range(len(GENE_ORDER)))
+    ax.set_xticklabels(GENE_ORDER, rotation=45, ha="right", fontsize=SMALL_TXT)
+    ax.set_xlim(-0.55, len(GENE_ORDER) - 0.45)
+    ax.set_title(sp, fontsize=AXIS_TXT)
+    ax.tick_params(axis="y", labelsize=SMALL_TXT)
+    ax.grid(axis="y", color="0.92", lw=0.6, zorder=0)
+    sns.despine(ax=ax)
+flat[-1].axis("off")
+fig.supylabel("log2(Expression),\nrelative to mean juvenile expression",
+              fontsize=AXIS_TXT, x=-0.01)
+fig.legend(handles=[plt.Line2D([], [], marker="s", ls="", markerfacecolor="none",
+                               markeredgecolor=STAGE_COL[s], markersize=6, label=s)
+                    for s in ["Juvenile", "Adult"]],
+           loc="upper center", bbox_to_anchor=(0.5, 1.06), ncol=2, frameon=False,
+           fontsize=LEG_TXT, title="Testis stage", title_fontsize=LEG_TXT)
+savefig(fig, "FigS_NMD_UPF3_JuvenileVsAdult.pdf")
+```
+
+*UPF3A* rises and *UPF3B* falls from juvenile to adult testis in human, macaque, mouse and
+chicken, so their ratio shifts substantially; rat and rabbit show no significant change. Since
+UPF3A and UPF3B act antagonistically in NMD, the ratio is the quantity of interest.
+
+# Panels written
+
+```{python}
+#| label: manifest
+man = sorted(f for f in os.listdir(FIGDIR) if f.endswith(".pdf"))
+pd.DataFrame({"panel": man,
+              "KB": [round(os.path.getsize(os.path.join(FIGDIR, f)) / 1024, 1)
+                     for f in man]})
+```

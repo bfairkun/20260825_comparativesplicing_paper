@@ -1,0 +1,8 @@
+GenomeName	EnsemblGtf	RefSeqGtf
+Chicken_UCSC.galGal6_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/bigZips/genes/galGal6.ensGene.gtf.gz	https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/bigZips/genes/galGal6.ncbiRefSeq.gtf.gz
+Macaque_UCSC.rheMac10_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/rheMac10/bigZips/genes/rheMac10.ensGene.gtf.gz	https://hgdownload.soe.ucsc.edu/goldenPath/rheMac10/bigZips/genes/rheMac10.ncbiRefSeq.gtf.gz
+Opossum_UCSC.monDom5_ensvUnknown	https://hgdownload.soe.ucsc.edu/goldenPath/monDom5/bigZips/genes/monDom5.ensGene.gtf.gz	
+Rabbit_UCSC.oryCun2_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/oryCun2/bigZips/genes/oryCun2.ensGene.gtf.gz	https://hgdownload.soe.ucsc.edu/goldenPath/oryCun2/bigZips/genes/oryCun2.ncbiRefSeq.gtf.gz
+Rat_UCSC.rn7_RefSeqv108		https://hgdownload.soe.ucsc.edu/goldenPath/rn7/bigZips/genes/ncbiRefSeq.gtf.gz
+Human_UCSC.hg38_GencodeComprehensive46	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ensGene.gtf.gz	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.ncbiRefSeq.gtf.gz
+Mouse_UCSC.mm39_GencodeComprehensive46	https://hgdownload.soe.ucsc.edu/goldenPath/mm39/bigZips/genes/mm39.knownGene.gtf.gz	https://hgdownload.soe.ucsc.edu/goldenPath/mm39/bigZips/genes/mm39.ncbiRefSeq.gtf.gz

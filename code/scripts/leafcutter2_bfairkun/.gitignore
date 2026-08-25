@@ -1,0 +1,16 @@
+.snakemake/*
+./snakemake
+.vscode
+Untitled*.ipynb
+.ipynb_checkpoints
+/.quarto/
+.Rproj.user
+.Rhistory
+test/*
+test
+test*
+play*/
+**/*checkpoints/*
+**/*cache*/
+
+

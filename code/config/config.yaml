@@ -1,0 +1,23 @@
+# This file should contain everything to configure the workflow on a global scale.
+# In case of sample based data, it should be complemented by a samples.tsv file that contains
+# one row per sample. It can be parsed easily via pandas.
+
+samples: config/samples.tsv
+
+STAR_genomes: config/STAR_Genome_List.tsv
+
+#Prefix for all ReferenceGenomes files... STAR index will be made at {GenomesPrefix}{GenomeName}
+GenomesPrefix: "resources/ReferenceGenomes/"
+
+aspera_key: ""   # set to your asperaweb_id_dsa.openssh to use aspera; otherwise FTP is used
+
+rna_seq:
+    samples: config/samples.tsv
+    # samples: module_workflows/snakemake-workflow_rna-seq/config/samples.tsv
+    STAR_genomes: config/STAR_Genome_List.tsv
+
+    #Prefix for all ReferenceGenomes files... STAR index will be made at {GenomesPrefix}{GenomeName}/
+    GenomesPrefix: "resources/ReferenceGenomes/"
+
+    #Scratch dir for large temporary files
+    scratch: "scratch/tmp/"

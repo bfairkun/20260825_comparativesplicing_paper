@@ -1,0 +1,169 @@
+Stage_From_SampleName	Species	StageName	Developmental Stage	Ordinal_stage	Label_As_in_PreviousAnalysis	Marker
+10	Chicken	10	e10	1	e10	
+12	Chicken	12	e12	2	e12	
+14	Chicken	14	e14	3	e14	Onset meiosis oogenesis
+17	Chicken	17	e17	4	e17	
+0dph	Chicken	0dph	P0	5	P0	Birth
+7dph	Chicken	7dph	P7	6	P7	
+5wph	Chicken	5wph	P35	7	P35	
+10wph	Chicken	10wph	P70	8	P70	Onset meiosis spermatogenesis
+Adult	Chicken	Adult	P155	9	P155	
+adult	Chicken	adult	P155	9	P155	
+CS13	Human	CS13	4wpc	1	4wpc	
+4w	Human	4w	4wpc	1	4wpc	
+CS14	Human	CS14	4wpc	1	4wpc	
+CS16	Human	CS16	5wpc	2	5wpc	
+5w	Human	5w	5wpc	2	5wpc	
+CS18	Human	CS18	6wpc	3	6wpc	
+CS17	Human	CS17	6wpc	3	6wpc	
+6w	Human	6w	6wpc	3	6wpc	
+CS20	Human	CS20	7wpc	4	7wpc	
+CS21	Human	CS21	7wpc	4	7wpc	
+CS19	Human	CS19	7wpc	4	7wpc	
+7w	Human	7w	7wpc	4	7wpc	
+CS23	Human	CS23	8wpc	5	8wpc	
+CS22	Human	CS22	8wpc	5	8wpc	
+8w	Human	8w	8wpc	5	8wpc	
+9w	Human	9w	9wpc	6	9wpc	
+10w	Human	10w	10wpc	7	10wpc	Onset meiosis oogenesis
+11w	Human	11w	11wpc	8	11wpc	
+12w	Human	12w	12wpc	9	12wpc	
+13w	Human	13w	13wpc	10	13wpc	
+16w	Human	16w	16wpc	11	16wpc	
+18w	Human	18w	18wpc	12	18wpc	
+19w	Human	19w	19wpc	13	19wpc	
+20w	Human	20w	20wpc	14	20wpc	
+15dpb	Human	15dpb	newborn	15	newborn	Birth
+6dpb	Human	6dpb	newborn	15	newborn	Birth
+0dpb	Human	0dpb	newborn	15	newborn	Birth
+34dpb	Human	34dpb	newborn	15	newborn	Birth
+19dpb	Human	19dpb	newborn	15	newborn	Birth
+18dpb	Human	18dpb	newborn	15	newborn	Birth
+4dpb	Human	4dpb	newborn	15	newborn	Birth
+94dpb	Human	94dpb	newborn	15	newborn	Birth
+127dpb	Human	127dpb	infant	16	infant	
+270dpb	Human	270dpb	infant	16	infant	
+6mpb	Human	6mpb	infant	16	infant	
+221dpb	Human	221dpb	infant	16	infant	
+271dpb	Human	271dpb	infant	16	infant	
+226dpb	Human	226dpb	infant	16	infant	
+2ypb	Human	2ypb	toddler	17	toddler	
+4ypb	Human	4ypb	toddler	17	toddler	
+1ypb	Human	1ypb	toddler	17	toddler	
+8ypb	Human	8ypb	school	18	school	
+7ypb	Human	7ypb	school	18	school	
+14ypb	Human	14ypb	youngTeenager	19	youngTeenager	Onset meiosis spermatogenesis
+14ypb	Human	14ypb	teenager	19	youngTeenager	Onset meiosis spermatogenesis
+13ypb	Human	13ypb	teenager	19	youngTeenager	Onset meiosis spermatogenesis
+16ypb	Human	16ypb	teenager	20	teenager	
+16ypb	Human	16ypb	oldTeenager	20	teenager	
+17ypb	Human	17ypb	teenager	21	oldTeenager	
+17ypb	Human	17ypb	oldTeenager	21	oldTeenager	
+29ypb	Human	29ypb	youngAdult	22	youngAdult	
+28ypb	Human	28ypb	youngAdult	22	youngAdult	
+25ypb	Human	25ypb	youngAdult	22	youngAdult	
+32ypb	Human	32ypb	youngAdult	22	youngAdult	
+39ypb	Human	39ypb	youngAdult	23	youngMidAge	
+39ypb	Human	39ypb	youngMidAge	23	youngMidAge	
+50ypb	Human	50ypb	olderMidAge	24	olderMidAge	
+53ypb	Human	53ypb	olderMidAge	24	olderMidAge	
+46ypb	Human	46ypb	olderMidAge	24	olderMidAge	
+54ypb	Human	54ypb	olderMidAge	24	olderMidAge	
+55ypb	Human	55ypb	senior	25	senior	
+58ypb	Human	58ypb	senior	25	senior	
+55ypb	Human	55ypb	senior	25	senior	
+93	Macaque	93	e93	1	e93	
+109	Macaque	109	e109	2	e108	
+112	Macaque	112	e112	3	e112	
+123	Macaque	123	e123	4	e123	
+129	Macaque	129	e130	5	e130	
+130	Macaque	130	e130	5	e130	
+7dpb	Macaque	7dpb	P0	6	P0	Birth
+1dpb	Macaque	1dpb	P0	6	P0	Birth
+2dpb	Macaque	2dpb	P0	6	P0	Birth
+23dpb	Macaque	23dpb	P0	7	P23	
+22dpb	Macaque	22dpb	P0	7	P23	
+20dpb	Macaque	20dpb	P0	7	P23	
+24dpb	Macaque	24dpb	24 days post birth	7	P23	
+153dpb	Macaque	153dpb	P6m	8	P152	
+151dpb	Macaque	151dpb	P6m	8	P152	
+6mpb	Macaque	6mpb	P6m	9	P183	
+1ypb	Macaque	1ypb	P1y	10	P365	
+3ypb	Macaque	3ypb	P3y	11	P1095	Onset meiosis spermatogenesis
+2ypb	Macaque	2ypb	2 years post birth	11	P1095	Onset meiosis spermatogenesis
+8ypb	Macaque	8ypb	P8y	12	P3285	
+9ypb	Macaque	9ypb	P9y	12	P3285	
+11ypb	Macaque	11ypb	P11y	12	P3285	
+14ypb	Macaque	14ypb	P14-15y	13	P5475	
+15ypb	Macaque	15ypb	P14-15y	13	P5475	
+20ypb	Macaque	20ypb	P20-26y	14	P8030	
+22ypb	Macaque	22ypb	P22-26y	14	P8030	
+21ypb	Macaque	21ypb	P20-26y	14	P8030	
+26ypb	Macaque	26ypb	P20-26y	14	P8030	
+10.5	Mouse	10.5	e10.5	1	e10	
+11.5	Mouse	11.5	e11.5	2	e11	Onset meiosis oogenesis
+12.5	Mouse	12.5	e12.5	3	e12	
+13.5	Mouse	13.5	e13.5	4	e13	
+14.5	Mouse	14.5	e14.5	5	e14	
+15.5	Mouse	15.5	e15.5	6	e15	
+16.5	Mouse	16.5	e16.5	7	e16	
+17.5	Mouse	17.5	e17.5	8	e17	
+18.5	Mouse	18.5	e18.5	9	e18	
+0dpb	Mouse	0dpb	P0	10	P0	Birth
+3dpb	Mouse	3dpb	P3	11	P35	
+2wpb	Mouse	2wpb	P14	12	P14	Onset meiosis spermatogenesis
+4wpb	Mouse	4wpb	P28	13	P28	
+9wpb	Mouse	9wpb	P63	14	P63	
+13.5	Opossum	13.5	e13.5	1	13	
+0dpb	Opossum	0dpb	P0	2	14	Birth
+2dpb	Opossum	2dpb	P2	3	16	
+4dpb	Opossum	4dpb	P4	4	18	
+6dpb	Opossum	6dpb	P6	5	20	
+10dpb	Opossum	10dpb	P10	6	24	
+14dpb	Opossum	14dpb	P14	7	28	Onset meiosis oogenesis
+21dpb	Opossum	21dpb	P21	8	35	
+28dpb	Opossum	28dpb	P28	9	42	
+42dpb	Opossum	42dpb	P42	10	56	
+60dpb	Opossum	60dpb	P60	11	74	Onset meiosis spermatogenesis
+90dpb	Opossum	90dpb	P90	12	104	
+120dpb	Opossum	120dpb	P120	13	134	
+150dpb	Opossum	150dpb	P150	14	164	
+180dpb	Opossum	180dpb	P180	15	194	
+6mpb	Opossum	6mpb	P180	15	194	
+20mpb	Opossum	20mpb	P180	15	194	
+14mpb	Opossum	14mpb	P180	15	194	
+4mpb	Opossum	4mpb	P180	15	194	
+12	Rabbit	12	e12	1	e12	
+13	Rabbit	13	e13	2	e13	
+14	Rabbit	14	e14	3	e14	
+15.5	Rabbit	15.5	e15.5	4	e15	
+16.5	Rabbit	16.5	e16.5	5	e16	
+18	Rabbit	18	e18	6	e18	
+19.5	Rabbit	19.5	e19.5	7	e20	
+21	Rabbit	21	e21	8	e21	
+23	Rabbit	23	e23	9	e23	
+24	Rabbit	24	e24	10	e24	
+27	Rabbit	27	e27	11	e27	Onset meiosis oogenesis
+0dpb	Rabbit	0dpb	P0	12	P0	Birth
+2wpb	Rabbit	2wpb	P14	13	P14	
+12wpb	Rabbit	12wpb	P84	14	P84	Onset meiosis spermatogenesis
+1ypb	Rabbit	1ypb	P186-P548	15	P186	
+6mpb	Rabbit	6mpb	P186-P548	15	P186	
+9mpb	Rabbit	9mpb	P186-P548	15	P186	
+11	Rat	11	e11	1	e11	
+12	Rat	12	e12	2	e12	
+13	Rat	13	e13	3	e13	
+14	Rat	14	e14	4	e14	
+15	Rat	15	e15	5	e15	
+16	Rat	16	e16	6	e16	Onset meiosis oogenesis
+17	Rat	17	e17	7	e17	
+18	Rat	18	e18	8	e18	
+19d	Rat	19d	e19	9	e19	
+19	Rat	19	e19	9	e19	
+20	Rat	20	e20	10	e20	
+0dpb	Rat	0dpb	P0	11	P0	Birth
+3dpb	Rat	3dpb	P3	12	P3	
+1wpb	Rat	1wpb	P7	13	P7	
+2wpb	Rat	2wpb	P14	14	P14	Onset meiosis spermatogenesis
+6wpb	Rat	6wpb	P42	15	P42	
+16wpb	Rat	16wpb	P112	16	P112	

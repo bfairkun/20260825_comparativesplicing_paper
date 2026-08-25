@@ -1,0 +1,83 @@
+name: 20260825_comparativesplicing_paper
+# Tip: on memory-limited login nodes `conda env create` may get OOM-killed during the
+# solve; micromamba uses far less memory for the same solve:
+#     micromamba env create -f envs/20260825_comparativesplicing_paper.yaml --yes
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  # Jupyter / notebook
+  - jupyterlab
+  - jupyter
+  - ipykernel
+  - ipython
+  - ipywidgets
+  - nbconvert
+  - nbformat
+  - nbclient
+  - papermill
+
+  # Core scientific
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - plotnine
+  - altair
+  - bokeh
+  - plotly
+
+  # Data / IO
+  - polars
+  - pyarrow
+  - openpyxl
+  - xarray
+  - dask
+
+  # Stats / ML
+  - scikit-learn
+  - statsmodels
+  - arviz
+  - pymc>=5
+  - pip
+  - pytensor
+  - tensorflow
+
+  # Bioinformatics
+  - biopython
+  - bedtools
+  - pybedtools
+  - pysam
+  - pygenometracks
+  - bedparse
+  - pyfaidx
+  - gffutils
+  - pybigwig
+  - bioconda::igv-reports
+  - bioconda::spliceai
+  - bioconda::htseq
+  - bioconda::blast=2.16.0
+  - snakemake=7.32.4
+  - bioconda::hgvs
+  - bioconda::logomaker
+  - bioconda::gseapy  # GO/pathway enrichment (ORA + GSEA)
+
+  # Utilities
+  - jinja2
+  - pytest
+  - tqdm
+  - future
+  - pycryptodome
+  - ca-certificates
+  - certifi
+  - openssl
+  - pyopenssl>=24  # avoid drift vs cryptography
+  - natsort
+  - anndata
+
+  - pip:
+    - my-utils==0.1.0
+    - alphagenome==0.5.1
+    - pikachu-chem==1.1.5

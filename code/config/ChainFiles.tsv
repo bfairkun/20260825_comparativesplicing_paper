@@ -1,0 +1,7 @@
+GenomeName	Hg38_to_Genome_Chain_Link	Genome_to_Hg38_Chain_Link
+Chicken_UCSC.galGal6_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToGalGal6.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/liftOver/galGal6ToHg38.over.chain.gz
+Macaque_UCSC.rheMac10_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToRheMac10.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/rheMac10/liftOver/rheMac10ToHg38.over.chain.gz
+Mouse_UCSC.mm39_GencodeComprehensive46	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToMm39.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/mm39/liftOver/mm39ToHg38.over.chain.gz
+Opossum_UCSC.monDom5_ensvUnknown	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToMonDom5.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/monDom5/liftOver/monDom5ToHg38.over.chain.gz
+Rabbit_UCSC.oryCun2_ensv101	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToOryCun2.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/oryCun2/liftOver/oryCun2ToHg38.over.chain.gz
+Rat_UCSC.rn7_RefSeqv108	https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToRn7.over.chain.gz	https://hgdownload.soe.ucsc.edu/goldenPath/rn7/liftOver/rn7ToHg38.over.chain.gz

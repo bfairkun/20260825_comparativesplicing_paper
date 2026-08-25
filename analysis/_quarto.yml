@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "20260825_ComparativeSplicing_Paper"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    embed-resources: true

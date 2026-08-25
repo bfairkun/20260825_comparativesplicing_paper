@@ -1,0 +1,95 @@
+# Publication bundle: comparative unproductive splicing across seven vertebrate species.
+#
+# Two entry points:
+#
+#   snakemake all_plot_data all_supplement_tables
+#       Regenerates everything shipped in output/ from pipeline intermediates. Cheap.
+#
+#   snakemake all
+#       The whole pipeline, from downloading ~2,030 FASTQs through STAR alignment,
+#       regtools, leafcutter clustering, leafcutter2 junction classification, liftover and
+#       differential splicing. Weeks of compute and several TB of scratch.
+#
+# Two further targets are deliberately kept out of `all` because of their cost:
+#   all_dnds           the 100-way multiz MAF chain (~1.5 TB scratch)
+#   all_genometracks   per-sample bigwigs for the pyGenomeTracks panels
+configfile: "config/config.yaml"
+
+include: "rules/common.smk"
+include: "rules/Download.smk"
+include: "rules/GenomeAnnotations.smk"
+include: "rules/MultipleSequenceAlignmentAnalysis.smk"
+
+localrules:
+    DownloadFastaAndGtf,
+    Download_hg19_PhyloP,
+    DownloadFastqFromENA,
+    Download_Chain_to_hg38,
+    Download_Chain_from_hg38,
+    DownloadHumanAndMouse_GencodeFa,
+    GetExtra_GTF_From_link,
+    GetExtra_GTF_From_link_RefSeq,
+    Download_100WayVertebrate_MAF_hg38,
+
+wildcard_constraints:
+    GenomeName = "|".join(STAR_genomes.index)
+
+ruleorder: rna_seq_faidxGenome > faidxGenome
+ruleorder: annotate_juncfiles_NoWhitespaceGtf > rna_seq_annotate_juncfiles
+ruleorder: AnnotateConcatedUniqJuncFile_basic_NoWhitespaceGtf > rna_seq_AnnotateConcatedUniqJuncFile_basic
+
+
+module rna_seq:
+    snakefile: "module_workflows/rna_seq/Snakefile"
+    prefix: "rna-seq"
+    config: config["rna_seq"]
+
+# Separate import statements for local and non-local rules (as defined in the other
+# workflow), so those rules stay local without editing the module and without triggering
+# warnings about new local rules that are not defined.
+use rule * from rna_seq exclude DownloadFastaAndGtf, CopyFastq, CopyFastq_SE, STAR_make_index as rna_seq_*
+use rule DownloadFastaAndGtf, CopyFastq, CopyFastq_SE, STAR_make_index from rna_seq as *
+
+# Some module rules invoke scripts by a path relative to the module workdir; symlink them
+# into this workdir so those shell commands resolve.
+CreateSymlinksOfDir1ContentsIntoDir2("module_workflows/rna_seq/scripts/", "scripts/")
+
+include: "rules/other.smk"
+include: "rules/LiftoverJuncs.smk"
+include: "rules/MazinLeafcutterAnalysis.smk"
+include: "rules/PlotData.smk"
+
+
+rule all:
+    input:
+        expand("MazinLeafcutterAnalysis/ClassifyJuncs/{GenomeName}.{JunctionSet}._junction_classifications.txt",
+               GenomeName=CordosMoreiraGenomes, JunctionSet=["Clustered", "AllObserved"]),
+        expand("MazinLeafcutterAnalysis/SplicingSpearmanCoefs/{GenomeName}.{Metric}.tsv.gz",
+               GenomeName=CordosMoreiraGenomes, Metric=["PSI", "PSI_ByMax"]),
+        expand("featureCounts/{GenomeName}/AllSamplesUnstrandedCounting.Counts.txt",
+               GenomeName=CordosMoreiraGenomes),
+        expand("MazinLeafcutterAnalysis/ExpressionSpearmanCoefs/{GenomeName}.{Metric}.Extended.tsv.gz",
+               GenomeName=CordosMoreiraGenomes, Metric=["log2tpm", "log2rpkm", "log2cpm"]),
+        expand("rna-seq/SplicingAnalysis/leafcutter/{GenomeName}/juncTableBeds/PSI_ByMax.sorted.bed.gz.indexing_done",
+               GenomeName=CordosMoreiraGenomes),
+        expand("MazinLeafcutterAnalysis/Contrasts_ds_tidy/{treatment}.joined.tsv.gz",
+               treatment=PAPER_DEV_CONTRASTS),
+        expand("MazinLeafcutterAnalysis/ContrastAdultTissues_ds_tidy/{treatment}.joined.tsv.gz",
+               treatment=PAPER_ADULT_CONTRASTS),
+        expand("MazinLeafcutterAnalysis/ClassifyJuncs/Ensembl/{GenomeName}.AllObserved._junction_classifications.txt",
+               GenomeName=GenomesWithEnsembl.unique()),
+        expand("MazinLeafcutterAnalysis/ClassifyJuncs/RefSeq/{GenomeName}.AllObserved._junction_classifications.txt",
+               GenomeName=GenomesWithRefSeq.unique()),
+        expand("MazinLeafcutterAnalysis/ClassifyJuncs/Gencode/{GenomeName}.AllObserved._junction_classifications.txt",
+               GenomeName=["Human_UCSC.hg38_GencodeComprehensive46",
+                           "Mouse_UCSC.mm39_GencodeComprehensive46"]),
+        expand("MazinLeafcutterAnalysis/Splicing_qqNormed/{GenomeName}/DevAS.tsv.gz",
+               GenomeName=CordosMoreiraGenomes),
+        expand("MazinLeafcutterAnalysis/SummarisedClassificationsBySample/{Species}.tsv.gz",
+               Species=CordosMoreiraGenomes_dict.keys()),
+        expand("LiftoverJuncs/AsFlanks/{GenomeName}.Lifted.bed.gz",
+               GenomeName=[g for g in CordosMoreiraGenomes
+                           if not g.startswith("Human_")]),
+        # and the plot-ready tables the figure notebook reads
+        rules.all_plot_data.input,
+        rules.all_supplement_tables.input,

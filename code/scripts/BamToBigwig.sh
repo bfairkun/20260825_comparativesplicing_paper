@@ -1,0 +1,1 @@
+/project2/yangili1/bjf79/20260825_comparativesplicing_paper/code/module_workflows/rna_seq/scripts/BamToBigwig.sh

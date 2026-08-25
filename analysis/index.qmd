@@ -1,0 +1,24 @@
+---
+title: "Home"
+listing:
+  contents:
+    - "*.qmd"
+    - "*.Rmd"
+    - "*.ipynb"
+  exclude:
+    filename:
+      - "index.qmd"
+      - "about.qmd"
+      - "license.qmd"
+  type: table
+  fields: [title, date, description]
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+---
+
+Welcome to your Quarto project!
+
+Below are all notebooks (`.qmd`, `.Rmd`, `.ipynb`) in the `analysis/` directory. This
+table is generated natively by Quarto from each notebook's YAML front matter (`title`,
+`date`, `description`) — no R or Python required to render this page.
