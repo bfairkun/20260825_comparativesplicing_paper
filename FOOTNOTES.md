@@ -58,6 +58,59 @@ the leafcutter cluster key's `stop` is one past the intron end, so
 `tidy_leafcutter_ds_results.R` forms `Intron_coord` as `{chrom}:{start}-{stop-1}` to line up
 with the leafcutter2 classifications.
 
+## Junction classification: which leafcutter2 produced what
+
+Upstream leafcutter2 commit `16b5603` (2026-04-10, "recursive splicing fixes") changed ORF
+path-finding in `solve_NMD` so that a junction abutting the previous one can extend a path
+(`last_pos == j0 + 1`), and so that zero-length exons are skipped during translation. It is
+unconditional — there is no runtime flag — and it strictly widens the set of reachable ORF
+paths, so classifications move: `Coding` flips only False→True, `UTR` only True→False, and
+after `UTR & !Coding → NE` reconciliation the class transitions are overwhelmingly UP→PR and
+NE→PR. No junction is gained or lost, so diffing junction *sets* shows nothing. (Not to be
+confused with `--remove-junctions`, commit `2a2094c`, whose message also mentions recursive
+splicing but which is optional, off by default, and a different mechanism.)
+
+**The classifications distributed here predate that change**, on two independent lines of
+evidence:
+
+- The vendored classifier is the older script-based
+  `code/scripts/leafcutter2_daiuc/scripts/ForwardSpliceJunctionClassifier.py`
+  (daiuc/leafcutter2 `eb99084`), not the restructured `src/leafcutter2/classifier.py` the fix
+  applies to. Its path chaining is the pre-fix form —
+  `if strand == "+" and last_pos < j0 and j0-last_pos < exonLcutoff` — with no abutting-junction
+  clause and no zero-length-exon skip. The second-stage "extra UTR rule"
+  (`if utr and j[0] in coding_5_prime and ...`) is present and identical, which is the route by
+  which a junction's `UTR` can flip even when its own `Coding` does not: `coding_5_prime` is
+  built from junctions that passed `solve_NMD`, so a sibling sharing the 5' splice site is
+  enough.
+- The `_junction_classifications.txt` files that the shipped tallies were reduced from are dated
+  **2024-10-24**, about eighteen months before the fix.
+
+**This does not need a version knob here.** leafcutter2 is vendored as plain tracked files and
+invoked by path (`python scripts/leafcutter2_daiuc/scripts/...`); nothing installs it from a
+package or a moving ref. The workflow therefore reproduces its own classifications regardless of
+what upstream does, which is the property a floating install would not have. The vendored copy
+is md5-identical (`f6f7bfc3…`) to the copy in the working repository that actually produced the
+published files.
+
+What this does mean is that these classifications will **not** match output from current
+leafcutter2 (v2.0.1, `7dedb0a`), and will differ in the direction described above. The
+*magnitude* here is unmeasured — quantifying it would mean re-running classification for all
+seven species, which is outside what this bundle re-runs. For scale, an independent simulation
+benchmark measured `Coding` flips at 0.04–0.06% of junction-condition rows with every metric
+median unmoved, but that was different annotations and different data, so treat it as an order
+of magnitude and not a prediction.
+
+One related hazard that does *not* apply here: leafcutter2 v2.0.1 fails on fresh installs
+because bedparse 0.2.3 imports `pkg_resources`, removed in setuptools 81, surfacing as a
+misleading `'NoneType' object has no attribute 'splitlines'`. Both bedparse envs in this
+project already pin `setuptools==63.4.1`, so the failure cannot occur.
+
+Credit: the upstream change, its observable signature, and the byte-for-byte bisection that
+identified `2c161e2` as the last pre-fix commit were worked out in the
+`20260825_Leaf2Simulation_PublicationFigs` project; see its `FOOTNOTES.md`, section
+"leafcutter2: which version produced what".
+
 ## Vendored code
 
 No git submodules; the following are vendored as plain files at these commits.
