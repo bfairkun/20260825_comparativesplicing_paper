@@ -1,0 +1,411 @@
+---
+title: "Footnote: two ways of calling a testis library juvenile or adult"
+author: "Benjamin Fair"
+date: "2026-08-27"
+jupyter: py_general
+format:
+  html:
+    code-fold: true
+    toc: true
+    toc-depth: 3
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+---
+
+## Why this page exists
+
+The supplementary *UPF3A*/*UPF3B* panel compares juvenile against adult testis. There are two
+ways to decide which libraries are which, and the published panel and Fig 3c did not use the
+same one:
+
+- **Landmark.** A library is adult once its within-species percent-rank developmental stage
+  reaches the onset of meiosis in spermatogenesis, and juvenile between birth and that point.
+  This is a rule evaluated per library.
+- **Contrast table.** The two arms of the `Juvenile Testis v Adult Testis` row of
+  `data/20260820_SupplementalTable_Contrasts.tsv`. This is a curated list of libraries, and it
+  is what every differential-splicing contrast in the paper was actually run on — including
+  the one behind Fig 3c.
+
+The published NMD panel used the landmark rule; Fig 3c used the contrast table. The main
+figure notebook now uses the contrast table for both, so the two panels rest on identical
+groups. This page keeps the comparison on the record: it plots the panel both ways, shows
+which libraries move, and shows what changes as a result.
+
+Everything below is computed from the same shipped tables the main notebook reads. Nothing is
+copied from a previously rendered figure.
+
+```{python}
+#| label: setup
+import os
+
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import ttest_ind
+
+matplotlib.rcParams.update({"pdf.fonttype": 42, "svg.fonttype": "none",
+                            "font.family": "sans-serif",
+                            "font.sans-serif": ["Helvetica", "Nimbus Sans", "DejaVu Sans"]})
+
+OUT, DATA = "../output", "../data"
+FIGDIR = "figures_footnote"
+os.makedirs(FIGDIR, exist_ok=True)
+
+SPECIES = ["Human", "Macaque", "Mouse", "Rat", "Rabbit", "Opossum", "Chicken"]
+TISSUES = ["Brain", "Cerebellum", "Heart", "Kidney", "Liver", "Ovary", "Testis"]
+GENE_ORDER = ["UPF3A", "UPF3B", "UPF3A/UPF3B"]
+STAGE_COL = {"Juvenile": "#d95f02", "Adult": "#7570b3"}
+SMALL_TXT, AXIS_TXT, LEG_TXT = 6.5, 9.0, 7.5
+NEW_TESTIS_NAME = "Juvenile Testis v Adult Testis"
+# the three developmental landmarks, and how they are drawn
+MARK = {"Birth": ("#1b9e77", "Birth"),
+        "Onset meiosis oogenesis": ("#e7298a", "Onset meiosis, oogenesis"),
+        "OnsetMeiosis": ("#666666", "Onset meiosis, spermatogenesis")}
+
+
+def savefig(fig, name):
+    fig.savefig(os.path.join(FIGDIR, name), bbox_inches="tight")
+    return os.path.join(FIGDIR, name)
+
+
+def r_format_pval(vals, digits=1):
+    """R's format.pval: common formatting across a vector of P values."""
+    out = []
+    for v in vals:
+        out.append(f"{v:.0e}".replace("e-0", "e-") if v < 1e-3 else f"{v:.{digits + 2}g}")
+    return out
+```
+
+## The libraries, and the two group assignments
+
+`DataForReplotting_NMDFactorExpression.tsv.gz` holds one row per library per NMD gene, where
+`Delta` is log2 RPKM relative to the mean of the earliest stage sampled for that tissue. The
+ratio of interest is therefore `Delta(UPF3A) - Delta(UPF3B)`.
+
+```{python}
+#| label: load
+nmd = pd.read_csv(f"{OUT}/DataForReplotting_NMDFactorExpression.tsv.gz", sep="\t")
+markers = pd.read_csv(f"{OUT}/DataToPlot.DevelopmentalMarkers.tsv.gz", sep="\t")
+contrasts = pd.read_csv(f"{DATA}/20260820_SupplementalTable_Contrasts.tsv", sep="\t")
+mk = markers.set_index("Species")
+
+# one row per library, every tissue, carrying the UPF3A/UPF3B ratio
+sub = nmd[nmd["human.name"].isin(["UPF3A", "UPF3B"])]
+w = (sub.pivot_table(index=["ID", "Species", "Tissue", "PercentRank_OrdinalStage"],
+                     columns="human.name", values="Delta").reset_index()
+        .dropna(subset=["UPF3A", "UPF3B"]))
+w["UPF3A/UPF3B"] = w.UPF3A - w.UPF3B
+
+# assignment A: developmental landmarks. A stage rule, so it applies to every tissue.
+wl = w.merge(markers[["Species", "Birth", "OnsetMeiosis"]], on="Species", how="left")
+wl["Stage"] = np.select(
+    [(wl.PercentRank_OrdinalStage >= wl.Birth) & (wl.PercentRank_OrdinalStage < wl.OnsetMeiosis),
+     wl.PercentRank_OrdinalStage >= wl.OnsetMeiosis], ["Juvenile", "Adult"], default=None)
+
+# assignment B: the supplementary contrast table. Testis only, by construction.
+rows = contrasts[contrasts.ContrastName == NEW_TESTIS_NAME]
+recs = []
+for _, x in rows.iterrows():
+    for gi, col in [(1, "SamplesInGroup1"), (2, "SamplesInGroup2")]:
+        recs += [{"ID": s, "Stage": "Juvenile" if gi == 1 else "Adult"}
+                 for s in x[col].split(", ")]
+ct = pd.DataFrame(recs)
+absent = set(ct.ID) - set(w.ID)
+assert not absent, f"contrast-table libraries missing from the expression table: {sorted(absent)}"
+wc = w.merge(ct, on="ID", how="left")
+
+pd.DataFrame({"libraries with both genes": [len(w)],
+              "of those, testis": [(w.Tissue == "Testis").sum()],
+              "in the contrast table": [len(ct)]})
+```
+
+Group sizes under the two assignments, testis only. The row totals are equal in every
+species — the same libraries are being partitioned, only the boundary differs.
+
+```{python}
+#| label: group-sizes
+def sizes(df, label):
+    return (df[(df.Tissue == "Testis") & df.Stage.notna()]
+            .groupby(["Species", "Stage"]).size().unstack("Stage")
+            .reindex(SPECIES)[["Juvenile", "Adult"]]
+            .rename(columns=lambda c: f"{label}: {c}"))
+
+tab = pd.concat([sizes(wl, "landmark"), sizes(wc, "contrast table")], axis=1)
+tab["total"] = tab["landmark: Juvenile"] + tab["landmark: Adult"]
+tab
+```
+
+## The panel, drawn both ways
+
+One helper, called twice. The only thing that differs between the two figures is the `Stage`
+column of the frame passed in.
+
+```{python}
+#| label: draw-fn
+def nmd_panel(df, title, outname):
+    """Reproduce the supplementary NMD panel from a frame carrying a Stage column."""
+    d = df[(df.Tissue == "Testis") & df.Stage.notna()]
+    lg = d.melt(id_vars=["ID", "Species", "Stage"], value_vars=GENE_ORDER,
+                var_name="Gene", value_name="log2FC")
+    jm = (lg[lg.Stage == "Juvenile"].groupby(["Gene", "Species"])["log2FC"]
+          .mean().rename("mean_juv").reset_index())
+    lg = lg.merge(jm, on=["Gene", "Species"])
+    lg["rel"] = lg.log2FC - lg.mean_juv
+
+    tt = {}
+    for (sp, gene), s in lg.groupby(["Species", "Gene"]):
+        tt[(sp, gene)] = ttest_ind(s.loc[s.Stage == "Juvenile", "log2FC"],
+                                   s.loc[s.Stage == "Adult", "log2FC"],
+                                   equal_var=True).pvalue
+
+    rng = np.random.default_rng(1)
+    fig, axes = plt.subplots(2, 4, figsize=(7.6, 4.4),
+                             gridspec_kw={"wspace": 0.38, "hspace": 0.62})
+    flat = axes.ravel()
+    for ai, sp in enumerate(SPECIES):
+        ax = flat[ai]
+        s_sp = lg[lg.Species == sp]
+        labs = dict(zip(GENE_ORDER, r_format_pval([tt[(sp, g)] for g in GENE_ORDER])))
+        ax.axhline(0, color="black", lw=1.0, zorder=1)
+        group_n = []
+        for gi, gene in enumerate(GENE_ORDER):
+            for st in ["Juvenile", "Adult"]:
+                v = s_sp[(s_sp.Gene == gene) & (s_sp.Stage == st)].rel.values
+                if not len(v):
+                    continue
+                xc = gi + (-0.19 if st == "Juvenile" else 0.19)
+                group_n.append((xc, st, len(v)))
+                bp = ax.boxplot([v], positions=[xc], widths=0.30, showfliers=False,
+                                patch_artist=True, zorder=2)
+                for el in ("boxes", "whiskers", "caps", "medians"):
+                    for a in bp[el]:
+                        a.set_color(STAGE_COL[st]); a.set_linewidth(0.9)
+                bp["boxes"][0].set_facecolor("none")
+                ax.scatter(xc + rng.uniform(-0.10, 0.10, len(v)), v, s=7,
+                           color=STAGE_COL[st], lw=0, alpha=0.85, zorder=3)
+        lo, hi = s_sp.rel.min(), s_sp.rel.max(); span = hi - lo
+        ax.set_ylim(lo - span * 0.30, hi + span * 0.34)
+        for xc, st, n in group_n:
+            ax.text(xc, lo - span * 0.10, str(n), ha="center", va="top",
+                    fontsize=SMALL_TXT, color=STAGE_COL[st])
+        for gi, gene in enumerate(GENE_ORDER):
+            ax.text(gi, hi + span * 0.12, f"P=\n{labs[gene]}", ha="center", va="bottom",
+                    fontsize=SMALL_TXT)
+        ax.set_xticks(range(len(GENE_ORDER)))
+        ax.set_xticklabels(GENE_ORDER, rotation=45, ha="right", fontsize=SMALL_TXT)
+        ax.set_xlim(-0.55, len(GENE_ORDER) - 0.45)
+        ax.set_title(sp, fontsize=AXIS_TXT)
+        ax.tick_params(axis="y", labelsize=SMALL_TXT)
+        ax.grid(axis="y", color="0.92", lw=0.6, zorder=0)
+        sns.despine(ax=ax)
+    flat[-1].axis("off")
+    fig.supylabel("log2(Expression),\nrelative to mean juvenile expression",
+                  fontsize=AXIS_TXT, x=-0.01)
+    fig.legend(handles=[plt.Line2D([], [], marker="s", ls="", markerfacecolor="none",
+                                   markeredgecolor=STAGE_COL[s], markersize=6, label=s)
+                        for s in ["Juvenile", "Adult"]],
+               loc="upper center", bbox_to_anchor=(0.5, 1.06), ncol=2, frameon=False,
+               fontsize=LEG_TXT, title="Testis stage", title_fontsize=LEG_TXT)
+    fig.suptitle(title, fontsize=AXIS_TXT, y=1.14)
+    savefig(fig, outname)
+    return pd.DataFrame(
+        [[r_format_pval([tt[(sp, g)]])[0] for g in GENE_ORDER] for sp in SPECIES],
+        index=SPECIES, columns=GENE_ORDER)
+```
+
+### Landmark grouping, as published
+
+```{python}
+#| label: fig-landmark
+#| fig-cap: "Juvenile and adult from the developmental landmarks. This is the published panel."
+p_landmark = nmd_panel(wl, "Groups from developmental landmarks (as published)",
+                       "NMD_UPF3_landmark.pdf")
+p_landmark
+```
+
+### Contrast-table grouping, as in Fig 3c
+
+```{python}
+#| label: fig-contrast
+#| fig-cap: "The same libraries, regrouped by the supplementary contrast table."
+p_contrast = nmd_panel(wc, "Groups from the supplementary contrast table (as in Fig 3c)",
+                       "NMD_UPF3_contrasttable.pdf")
+p_contrast
+```
+
+Every effect points the same way under both groupings, and the P values are generally smaller
+under the contrast table. Rat is the one species that changes qualitatively.
+
+```{python}
+#| label: pval-compare
+pd.concat([p_landmark.add_suffix(" (landmark)"),
+           p_contrast.add_suffix(" (contrast)")], axis=1)[
+    [f"{g} ({k})" for g in GENE_ORDER for k in ("landmark", "contrast")]]
+```
+
+## Where the two assignments disagree
+
+Plotting each library against its ordinal stage makes the boundary visible. The three
+developmental landmarks are drawn as vertical lines; points are coloured by group assignment,
+grey where a library belongs to neither.
+
+The landmark rule is a stage rule, so it colours every tissue.
+
+```{python}
+#| label: fig-ordinal-landmark
+#| fig-cap: "UPF3A/UPF3B against ordinal stage, coloured by the landmark grouping."
+def ordinal_grid(df, title, outname, grouping):
+    fig, axes = plt.subplots(len(SPECIES), len(TISSUES), figsize=(15.5, 13.5),
+                             sharex=True, sharey="row",
+                             gridspec_kw={"wspace": 0.12, "hspace": 0.25})
+    for ri, sp in enumerate(SPECIES):
+        for ci, ti in enumerate(TISSUES):
+            ax = axes[ri, ci]
+            d = df[(df.Species == sp) & (df.Tissue == ti)]
+            for col, (c, _) in MARK.items():
+                v = mk.loc[sp, col]
+                if pd.notna(v):
+                    ax.axvline(v, color=c, lw=1.0, ls="--", zorder=1)
+            un = d[d.Stage.isna()]
+            ax.scatter(un.PercentRank_OrdinalStage, un["UPF3A/UPF3B"], s=11,
+                       color="0.75", lw=0, zorder=2)
+            for st in ["Juvenile", "Adult"]:
+                g = d[d.Stage == st]
+                ax.scatter(g.PercentRank_OrdinalStage, g["UPF3A/UPF3B"], s=16,
+                           color=STAGE_COL[st], lw=0, zorder=3)
+            ax.axhline(0, color="black", lw=0.6, zorder=1)
+            ax.tick_params(labelsize=6)
+            ax.set_xlim(-0.03, 1.03)
+            if ri == 0:
+                ax.set_title(ti, fontsize=9)
+            if ci == 0:
+                ax.set_ylabel(sp, fontsize=9)
+            if not len(d):
+                ax.text(0.5, 0.5, "no data", ha="center", va="center",
+                        transform=ax.transAxes, fontsize=6, color="0.6")
+            sns.despine(ax=ax)
+    handles = ([plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s], markersize=5,
+                           label=f"{s} ({grouping})") for s in ["Juvenile", "Adult"]]
+               + [plt.Line2D([], [], marker="o", ls="", color="0.75", markersize=5,
+                             label="ungrouped")]
+               + [plt.Line2D([], [], color=c, ls="--", lw=1.2, label=lab)
+                  for c, lab in MARK.values()])
+    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 1.035),
+               ncol=6, frameon=False, fontsize=9)
+    fig.supxlabel("Ordinal developmental stage (within-species percent rank)",
+                  fontsize=11, y=0.055)
+    fig.supylabel("log2(UPF3A / UPF3B), relative to the earliest stage of that tissue",
+                  fontsize=11, x=0.065)
+    fig.suptitle(title, fontsize=12, y=1.06)
+    savefig(fig, outname)
+    return None
+
+ordinal_grid(wl, "UPF3A/UPF3B by stage — groups from developmental landmarks",
+             "NMD_ordinal_landmark.pdf", "landmark")
+```
+
+The contrast table names testis libraries only, so every other panel is grey. The point of
+showing it is the testis column, which is directly comparable to the one above.
+
+```{python}
+#| label: fig-ordinal-contrast
+#| fig-cap: "The same grid coloured by the contrast-table grouping."
+ordinal_grid(wc, "UPF3A/UPF3B by stage — groups from the supplementary contrast table\n"
+                 "only testis libraries belong to that contrast, so every other panel is ungrouped",
+             "NMD_ordinal_contrasttable.pdf", "contrast table")
+```
+
+Restricting to testis and stacking the two assignments per library isolates the difference.
+Black-outlined points are libraries the two groupings disagree about.
+
+```{python}
+#| label: fig-assignment-diff
+#| fig-cap: "Which testis libraries move between groups."
+tst = w[w.Tissue == "Testis"][["ID", "Species", "PercentRank_OrdinalStage", "UPF3A/UPF3B"]].copy()
+tst = (tst.merge(wl[["ID", "Stage"]].rename(columns={"Stage": "landmark"}), on="ID")
+          .merge(wc[["ID", "Stage"]].rename(columns={"Stage": "contrast"}), on="ID"))
+tst["agree"] = tst.landmark.fillna("none") == tst.contrast.fillna("none")
+
+fig, axes = plt.subplots(len(SPECIES), 1, figsize=(9.5, 11), sharex=True,
+                         gridspec_kw={"hspace": 0.45})
+for ax, sp in zip(axes, SPECIES):
+    d = tst[tst.Species == sp].sort_values("PercentRank_OrdinalStage")
+    for col, (c, _) in MARK.items():
+        v = mk.loc[sp, col]
+        if pd.notna(v):
+            ax.axvline(v, color=c, lw=1.0, ls="--", zorder=1)
+    for yi, key in enumerate(["contrast", "landmark"]):
+        for _, r in d.iterrows():
+            st = r[key]
+            ax.scatter(r.PercentRank_OrdinalStage, yi, s=46,
+                       color="0.85" if pd.isna(st) else STAGE_COL[st],
+                       edgecolors="black" if not r.agree else "none", lw=1.1, zorder=3)
+    ax.set_yticks([0, 1]); ax.set_yticklabels(["contrast table", "landmark"], fontsize=8)
+    ax.set_ylim(-0.6, 1.6); ax.set_xlim(-0.03, 1.03)
+    ax.set_title(f"{sp}   —   {len(d)} testis libraries, "
+                 f"{(~d.agree).sum()} assigned differently", fontsize=9, loc="left")
+    ax.tick_params(axis="x", labelsize=8)
+    sns.despine(ax=ax, left=True)
+handles = ([plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s], markersize=7, label=s)
+            for s in ["Juvenile", "Adult"]]
+           + [plt.Line2D([], [], marker="o", ls="", color="0.85", markersize=7, label="ungrouped"),
+              plt.Line2D([], [], marker="o", ls="", markerfacecolor="white", markersize=7,
+                         markeredgecolor="black", label="the two groupings disagree")]
+           + [plt.Line2D([], [], color=c, ls="--", lw=1.2, label=lab) for c, lab in MARK.values()])
+fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 1.03), ncol=4,
+           frameon=False, fontsize=9)
+fig.supxlabel("Ordinal developmental stage (within-species percent rank)", fontsize=11, y=0.045)
+fig.suptitle("Which testis libraries the two groupings disagree about", fontsize=12, y=1.065)
+savefig(fig, "NMD_testis_assignment_diff.pdf")
+```
+
+## What the difference actually is
+
+Every library the two groupings disagree about sits **exactly on** the onset-of-meiosis
+landmark, and in every case the landmark rule calls it adult while the contrast table calls it
+juvenile.
+
+```{python}
+#| label: disagreement-table
+dis = tst[~tst.agree].copy()
+dis["OnsetMeiosis"] = dis.Species.map(mk.OnsetMeiosis)
+dis["stage - onset"] = dis.PercentRank_OrdinalStage - dis.OnsetMeiosis
+dis[["Species", "ID", "PercentRank_OrdinalStage", "OnsetMeiosis", "stage - onset",
+     "landmark", "contrast"]].sort_values(["Species", "PercentRank_OrdinalStage"])
+```
+
+That follows from the rule: the landmark assignment is `PercentRank >= OnsetMeiosis → Adult`,
+so a library sampled at precisely the onset stage falls on the adult side.
+
+It is **not**, however, a uniform off-by-one against the contrast table. Rabbit and chicken
+also have a library at exactly the onset stage, and there the contrast table calls it adult
+too, agreeing with the rule:
+
+```{python}
+#| label: on-the-landmark
+on = tst.copy()
+on["OnsetMeiosis"] = on.Species.map(mk.OnsetMeiosis)
+on = on[np.isclose(on.PercentRank_OrdinalStage, on.OnsetMeiosis)]
+(on.groupby(["Species", "landmark", "contrast"], dropna=False).size()
+   .rename("libraries").reset_index().set_index("Species").reindex(SPECIES))
+```
+
+So the contrast table's boundary was curated per species rather than derived mechanically from
+the landmark; it happens to coincide for rabbit and chicken, which is exactly why those are
+the two species whose group sizes already agreed.
+
+The practical consequence is confined to rat. Moving two 2-week-post-birth libraries out of
+the adult group and into the juvenile one sharpens a contrast that the landmark rule had
+blurred by placing a pre-spermatogenic stage on the adult side, and rat goes from
+non-significant to significant. Nothing changes direction in any species.
+
+```{python}
+#| label: manifest
+man = sorted(f for f in os.listdir(FIGDIR) if f.endswith(".pdf"))
+pd.DataFrame({"panel": man,
+              "KB": [round(os.path.getsize(os.path.join(FIGDIR, f)) / 1024, 1) for f in man]})
+```

@@ -111,6 +111,36 @@ identified `2c161e2` as the last pre-fix commit were worked out in the
 `20260825_Leaf2Simulation_PublicationFigs` project; see its `FOOTNOTES.md`, section
 "leafcutter2: which version produced what".
 
+## Juvenile versus adult testis: two group definitions
+
+> **The supplementary *UPF3A*/*UPF3B* panel as published grouped testis libraries by the
+> onset-of-meiosis developmental landmark, while Fig 3c grouped them by the supplementary
+> contrast table. The figure notebook now uses the contrast table for both.**
+
+There are two ways to decide whether a testis library is juvenile or adult. The landmark rule
+calls a library adult once its within-species percent-rank stage reaches the onset of meiosis
+in spermatogenesis. The contrast table (`data/20260820_SupplementalTable_Contrasts.tsv`) names
+the two arms explicitly, and is what every differential-splicing contrast in the paper was run
+on, Fig 3c included.
+
+The two partition the same libraries — per-species totals are equal in all seven species — and
+disagree about 11 libraries in five species. Every one of them sits *exactly on* the
+onset-of-meiosis landmark, where the rule's `>=` puts it on the adult side and the contrast
+table puts it on the juvenile side. It is not a uniform off-by-one: rabbit and chicken also
+have a library at that stage and there the two agree, which is why those are the two species
+whose group sizes already matched. The contrast table's boundary was curated per species, not
+derived from the landmark.
+
+Consequences are confined to rat, which goes from non-significant under the landmark grouping
+(P = 0.1, 0.3, 0.2 for *UPF3A*, *UPF3B*, ratio) to significant under the contrast table
+(P = 4e-05, 0.02, 2e-04). No effect changes direction in any species.
+
+**[▶ Rendered comparison notebook](https://bfairkun.github.io/20260825_comparativesplicing_paper/NMD_GroupingDiscrepancy.html)**
+— draws the panel both ways from the shipped tables, plots every library against its ordinal
+stage with the developmental landmarks marked, and names the libraries that move. Committed at
+[`docs/NMD_GroupingDiscrepancy.html`](docs/NMD_GroupingDiscrepancy.html); rebuild with
+`conda run -n py_general quarto render analysis/NMD_GroupingDiscrepancy.qmd`.
+
 ## Vendored code
 
 No git submodules; the following are vendored as plain files at these commits.

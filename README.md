@@ -20,6 +20,14 @@ conda run -n py_general quarto render analysis/ComparativeSplicingFigures.qmd
 It writes the individual data panels to `analysis/figures/`. The published figures are
 multi-panel composites assembled by hand from those panels.
 
+A second, smaller notebook documents one place where the published panel and Fig 3c grouped
+testis libraries differently; see
+[FOOTNOTES](FOOTNOTES.md#juvenile-versus-adult-testis-two-group-definitions) or render it with:
+
+```bash
+conda run -n py_general quarto render analysis/NMD_GroupingDiscrepancy.qmd
+```
+
 ## Reproducing the data
 
 ```bash
