@@ -24,9 +24,11 @@ same one:
   reaches the onset of meiosis in spermatogenesis, and juvenile between birth and that point.
   This is a rule evaluated per library.
 - **Contrast table.** The two arms of the `Juvenile Testis v Adult Testis` row of
-  `data/20260820_SupplementalTable_Contrasts.tsv`. This is a curated list of libraries, and it
-  is what every differential-splicing contrast in the paper was actually run on — including
-  the one behind Fig 3c.
+  `data/20260820_SupplementalTable_Contrasts.tsv`. These were first drawn by the landmark rule
+  above and then corrected: the libraries sitting exactly on the landmark were inspected, and
+  in some species they looked pre-meiotic and in others post-meiotic, so the boundary stage was
+  assigned per species on that evidence. This is what every differential-splicing contrast in
+  the paper was run on — including the one behind Fig 3c.
 
 The published NMD panel used the landmark rule; Fig 3c used the contrast table. The main
 figure notebook now uses the contrast table for both, so the two panels rest on identical
@@ -72,12 +74,32 @@ def savefig(fig, name):
     return os.path.join(FIGDIR, name)
 
 
+def _signif(x, d):
+    x = np.asarray(x, float)
+    e = np.floor(np.log10(np.abs(np.where(x != 0, x, 1))))
+    return np.round(x / 10.0 ** e, d - 1) * 10.0 ** e
+
+
 def r_format_pval(vals, digits=1):
-    """R's format.pval: common formatting across a vector of P values."""
-    out = []
-    for v in vals:
-        out.append(f"{v:.0e}".replace("e-0", "e-") if v < 1e-3 else f"{v:.{digits + 2}g}")
-    return out
+    """Emulate R's format.pval(x, digits) on a vector. Copied from the main figure
+    notebook so the P labels here are formatted identically to the published panel.
+
+    R splits at exponent -3, then within each subset uses a COMMON number of decimals -- set
+    so the smallest element still shows `digits` significant figures, using the value AFTER
+    rounding -- and picks fixed or scientific by whichever is not wider.
+    """
+    vals = np.asarray(vals, float)
+    out = np.empty(len(vals), dtype=object)
+    expo = np.floor(np.log10(np.where(vals > 0, vals, 1e-50)))
+    for mask in (expo >= -3, expo < -3):
+        if not mask.any():
+            continue
+        sub = vals[mask]
+        dec = int(max(digits - 1 - np.floor(np.log10(_signif(sub, digits)))))
+        out[mask] = ([f"%.{dec}f" % v for v in sub] if 2 + dec <=
+                     max(len(f"%.{digits-1}e" % v) for v in sub)
+                     else [f"%.{digits-1}e" % v for v in sub])
+    return list(out)
 ```
 
 ## The libraries, and the two group assignments
@@ -203,8 +225,8 @@ def nmd_panel(df, title, outname):
         ax.grid(axis="y", color="0.92", lw=0.6, zorder=0)
         sns.despine(ax=ax)
     flat[-1].axis("off")
-    fig.supylabel("log2(Expression),\nrelative to mean juvenile expression",
-                  fontsize=AXIS_TXT, x=-0.01)
+    fig.supylabel("log$_2$(Expression),\nrelative to mean juvenile expression",
+                  fontsize=AXIS_TXT, x=-0.01, ma="center")
     fig.legend(handles=[plt.Line2D([], [], marker="s", ls="", markerfacecolor="none",
                                    markeredgecolor=STAGE_COL[s], markersize=6, label=s)
                         for s in ["Juvenile", "Adult"]],
@@ -298,8 +320,8 @@ def ordinal_grid(df, title, outname, grouping):
                ncol=6, frameon=False, fontsize=9)
     fig.supxlabel("Ordinal developmental stage (within-species percent rank)",
                   fontsize=11, y=0.055)
-    fig.supylabel("log2(UPF3A / UPF3B), relative to the earliest stage of that tissue",
-                  fontsize=11, x=0.065)
+    fig.supylabel("log$_2$(UPF3A / UPF3B), relative to the earliest stage of that tissue",
+                  fontsize=11, x=0.065, ma="center")
     fig.suptitle(title, fontsize=12, y=1.06)
     savefig(fig, outname)
     return None
@@ -378,12 +400,21 @@ dis[["Species", "ID", "PercentRank_OrdinalStage", "OnsetMeiosis", "stage - onset
      "landmark", "contrast"]].sort_values(["Species", "PercentRank_OrdinalStage"])
 ```
 
-That follows from the rule: the landmark assignment is `PercentRank >= OnsetMeiosis → Adult`,
-so a library sampled at precisely the onset stage falls on the adult side.
+### Why the disagreement sits exactly there
 
-It is **not**, however, a uniform off-by-one against the contrast table. Rabbit and chicken
-also have a library at exactly the onset stage, and there the contrast table calls it adult
-too, agreeing with the rule:
+This is not a coincidence, and the contrast table is not an independent grouping. The contrast
+groups were originally drawn *by* the landmark rule, from the same ordinal stage table, and
+were consistent with it. The stage that falls exactly on the landmark is the ambiguous one:
+looking at the libraries sitting right on that boundary, some species' borderline samples
+looked pre-meiotic and others looked post-meiotic. The contrast table records that per-species
+judgement; the mechanical rule, which resolves the tie one way for everybody
+(`PercentRank >= OnsetMeiosis → Adult`), cannot.
+
+So the contrast table is the landmark rule plus a hand adjudication of the single boundary
+stage, and the disagreements are exactly the libraries that adjudication moved. That also
+predicts what we see for rabbit and chicken: they have a library at exactly the onset stage
+too, and there the borderline sample was judged post-meiotic, so the table agrees with the
+rule and the group sizes already matched.
 
 ```{python}
 #| label: on-the-landmark
@@ -394,9 +425,9 @@ on = on[np.isclose(on.PercentRank_OrdinalStage, on.OnsetMeiosis)]
    .rename("libraries").reset_index().set_index("Species").reindex(SPECIES))
 ```
 
-So the contrast table's boundary was curated per species rather than derived mechanically from
-the landmark; it happens to coincide for rabbit and chicken, which is exactly why those are
-the two species whose group sizes already agreed.
+The contrast table is therefore the grouping to use: it carries information the stage table
+does not, namely what the borderline libraries actually look like. It is also the grouping
+every differential-splicing contrast in the paper was run on.
 
 The practical consequence is confined to rat. Moving two 2-week-post-birth libraries out of
 the adult group and into the juvenile one sharpens a contrast that the landmark rule had

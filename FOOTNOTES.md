@@ -123,13 +123,23 @@ in spermatogenesis. The contrast table (`data/20260820_SupplementalTable_Contras
 the two arms explicitly, and is what every differential-splicing contrast in the paper was run
 on, Fig 3c included.
 
-The two partition the same libraries — per-species totals are equal in all seven species — and
-disagree about 11 libraries in five species. Every one of them sits *exactly on* the
-onset-of-meiosis landmark, where the rule's `>=` puts it on the adult side and the contrast
-table puts it on the juvenile side. It is not a uniform off-by-one: rabbit and chicken also
-have a library at that stage and there the two agree, which is why those are the two species
-whose group sizes already matched. The contrast table's boundary was curated per species, not
-derived from the landmark.
+The two are not independent. The contrast groups were originally drawn *by* the landmark rule,
+from the same ordinal stage table, and were consistent with it. They were then corrected: the
+libraries sitting exactly on the landmark were inspected, and in some species those borderline
+samples looked pre-meiotic while in others they looked post-meiotic, so the boundary stage was
+assigned per species on that evidence. The contrast table is therefore the landmark rule plus a
+hand adjudication of the one ambiguous stage.
+
+The two groupings consequently partition the same libraries — per-species totals are equal in
+all seven species — and disagree about exactly the libraries that adjudication moved: 11
+libraries in five species, every one of them sitting precisely on the onset-of-meiosis
+landmark, where the rule's `>=` resolves the tie toward adult for everybody. Rabbit and chicken
+have a library at that stage too, but there the borderline sample was judged post-meiotic, so
+the table agrees with the rule — which is why those are the two species whose group sizes
+already matched.
+
+The contrast table is the grouping to prefer: it carries information the stage table does not,
+namely what the borderline libraries actually look like.
 
 Consequences are confined to rat, which goes from non-significant under the landmark grouping
 (P = 0.1, 0.3, 0.2 for *UPF3A*, *UPF3B*, ratio) to significant under the contrast table

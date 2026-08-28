@@ -1119,8 +1119,8 @@ for ai, sp in enumerate(SPECIES):
     ax.grid(axis="y", color="0.92", lw=0.6, zorder=0)
     sns.despine(ax=ax)
 flat[-1].axis("off")
-fig.supylabel("log2(Expression),\nrelative to mean juvenile expression",
-              fontsize=AXIS_TXT, x=-0.01)
+fig.supylabel("log$_2$(Expression),\nrelative to mean juvenile expression",
+              fontsize=AXIS_TXT, x=-0.01, ma="center")
 fig.legend(handles=[plt.Line2D([], [], marker="s", ls="", markerfacecolor="none",
                                markeredgecolor=STAGE_COL[s], markersize=6, label=s)
                     for s in ["Juvenile", "Adult"]],
