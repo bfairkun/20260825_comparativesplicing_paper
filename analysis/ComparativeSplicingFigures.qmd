@@ -303,6 +303,34 @@ def contrast_n_sig(contrast_name, species, coding):
 contrasts[["ContrastGroup", "ContrastName", "Species"]].head()
 ```
 
+The splicing-vs-expression Spearman test is run once per (contrast, species, coding class) —
+every "well-powered" (`n >= 100`) row of `DataToPlot.ContrastSummaries.tsv.gz`, which spans
+every contrast in the supplementary contrast table, developmental and adult-tissue-pair alike.
+Fig 3d and FigS23a each highlight one specific contrast from that same family, so their P.adj
+is computed by Benjamini-Hochberg over the *whole* 417-test family, not just the 4 tests shown
+in that one panel — the two are looked up from one shared correction rather than each running
+its own local `p.adjust`.
+
+```{python}
+#| label: contrast-summaries-corrected
+contrast_summaries_powered = pd.read_csv(f"{OUT}/DataToPlot.ContrastSummaries.tsv.gz", sep="\t")
+contrast_summaries_powered = contrast_summaries_powered[
+    contrast_summaries_powered.n >= 100].copy()
+contrast_summaries_powered["p_adj"] = bh(contrast_summaries_powered.p.values)
+
+
+def contrast_p_adj(tissue, species, coding):
+    """BH-adjusted P for one (tissue, species, coding) test, corrected across all 417 tests."""
+    d = contrast_summaries_powered[
+        (contrast_summaries_powered.Tissue == tissue)
+        & (contrast_summaries_powered.Species == species)
+        & (contrast_summaries_powered.Coding == coding)]
+    return d.p_adj.iloc[0]
+
+
+print(f"{len(contrast_summaries_powered)} well-powered tests in the shared correction family")
+```
+
 # Annotated transcripts per gene
 
 Restricted to protein-coding genes; a transcript counts as unproductive when its own biotype
@@ -553,7 +581,15 @@ for sp in ["Chicken", "Human"]:
                          n_table=contrast_n_sig("Adult Brain v Adult Kidney", sp, cod),
                          n_spearman=len(s), spearman=rho, p=p))
 s_bk = pd.DataFrame(recs)
-s_bk["p_adj"] = bh(s_bk.p.values)
+# P.adj: BH over the full 417-test contrast-summaries family (see contrast-summaries-corrected),
+# not just these 4 tests -- Fig 3d is one contrast among many in that same family.
+s_bk["p_adj"] = [contrast_p_adj("Adult Brain v Adult Kidney", r.Species, r.Coding)
+                 for r in s_bk.itertuples()]
+assert np.allclose(s_bk.p, [contrast_summaries_powered[
+    (contrast_summaries_powered.Tissue == "Adult Brain v Adult Kidney")
+    & (contrast_summaries_powered.Species == r.Species)
+    & (contrast_summaries_powered.Coding == r.Coding)].p.iloc[0] for r in s_bk.itertuples()]), \
+    "local p and contrast-summaries p disagree -- check filtering is identical"
 
 fig, axes = plt.subplots(2, 2, figsize=(4.6, 3.4), sharex=True, sharey=True,
                          gridspec_kw={"wspace": 0.10, "hspace": 0.12})
@@ -611,6 +647,11 @@ class from `n_sig_productive_ds_leafcutter_clusters` /
 `n_sig_unproductive_ds_leafcutter_clusters` in `20260820_SupplementalTable_Contrasts.tsv`,
 which is slightly larger and not the number plotted or tested.
 
+**A note on *P.adj*.** This panel highlights one contrast, but its P.adj is not computed from
+just these 4 tests — it comes from `contrast_summaries_powered` (see the setup section above),
+the Benjamini-Hochberg correction over the full family of 417 well-powered splicing-vs-expression
+tests spanning every contrast in the supplementary table, the same family FigS23b plots in full.
+
 ## FigS23b — splicing-expression coupling, every contrast
 
 Every contrast in the study at once: each point is one species:tissue contrast, positioned by
@@ -621,8 +662,7 @@ contrasts with at least 100 events.
 ```{python}
 #| label: fig-splicexpr-b
 #| fig-cap: "Splicing-expression coupling is specific to unproductive junctions in every species."
-summ = pd.read_csv(f"{OUT}/DataToPlot.ContrastSummaries.tsv.gz", sep="\t")
-volc = summ[summ.n >= 100].copy()
+volc = contrast_summaries_powered.copy()  # already n>=100, with the shared p_adj column
 species_p = {}
 for sp, sub in volc.groupby("Species"):
     species_p[sp] = wilcox_p(sub.loc[sub.Coding == "Productive", "spearman"].dropna(),
@@ -909,7 +949,15 @@ for sp in ["Chicken", "Human"]:
                          n_table=contrast_n_sig("Juvenile Testis v Adult Testis", sp, cod),
                          n_spearman=len(s), spearman=rho, p=p))
 s_jat = pd.DataFrame(recs)
-s_jat["p_adj"] = bh(s_jat.p.values)
+# P.adj: BH over the full 417-test contrast-summaries family, as in Fig 3d. Note the contrast
+# is named "...vs..." in ContrastSummaries but "...v..." in the supplementary contrast table.
+s_jat["p_adj"] = [contrast_p_adj("Juvenile Testis vs Adult Testis", r.Species, r.Coding)
+                  for r in s_jat.itertuples()]
+assert np.allclose(s_jat.p, [contrast_summaries_powered[
+    (contrast_summaries_powered.Tissue == "Juvenile Testis vs Adult Testis")
+    & (contrast_summaries_powered.Species == r.Species)
+    & (contrast_summaries_powered.Coding == r.Coding)].p.iloc[0] for r in s_jat.itertuples()]), \
+    "local p and contrast-summaries p disagree -- check filtering is identical"
 
 fig, axes = plt.subplots(2, 2, figsize=(4.6, 3.4), sharex=True, sharey=True,
                          gridspec_kw={"wspace": 0.10, "hspace": 0.12})
@@ -964,6 +1012,10 @@ also lists `n_table`, the total significant cluster count from
 `20260820_SupplementalTable_Contrasts.tsv`'s `n_sig_productive_ds_leafcutter_clusters` /
 `n_sig_unproductive_ds_leafcutter_clusters` columns for `Juvenile Testis v Adult Testis`, which
 is slightly larger and not the number plotted or tested.
+
+**A note on *P.adj*** (as in Fig 3d): P.adj here is the same shared `contrast_summaries_powered`
+correction, i.e. Benjamini-Hochberg over all 417 well-powered tests across every contrast in
+the supplementary table, not just the 4 tests in this panel.
 
 # Conserved AS events
 
