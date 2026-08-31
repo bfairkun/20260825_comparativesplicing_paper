@@ -209,11 +209,23 @@ def contrast_summaries(args):
     out.to_csv(args.out, **GZ)
 
 
+def _species_from_joined_path(path):
+    """Species out of either joined-file naming convention this pipeline uses.
+
+    Adult-tissue-pair files are named `{Species}_{TissueA}-{TissueB}.joined.tsv.gz`; the
+    Neonate/Early-embryo developmental contrasts (as in contrast_summaries) are named
+    `{fam}.{Tissue}.{Species}.joined.tsv.gz`.
+    """
+    base = os.path.basename(path)
+    m = re.match(r"(Neonate_vs_Adult|First10_vs_Second10)\.(.+?)\.(.+?)\.joined\.tsv\.gz", base)
+    return m.group(3) if m else base.split("_")[0]
+
+
 def betabeta_points(args):
-    """One adult tissue pair, per-cluster scatter points for the main beta-beta panel."""
+    """One tissue-pair or developmental contrast, per-cluster scatter points for a beta-beta panel."""
     rows = []
     for path in args.joined:
-        sp = os.path.basename(path).split("_")[0]
+        sp = _species_from_joined_path(path)
         d = one_event_per_cluster(pd.read_csv(path, sep="\t", usecols=DS_COLS,
                                              low_memory=False))
         rows.append(d.assign(Species=sp)[["Species", "Prod", "cluster", "deltapsi", "logFC"]])
@@ -242,6 +254,35 @@ def testis_percent_up(args):
     tot = d.groupby(["ID", "PL"])["TotalCounts"].sum().unstack(fill_value=0)
     tot["Percent"] = tot["UP"] / (tot["UP"] + tot["PR"]) * 100
     tot.reset_index()[["ID", "UP", "PR", "Percent"]].to_csv(args.out, **GZ)
+
+
+def all_tissues_percent_up(args):
+    """Percent unproductive reads per library, every tissue, across development (Supp Fig 20).
+
+    Mirrors testis_percent_up's UP/(UP+PR) definition, but keeps every
+    Tissue_ForDevelopementalAnalysis group rather than just testis, and attaches each library's
+    developmental percent-rank position -- computed exactly as in developmental_markers, so the
+    two outputs share one x-axis -- plus the NoHumanEmbryo library-usage flag.
+    """
+    d = pd.read_csv(args.counts, sep="\t")
+    pl, _ = productivity_label(1.0 * d.UTR, 1.0 * d.Coding, 1.0 * d.Annot, 1.0 * d.GencodePC)
+    d["PL"] = pl.values
+    d = d[d.PL != "NE"]
+    tot = d.groupby(["ID", "PL"])["TotalCounts"].sum().unstack(fill_value=0)
+    tot["Percent"] = tot["UP"] / (tot["UP"] + tot["PR"]) * 100
+    pct = tot.reset_index()[["ID", "Percent"]]
+
+    sw = pd.read_csv(args.sample_stages, sep="\t").rename(columns={"ID_Species": "Species"})
+    sw["PercentRank_OrdinalStage"] = (sw.groupby("Species")["Ordinal_stage"]
+                                      .transform(lambda s: s.rank(method="min").sub(1)
+                                                 / (len(s) - 1)))
+    sw = sw[sw.NoHumanEmbryo].assign(
+        Tissue=sw.Tissue_ForDevelopementalAnalysis.str.split(",")).explode("Tissue")
+    sw["Tissue"] = sw.Tissue.str.strip()
+
+    out = sw.merge(pct, on="ID", how="inner")
+    (out[["ID", "Species", "Tissue", "Ordinal_stage", "PercentRank_OrdinalStage", "Percent"]]
+     .drop_duplicates(["ID", "Tissue"]).to_csv(args.out, **GZ))
 
 
 def scn8a_phylop(args):
@@ -852,6 +893,12 @@ def main():
     p.add_argument("--counts", required=True)
     p.add_argument("--out", required=True)
     p.set_defaults(func=testis_percent_up)
+
+    p = sub.add_parser("all-tissues-percent-up")
+    p.add_argument("--counts", required=True)
+    p.add_argument("--sample-stages", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=all_tissues_percent_up)
 
     p = sub.add_parser("scn8a-phylop")
     p.add_argument("--bedgraph", required=True)

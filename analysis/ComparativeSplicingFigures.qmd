@@ -65,14 +65,16 @@ rebuilt: the *ARHGAP17* gene track and the *SCN8A* exon schematic.
 | Fig 3c | Percent unproductive reads, juvenile vs adult testis | `DataToPlot.Testis.Percent.UP` |
 | Fig 3d | ΔPSI vs Δexpression, adult brain vs adult kidney | `DataForReplotting_BetaBeta_AdultBrainKidney` |
 | Fig 3f | *ARHGAP17* unproductive junction across testis development | `DataForReplotting_ConservedAS_Examples` |
-| FigS AlternateGtfs a–c | Fig 3a/3b equivalents across all three annotation sources | as above |
-| FigS SplicExprCorrelation b | Splicing–expression coupling, every contrast and species | `DataToPlot.ContrastSummaries` |
-| FigS ConservedAS a | Conserved-event counts after each successive filter | `DataToPlot.ConservedEventCascade` |
-| FigS ConservedAS c | *SCN8A* exon 18N splicing and host-gene expression | `DataForReplotting_ConservedAS_Examples` |
-| FigS ConservedAS d | *SCN8A* exon conservation by codon position | `DataForReplotting_SCN8A_PhyloP` |
-| FigS ConservedAS e | dN/dS vs PhyloP for cassette-exon trios | `DataToPlot.dNdS_PhyloP_ExonTrios` |
-| FigS ConservedAS f | *ARHGAP17* flanking intronic conservation | `DataForReplotting_ARHGAP17_FlankingPhyloP` |
-| FigS NMD factors | *UPF3A*/*UPF3B* across testis maturation | `DataForReplotting_NMDFactorExpression` |
+| FigS20 | Percent unproductive reads, every species/tissue, across development | `DataToPlot.AllTissues.Percent.UP` |
+| FigS21a–c | Fig 3a/3b equivalents across all three annotation sources | as above |
+| FigS22a | *UPF3A*/*UPF3B* across testis maturation | `DataForReplotting_NMDFactorExpression` |
+| FigS23a | ΔPSI vs Δexpression, juvenile vs adult testis | `DataForReplotting_BetaBeta_JuvenileAdultTestis` |
+| FigS23b | Splicing–expression coupling, every contrast and species | `DataToPlot.ContrastSummaries` |
+| FigS24a | Conserved-event counts after each successive filter | `DataToPlot.ConservedEventCascade` |
+| FigS24c | *SCN8A* exon 18N splicing and host-gene expression | `DataForReplotting_ConservedAS_Examples` |
+| FigS24d | *SCN8A* exon conservation by codon position | `DataForReplotting_SCN8A_PhyloP` |
+| FigS24e | dN/dS vs PhyloP for cassette-exon trios | `DataToPlot.dNdS_PhyloP_ExonTrios` |
+| FigS24f | *ARHGAP17* flanking intronic conservation | `DataForReplotting_ARHGAP17_FlankingPhyloP` |
 
 ### Definitions used throughout
 
@@ -146,6 +148,17 @@ def savefig(fig, name):
     p = os.path.join(FIGDIR, name)
     fig.savefig(p, bbox_inches="tight")
     return p
+
+
+# Source data: one entry per panel, collected as the notebook runs and written to a single
+# multi-tab spreadsheet (one tab per panel, main and supplemental together) at the end.
+SOURCE_DATA = {}
+
+
+def record_source(panel, df):
+    """Stash the exact table behind a panel's plot, keyed by its panel label."""
+    assert panel not in SOURCE_DATA, f"duplicate source-data panel label: {panel}"
+    SOURCE_DATA[panel] = df.reset_index(drop=True).copy()
 ```
 
 ## Shared helpers
@@ -279,6 +292,14 @@ def samples_from_table(contrast_name, groupnum=None):
                          for s in r[col].split(", ")]
     return pd.DataFrame(recs)
 
+
+def contrast_n_sig(contrast_name, species, coding):
+    """n_sig_{productive,unproductive}_ds_leafcutter_clusters straight from the contrast table."""
+    col = f"n_sig_{coding.lower()}_ds_leafcutter_clusters"
+    d = contrasts[(contrasts.ContrastName == contrast_name) & (contrasts.Species == species)]
+    return int(d[col].iloc[0])
+
+
 contrasts[["ContrastGroup", "ContrastName", "Species"]].head()
 ```
 
@@ -329,9 +350,11 @@ fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=TX_COL[k]) for k in TX_COL
            ncol=2, frameon=False, fontsize=LEG_TXT,
            title="Annotated transcript type", title_fontsize=LEG_TXT)
 savefig(fig, "Fig3a_TranscriptsPerGene_MainGtfs.pdf")
+record_source("Fig3a", hist[[MAIN_GTF[s] == a
+                             for s, a in zip(hist.Species, hist.AnnotationSource)]])
 ```
 
-## FigS Alternate GTFs — panel a
+## FigS21a — transcripts per gene, all annotation sources
 
 ```{python}
 #| label: fig-altgtfs-a
@@ -372,6 +395,8 @@ fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=TX_COL[k]) for k in TX_COL
            ncol=2, frameon=False, fontsize=LEG_TXT,
            title="Annotated transcript type", title_fontsize=LEG_TXT)
 savefig(fig, "FigS_AltGtfs_a_TranscriptsPerGene.pdf")
+record_source("FigS21A", hist.merge(
+    tx_totals, on=["Species", "AnnotationSource"], suffixes=("", "_Total")))
 ```
 
 # Junction productivity classification
@@ -435,9 +460,10 @@ fig, ax = plt.subplots(figsize=(2.9, 3.1))
 stacked_panel(ax, piv_uniq, "Percent unique junctions")
 ax.set_ylim(0, 100); ax.set_yticks([0, 25, 50, 75, 100])
 savefig(fig, "Fig3b_PercentUniqueJuncs_MainGtfs.pdf")
+record_source("Fig3b", piv_uniq.reset_index())
 ```
 
-## FigS Alternate GTFs — panels b and c
+## FigS21b,c — percent unique junctions / junction reads, all annotation sources
 
 ```{python}
 #| label: fig-altgtfs-bc
@@ -500,6 +526,8 @@ faceted_stacked(uniq_p, "Percent unique junctions",
                 "FigS_AltGtfs_b_PercentUniqueJuncs.pdf")
 faceted_stacked(reads_p, "Percent junction reads",
                 "FigS_AltGtfs_c_PercentJuncReads.pdf", broken=True)
+record_source("FigS21B", uniq_p)
+record_source("FigS21C", reads_p)
 ```
 
 # Splicing versus expression
@@ -522,7 +550,8 @@ for sp in ["Chicken", "Human"]:
         from scipy.stats import spearmanr
         rho, p = spearmanr(s.deltapsi, s.logFC)
         recs.append(dict(Species=sp, Coding=cod, Prod=(cod == "Productive"),
-                         n=len(s), spearman=rho, p=p))
+                         n_table=contrast_n_sig("Adult Brain v Adult Kidney", sp, cod),
+                         n_spearman=len(s), spearman=rho, p=p))
 s_bk = pd.DataFrame(recs)
 s_bk["p_adj"] = bh(s_bk.p.values)
 
@@ -541,7 +570,7 @@ for ri, sp in enumerate(["Chicken", "Human"]):
         ax.plot(xs, intercept + slope * xs, color=CODE_COL[cod], lw=1.6, zorder=4)
         r = s_bk[(s_bk.Species == sp) & (s_bk.Coding == cod)].iloc[0]
         ax.text(0.02, 0.97,
-                f"n={r.n}\nspearman rho={r.spearman:.2f}\n"
+                f"n={r.n_spearman}\nspearman rho={r.spearman:.2f}\n"
                 f"P={pval_fmt(r.p)}\nP.adj={pval_fmt(r.p_adj)}",
                 transform=ax.transAxes, ha="left", va="top", fontsize=SMALL_TXT, zorder=6)
         ax.set_ylim(-5, 5); ax.set_yticks([-4, -2, 0, 2, 4])
@@ -558,18 +587,31 @@ for ax in axes[-1]:
     ax.tick_params(axis="x", labelrotation=45)
     for lab in ax.get_xticklabels():
         lab.set_ha("right")
-fig.supylabel("Differential gene\nexpression (log2FC)", fontsize=AXIS_TXT, x=-0.02)
+fig.supylabel("Differential gene\nexpression (log$_2$FC)", fontsize=AXIS_TXT, x=-0.02, ma="center")
 fig.supxlabel("Differential splicing\n(Delta PSI)", fontsize=AXIS_TXT, y=-0.10)
 fig.suptitle("Adult Brain v Adult Kidney", fontsize=AXIS_TXT, y=1.02)
 savefig(fig, "Fig3d_BetaBeta_AdultBrainKidney.pdf")
-s_bk[["Species", "Coding", "n", "spearman", "p", "p_adj"]]
+record_source("Fig3d", bk[["Species", "Prod", "deltapsi", "logFC"]])
+s_bk_out = s_bk[["Species", "Coding", "n_table", "n_spearman", "spearman", "p", "p_adj"]].rename(
+    columns={"n_spearman": "n_spearman (requires cluster can be matched to a gene)"})
+record_source("Fig3d_stats", s_bk_out)
+s_bk_out
 ```
 
 In both species the unproductive junctions show a negative relationship between ΔPSI and
 Δexpression while the productive ones show essentially none — the signature expected if
 increased inclusion of an unproductive junction lowers host transcript abundance.
 
-## FigS SplicingExpressionCorrelation — panel b
+**A note on *n*.** The *n* printed on each panel (and `n_spearman` in the source-data table)
+is the number of clusters actually used for the Spearman correlation and the OLS trend line —
+excluding clusters whose host gene has no matched expression value, since a rank correlation
+and a line fit cannot be computed against a missing y-value. The source-data table also lists
+`n_table`, the total significant differential-splicing cluster count for that species/coding
+class from `n_sig_productive_ds_leafcutter_clusters` /
+`n_sig_unproductive_ds_leafcutter_clusters` in `20260820_SupplementalTable_Contrasts.tsv`,
+which is slightly larger and not the number plotted or tested.
+
+## FigS23b — splicing-expression coupling, every contrast
 
 Every contrast in the study at once: each point is one species:tissue contrast, positioned by
 its splicing–expression Spearman ρ and that correlation's significance. The per-species P is a
@@ -620,6 +662,7 @@ fig.supylabel(r"$-\log_{10}(P)$", fontsize=AXIS_TXT, x=0.02)
 fig.supxlabel(r"Splicing vs expression Spearman $\rho$", fontsize=AXIS_TXT, y=-0.06)
 savefig(fig, "FigS_SplicExpr_b_Volcano_AllSpecies.pdf")
 print({sp: rfmt(species_p[sp]) for sp in SPECIES})
+record_source("FigS23B", volc)
 ```
 
 In every species the unproductive contrasts sit left of zero and reach far higher significance
@@ -679,7 +722,67 @@ ax.legend(handles=[plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s], mar
 sns.despine(ax=ax)
 savefig(fig, "Fig3c_PercentUnproductive_Testis.pdf")
 print({sp: pfmt(p) for sp, p in pv_c.items()})
+record_source("Fig3c", pc[["Species", "sample", "Stage", "Percent"]])
 ```
+
+## FigS20 — percent unproductive reads across species, tissues and development
+
+Fig 3c's metric, generalised from testis alone to every tissue and the full developmental time
+course. Each point is one library, positioned by its developmental percent-rank within its
+species (0 = earliest sampled stage, 1 = adult); vertical lines mark the birth and
+onset-of-meiosis landmarks used to define juvenile/adult elsewhere in this notebook, taken from
+the same `DataToPlot.DevelopmentalMarkers.tsv.gz` table Fig 3c and the NMD-factor panel use, so
+the landmark positions are identical across every panel that draws them. Human and macaque have
+no ovary samples.
+
+```{python}
+#| label: fig-s20
+#| fig-cap: "Percent of unproductive reads across species, tissues, and developmental time. Vertical lines mark developmental landmarks (birth, onset of meiosis) per species."
+alltis = pd.read_csv(f"{OUT}/DataToPlot.AllTissues.Percent.UP.tsv.gz", sep="\t")
+landmarks = pd.read_csv(f"{OUT}/DataToPlot.DevelopmentalMarkers.tsv.gz", sep="\t")
+TISSUES_S20 = ["Brain", "Cerebellum", "Heart", "Kidney", "Liver", "Ovary", "Testis"]
+# column name -> (legend label, colour); OnsetMeiosis is the spermatogenesis landmark,
+# renamed from "Onset meiosis spermatogenesis" by the developmental-markers export rule.
+LANDMARK_COL = {"Birth": ("Birth", "black"),
+                "OnsetMeiosis": ("Onset meiosis (spermatogenesis)", "#7570b3"),
+                "Onset meiosis oogenesis": ("Onset meiosis (oogenesis)", "#e7298a")}
+
+fig, axes = plt.subplots(len(SPECIES), len(TISSUES_S20), figsize=(9.2, 7.6), sharex=True,
+                         sharey=True, gridspec_kw={"wspace": 0.08, "hspace": 0.12})
+for ri, sp in enumerate(SPECIES):
+    lm = landmarks[landmarks.Species == sp].iloc[0]
+    for ci, ts in enumerate(TISSUES_S20):
+        ax = axes[ri, ci]
+        sub = alltis[(alltis.Species == sp) & (alltis.Tissue == ts)]
+        for col, (_, color) in LANDMARK_COL.items():
+            if col in lm.index and pd.notna(lm[col]):
+                ax.axvline(lm[col], color=color, lw=0.8, zorder=1)
+        ax.scatter(sub.PercentRank_OrdinalStage, sub.Percent, s=4, alpha=0.4,
+                   color="black", lw=0, zorder=2)
+        ax.set_ylim(0, 6.5); ax.set_xlim(-0.05, 1.05)
+        ax.tick_params(axis="both", labelsize=SMALL_TXT)
+        sns.despine(ax=ax)
+        if ri == 0:
+            ax.set_title(ts, fontsize=AXIS_TXT)
+        if ci == 0:
+            ax.set_ylabel(sp, fontsize=AXIS_TXT)
+        else:
+            ax.tick_params(labelleft=False)
+        if ri == len(SPECIES) - 1:
+            ax.set_xticks([0, 1]); ax.set_xticklabels(["Early\nembryo", "Adult"])
+fig.supylabel("Percent unproductive reads", fontsize=AXIS_TXT, x=-0.005)
+fig.supxlabel("Development", fontsize=AXIS_TXT, y=-0.02)
+fig.legend(handles=[plt.Line2D([], [], color=color, lw=1.4, label=label)
+                    for label, color in LANDMARK_COL.values()],
+           loc="upper center", bbox_to_anchor=(0.5, 1.04), ncol=3, frameon=False,
+           fontsize=LEG_TXT, title="Developmental landmark", title_fontsize=LEG_TXT)
+savefig(fig, "FigS20_PercentUnproductive_AllTissues.pdf")
+record_source("FigS20", alltis[["Species", "Tissue", "ID", "PercentRank_OrdinalStage",
+                                "Percent"]])
+```
+
+Unproductive splicing rises through post-natal development in most species and tissues, most
+strikingly in testis, consistent with Fig 3c.
 
 ## Fig 3f — *ARHGAP17* unproductive junction
 
@@ -774,15 +877,97 @@ axes[1].legend(handles=[plt.Line2D([], [], marker="o", ls="", color=STAGE_COL[s]
                loc="upper center", bbox_to_anchor=(0.5, -0.32), ncol=3, frameon=False,
                fontsize=LEG_TXT, handletextpad=0.1)
 savefig(fig, "Fig3f_ARHGAP17_Testis.pdf")
+record_source("Fig3f", pf[["Species", "sample", "Stage", "PSI_shown", "log2RPKM"]])
+record_source("Fig3f_stats", pd.DataFrame(
+    [{"Species": sp, "Metric": col, "Comparison": lab, "p": p}
+     for (sp, col, lab), p in pf_p.items()]))
 ```
 
 Inclusion of the unproductive junction rises and host-gene expression falls between juvenile
 and adult testis in most species, in the direction expected if the junction destabilises the
 transcript.
 
+## FigS23a — juvenile vs adult testis, beta-beta
+
+The same ΔPSI-vs-Δexpression comparison as Fig 3d, but for the `Juvenile Testis v Adult Testis`
+contrast in place of Adult Brain v Adult Kidney. One event per cluster, `p.adjust < 0.05` and
+`|ΔPSI| > 0.05`, exactly as in Fig 3d; the correct thresholds are FDR<5% and |ΔPSI|>5%
+throughout (the published legend's "FDR < 0.05%" is a typo).
+
+```{python}
+#| label: fig-s23a
+#| fig-cap: "Differential splicing of unproductive junctions is anticorrelated with host gene expression through testis development, human and chicken."
+jat = pd.read_csv(f"{OUT}/DataForReplotting_BetaBeta_JuvenileAdultTestis.tsv.gz", sep="\t")
+recs = []
+for sp in ["Chicken", "Human"]:
+    for cod in ["Productive", "Unproductive"]:
+        s = jat[(jat.Species == sp) & (jat.Prod == (cod == "Productive"))].dropna(
+            subset=["deltapsi", "logFC"])
+        from scipy.stats import spearmanr
+        rho, p = spearmanr(s.deltapsi, s.logFC)
+        recs.append(dict(Species=sp, Coding=cod, Prod=(cod == "Productive"),
+                         n_table=contrast_n_sig("Juvenile Testis v Adult Testis", sp, cod),
+                         n_spearman=len(s), spearman=rho, p=p))
+s_jat = pd.DataFrame(recs)
+s_jat["p_adj"] = bh(s_jat.p.values)
+
+fig, axes = plt.subplots(2, 2, figsize=(4.6, 3.4), sharex=True, sharey=True,
+                         gridspec_kw={"wspace": 0.10, "hspace": 0.12})
+for ri, sp in enumerate(["Chicken", "Human"]):
+    for ci, cod in enumerate(["Productive", "Unproductive"]):
+        ax = axes[ri, ci]
+        sub = jat[(jat.Species == sp) & (jat.Prod == (cod == "Productive"))]
+        ax.axhline(0, ls="--", color="0.5", lw=0.8, zorder=1)
+        ax.scatter(sub.deltapsi, sub.logFC, s=3, alpha=0.05, lw=0,
+                   color=CODE_COL[cod], zorder=2)
+        m = sub.dropna(subset=["deltapsi", "logFC"])
+        slope, intercept = np.polyfit(m.deltapsi, m.logFC, 1)
+        xs = np.array([m.deltapsi.min(), m.deltapsi.max()])
+        ax.plot(xs, intercept + slope * xs, color=CODE_COL[cod], lw=1.6, zorder=4)
+        r = s_jat[(s_jat.Species == sp) & (s_jat.Coding == cod)].iloc[0]
+        ax.text(0.02, 0.97,
+                f"n={r.n_spearman}\nspearman rho={r.spearman:.2f}\n"
+                f"P={pval_fmt(r.p)}\nP.adj={pval_fmt(r.p_adj)}",
+                transform=ax.transAxes, ha="left", va="top", fontsize=SMALL_TXT, zorder=6)
+        ax.set_ylim(-5, 5); ax.set_yticks([-4, -2, 0, 2, 4])
+        if ri == 0:
+            ax.set_title(cod, fontsize=AXIS_TXT)
+        if ci == 1:
+            ax2 = ax.twinx(); ax2.set_yticks([])
+            ax2.set_ylabel(sp, fontsize=AXIS_TXT, rotation=-90, labelpad=12)
+            for s_ in ax2.spines.values():
+                s_.set_visible(False)
+        ax.tick_params(axis="both", labelsize=AXIS_TXT)
+        sns.despine(ax=ax)
+for ax in axes[-1]:
+    ax.tick_params(axis="x", labelrotation=45)
+    for lab in ax.get_xticklabels():
+        lab.set_ha("right")
+fig.supylabel("Differential gene\nexpression (log$_2$FC)", fontsize=AXIS_TXT, x=-0.02, ma="center")
+fig.supxlabel("Differential splicing\n(Delta PSI)", fontsize=AXIS_TXT, y=-0.10)
+fig.suptitle("Juvenile Testis v Adult Testis", fontsize=AXIS_TXT, y=1.02)
+savefig(fig, "FigS23a_BetaBeta_JuvenileAdultTestis.pdf")
+record_source("FigS23A", jat[["Species", "Prod", "deltapsi", "logFC"]])
+s_jat_out = s_jat[["Species", "Coding", "n_table", "n_spearman", "spearman", "p", "p_adj"]].rename(
+    columns={"n_spearman": "n_spearman (requires cluster can be matched to a gene)"})
+record_source("FigS23A_stats", s_jat_out)
+s_jat_out
+```
+
+As in Fig 3d, the unproductive junctions show a negative ΔPSI-Δexpression relationship in both
+species while the productive ones do not.
+
+**A note on *n*** (as in Fig 3d): the *n* printed on each panel (and `n_spearman` in the
+source-data table) is the number of clusters actually used for the Spearman correlation and
+trend line, after excluding clusters with no matched expression value. The source-data table
+also lists `n_table`, the total significant cluster count from
+`20260820_SupplementalTable_Contrasts.tsv`'s `n_sig_productive_ds_leafcutter_clusters` /
+`n_sig_unproductive_ds_leafcutter_clusters` columns for `Juvenile Testis v Adult Testis`, which
+is slightly larger and not the number plotted or tested.
+
 # Conserved AS events
 
-## Panel a — conserved-event filter cascade
+## FigS24a — conserved-event filter cascade
 
 Five successive filters, once down an unproductive path and once down a productive path, both
 starting from the junctions that lift over to a human junction. `*Any` counts distinct *human*
@@ -826,9 +1011,10 @@ cascade_row("Unproductive", STEP_TITLES("unproductive"),
             "FigS_ConservedAS_a_UnproductiveCascade.pdf")
 cascade_row("Productive", STEP_TITLES("productive"),
             "FigS_ConservedAS_a_ProductiveCascade.pdf")
+record_source("FigS24A", casc)
 ```
 
-## Panel c — *SCN8A* exon 18N
+## FigS24c — *SCN8A* exon 18N
 
 *SCN8A* exon 18N is a poison exon whose inclusion falls through brain development while
 *SCN8A* expression rises. Rows are coarse developmental stages, columns are species, colour is
@@ -868,9 +1054,10 @@ for ax, (col, ttl, cmap) in zip(
     cb.ax.tick_params(labelsize=4.5)
 axes[0].tick_params(labelbottom=False)
 savefig(fig, "FigS_ConservedAS_c_SCN8A_Heatmaps.pdf")
+record_source("FigS24C", scn[["Species.short", "Group", "PSI_shown", "log2RPKM"]])
 ```
 
-## Panel d — *SCN8A* exon conservation
+## FigS24d — *SCN8A* exon conservation
 
 Per-base PhyloP across the two constitutive flanking exons and the poison exon, coloured by
 codon position, with the mean over the plotted window as a dashed line. The `Mean PhyloP`
@@ -908,13 +1095,14 @@ axes[2, 0].set_xlabel("Nucleotide position", fontsize=SMALL_TXT)
 axes[2, 1].set_xlabel("Codon position", fontsize=SMALL_TXT)
 fig.supylabel("Nucleotide conservation, 100 vertebrate PhyloP", fontsize=SMALL_TXT, x=-0.02)
 savefig(fig, "FigS_ConservedAS_d_SCN8A_PhyloP.pdf")
+record_source("FigS24D", scn_phy)
 ```
 
 The poison exon (exon 18n) has mean PhyloP comparable to its constitutive neighbours but
 dN/dS above 1, and its conservation is flat across codon positions rather than depressed at
 position 3 — conserved DNA without amino-acid-level constraint.
 
-## Panel e — dN/dS versus PhyloP
+## FigS24e — dN/dS versus PhyloP
 
 ```{python}
 #| label: fig-conservedas-e
@@ -972,13 +1160,15 @@ fig.legend(seen.values(), seen.keys(), loc="center left", bbox_to_anchor=(1.02, 
 fig.suptitle("cassette exons in human and *any", fontsize=AXIS_TXT, y=1.02)
 savefig(fig, "FigS_ConservedAS_e_dNdS_v_PhyloP.pdf")
 print("highlighted:", sorted(highlight.external_gene_name.unique()))
+record_source("FigS24E", trios[["external_gene_name", "rn", "BroadType",
+                                           "Productivity", "PhyloP", "dnds"]])
 ```
 
 Unproductive cassette exons occupy a region of the plot that productive exons do not: high
 nucleotide conservation together with dN/dS above 1. The boxed region marks that quadrant, and
 the coloured points are splicing-factor and neuronal genes whose poison exons fall in it.
 
-## Panel f — *ARHGAP17* flanking intronic conservation
+## FigS24f — *ARHGAP17* flanking intronic conservation
 
 The cassette exon's flanking intronic 50-mers are compared against the same regions of the
 gene's constitutive exons, as a z-score against that null.
@@ -1023,12 +1213,13 @@ ax.tick_params(axis="x", labelsize=SMALL_TXT)
 ax.set_ylim(-0.6, 1.6)
 sns.despine(ax=ax)
 savefig(fig, "FigS_ConservedAS_f_ARHGAP17_FlankingConservation.pdf")
+record_source("FigS24F", arh_phy[["SS_Type", "isCE", "meanPhyloP", "z", "p"]])
 ```
 
 The cassette exon's flanking intronic sequence is far more conserved than that of the gene's
 constitutive exons.
 
-# NMD factor expression
+# NMD factor expression (FigS22a)
 
 *UPF3A*, *UPF3B* and their ratio through testis development, expressed relative to the mean
 juvenile level of the same species. Juvenile and adult are the two arms of the
@@ -1129,6 +1320,9 @@ fig.legend(handles=[plt.Line2D([], [], marker="s", ls="", markerfacecolor="none"
 savefig(fig, "FigS_NMD_UPF3_JuvenileVsAdult.pdf")
 print(lg[lg.Gene == GENE_ORDER[0]].groupby(["Species", "Stage"]).size()
         .unstack("Stage").reindex(SPECIES)[["Juvenile", "Adult"]].to_string())
+record_source("FigS22A", lg[["ID", "Species", "Gene", "Stage", "rel"]])
+record_source("FigS22A_stats", pd.DataFrame(
+    [{"Species": sp, "Gene": g, "p": p} for (sp, g), p in tt_res.items()]))
 ```
 
 *UPF3A* rises and *UPF3B* falls from juvenile to adult testis in every species except rabbit,
@@ -1143,4 +1337,22 @@ man = sorted(f for f in os.listdir(FIGDIR) if f.endswith(".pdf"))
 pd.DataFrame({"panel": man,
               "KB": [round(os.path.getsize(os.path.join(FIGDIR, f)) / 1024, 1)
                      for f in man]})
+```
+
+# Source data
+
+One spreadsheet, one tab per panel (main-text and supplemental together), holding the exact
+table each panel above plots. Sheet names are truncated to Excel's 31-character limit; the two
+recorded per multi-panel figure (e.g. `Fig3d` and `Fig3d_stats`) separate the raw points from
+the fitted/summary statistics annotated on the plot.
+
+```{python}
+#| label: source-data-xlsx
+SOURCE_DATA_XLSX = "SourceData_ComparativeSplicing.xlsx"
+with pd.ExcelWriter(SOURCE_DATA_XLSX, engine="openpyxl") as xl:
+    for panel, df in SOURCE_DATA.items():
+        df.to_excel(xl, sheet_name=panel[:31], index=False)
+print(f"{len(SOURCE_DATA)} tabs -> {SOURCE_DATA_XLSX} "
+      f"({os.path.getsize(SOURCE_DATA_XLSX) / 1024:.0f} KB)")
+pd.DataFrame({"panel": list(SOURCE_DATA), "n_rows": [len(d) for d in SOURCE_DATA.values()]})
 ```

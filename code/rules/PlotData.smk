@@ -128,6 +128,18 @@ rule Export_BetaBetaAdultBrainKidney:
         "python {EXPORT} betabeta-points --joined {input} --out {output}"
 
 
+rule Export_BetaBetaJuvenileAdultTestis:
+    """FigS23a scatter points, juvenile v adult testis, human and chicken."""
+    input:
+        expand("MazinLeafcutterAnalysis/Contrasts_ds_tidy/"
+               "Neonate_vs_Adult.Testis.{sp}.joined.tsv.gz", sp=["Chicken", "Human"]),
+    output:
+        "../output/DataForReplotting_BetaBeta_JuvenileAdultTestis.tsv.gz",
+    conda: "../envs/py_general.yml"
+    shell:
+        "python {EXPORT} betabeta-points --joined {input} --out {output}"
+
+
 rule Export_JuncClassCountsBySample:
     """Per-library junction-productivity read counts (Fig 3c input)."""
     input:
@@ -149,6 +161,19 @@ rule Export_TestisPercentUnproductive:
     conda: "../envs/py_general.yml"
     shell:
         "python {EXPORT} testis-percent-up --counts {input} --out {output}"
+
+
+rule Export_AllTissuesPercentUnproductive:
+    """Supp Fig 20: percent unproductive reads per library, every tissue, across development."""
+    input:
+        counts = "../output/DataToPlot.JuncClassCountsBySample.tsv.gz",
+        sample_stages = "../data/Cordoso_SampleList.WhichAreNonHumanEmbryo.tsv.gz",
+    output:
+        "../output/DataToPlot.AllTissues.Percent.UP.tsv.gz",
+    conda: "../envs/py_general.yml"
+    shell:
+        "python {EXPORT} all-tissues-percent-up --counts {input.counts} "
+        "--sample-stages {input.sample_stages} --out {output}"
 
 
 rule Export_SCN8A_PhyloP:
@@ -328,8 +353,10 @@ rule all_plot_data:
         "../output/DataToPlot.TranscriptsPerGene.Totals.tsv.gz",
         "../output/DataToPlot.ContrastSummaries.tsv.gz",
         "../output/DataForReplotting_BetaBeta_AdultBrainKidney.tsv.gz",
+        "../output/DataForReplotting_BetaBeta_JuvenileAdultTestis.tsv.gz",
         "../output/DataToPlot.JuncClassCountsBySample.tsv.gz",
         "../output/DataToPlot.Testis.Percent.UP.tsv.gz",
+        "../output/DataToPlot.AllTissues.Percent.UP.tsv.gz",
         "../output/DataForReplotting_SCN8A_PhyloP.tsv.gz",
         "../output/DataToPlot.dNdS_PhyloP_ExonTrios.tsv.gz",
         "../output/DataForReplotting_ARHGAP17_FlankingPhyloP.tsv.gz",
